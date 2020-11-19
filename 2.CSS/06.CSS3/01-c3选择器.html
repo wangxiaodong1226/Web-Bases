@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 300px;
+			height: 50px;
+			border:1px solid;
+			margin: 20px auto;
+			text-align: center;
+		}
+		div[class]{
+			background-color: red;
+		}
+		div[class="box1"]{
+			background-color: pink;
+		}
+		div[class^="aa"]{
+			background-color: green;
+		}
+		div[class$="aa"]{
+			background-color: yellow;
+		}
+		div[class*="aa"]{
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">1</div>
+	<div class="aabox2">2</div>
+	<div class="bbbox3">3</div>
+	<div class="box4aa">4</div>
+	<div class="box5bb">5</div>
+	<div class="aabox6bb">6</div>
+	<div class="bbbox7aa">7</div>
+	<div>8</div>
+</body>
+</html>

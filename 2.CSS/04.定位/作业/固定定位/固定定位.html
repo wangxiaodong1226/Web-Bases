@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>固定定位</title>
+	<style>
+		body{
+			text-align: center;
+		}
+		.header{
+			/*margin-top: -10px;*/
+			top: 0;
+			position:fixed;
+		}
+		.main>.left>img{
+			left:0px;
+			top:100px;
+			position: fixed;
+		}
+
+		.main .top>img{
+			right:0px;
+			top:100px;
+			position: fixed;
+		}
+		.main .bottom>img{
+			right:0px;
+			bottom:10px;
+			position: fixed;
+		}
+		/*.main>.middle>img{
+			padding-left:200px;
+		}*/
+	</style>
+</head>
+<body>
+	<div class="header"><img src="r1_c1.png" alt=""></div>
+	<div class="main">
+		<div class="left"><img src="r2_c1.png" alt=""></div>
+		<div class="middle"><img src="box.png" alt=""></div>
+		<div class="right">
+			<div class="top"><img src="r2_c2.png" alt=""></div>
+			<div class="bottom"><img src="1.png" alt=""></div>
+		</div>
+	</div>
+</body>
+</html>

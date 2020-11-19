@@ -1,0 +1,63 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:03:57
+ * @LastEditTime: 2020-10-16 12:41:40
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\04h5和css3\day27\01-手风琴.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		h3{
+			margin: 0;
+			padding: 0;
+			height: 35px;
+			line-height: 35px;
+			padding-left: 30px;
+			border-bottom: 2px solid yellowgreen;
+			color: #fff;
+			background-color: orange;
+			transition: all 0.5s ease;
+		}
+		.box{
+			width: 500px;
+			margin: 0 auto;
+		}
+		.list div{
+			height: 0;
+			background-color: pink;
+			transition: all 0.5s ease;
+		}
+		.list:hover h3{
+			background-color: red;
+		}
+		.list:hover div{
+			height: 150px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="list">
+			<h3>今日新闻</h3>
+			<div></div>
+		</div>
+		<div class="list">
+			<h3>今日新闻</h3>
+			<div></div>
+		</div>
+		<div class="list">
+			<h3>今日新闻</h3>
+			<div></div>
+		</div>
+		<div class="list">
+			<h3>今日新闻</h3>
+			<div></div>
+		</div>
+	</div>
+</body>
+</html>

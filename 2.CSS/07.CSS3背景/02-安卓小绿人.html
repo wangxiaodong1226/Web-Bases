@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			background-color: #f7f7f7;
+		}
+		.box{
+			width: 640px;
+			height: 440px;
+			margin: 80px auto;
+			background-color: #fff;
+		}	
+		.android{
+			width: 340px;
+			padding-top: 40px;
+			margin: 0 auto;
+			position: relative;
+		}
+		/*脑袋*/
+		.head{
+			width: 220px;
+			height: 100px;
+			margin:0 auto 10px;
+			background-color: yellowgreen;
+			border-radius: 100px 100px 0 0;
+			position: relative;
+		}
+		/*眼睛*/
+		.head::before,
+		.head::after{
+			content: "";
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			background-color: #fff;
+			border-radius: 50%;
+			top: 40px;
+		}
+		.head::before{
+			left: 50px;
+		} 
+		 .head::after{
+			right: 50px;
+		}
+		/*身体*/
+		.body{
+			width: 220px;
+			height: 180px;
+			margin: 0 auto;
+			background-color: yellowgreen;
+			border-radius: 0 0 20px 20px;
+			position: relative;
+		}
+		/*腿*/
+		.body::before,
+		.body::after{
+			content: '';
+			position: absolute;
+			width: 50px;
+			height: 80px;
+			background-color: yellowgreen;
+			border-radius: 0 0 25px 25px;
+			bottom: -80px;
+		}
+		 .body::before{
+			left: 40px;
+		 }
+		.body::after{
+			right: 40px;
+		} 
+		/*胳膊*/
+		.arms{
+			width: 340px;
+			height: 150px;
+			position: absolute;
+			top: 150px;
+		}
+		 .arms::before,
+		.arms::after{
+			content: '';
+			position: absolute;
+			width: 50px;
+			height: 150px;
+			background-color: yellowgreen;
+			border-radius: 25px;
+		} 
+		.arms::before{
+			left: 0;
+		}
+		.arms::after{
+			right: 0;
+		} 
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="android">
+			<div class="head"></div>
+			<div class="body"></div>
+			<div class="arms"></div>
+		</div>
+	</div>
+</body>
+</html>

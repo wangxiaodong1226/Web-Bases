@@ -1,0 +1,37 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:03:57
+ * @LastEditTime: 2020-10-16 12:51:04
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\04h5和css3\day27\05-小火箭.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html,body{
+			height: 100%;
+		}
+		body{
+			background-color: orange;
+		}
+		img{
+			position: absolute;
+			left: 100px;
+			top: 600px;
+			height: 120px;
+			transform: translate(-200px,200px) rotate(45deg);
+			transition: all 1s;
+		}
+		body:hover img{
+			transform: translate(500px,-500px) rotate(45deg);
+		}
+	</style>
+</head>
+<body>
+	<img src="images/rocket.png" alt="">
+</body>
+</html>

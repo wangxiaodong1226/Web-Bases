@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>微信案例</title>
+	<style>
+		.box{
+			background: url("weixin_bg1d20af.jpg");
+			height: 60px;
+			text-align: center;
+		}
+		.center{
+			display:inline-block;
+		}
+		ul,li{
+			float:left;
+			list-style: none;
+			margin:0;
+			padding:0;
+			margin-right: 10px;
+			margin-left: 10px;
+		}
+		/*ul,li{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			float: left;
+			margin-left: 10px;
+			margin-right: 10px;
+		}*/
+		ul li a{
+			display: inline-block;
+			text-decoration: none;
+			height: 34px;
+			background: url("bg.png") no-repeat 0 -191px;
+			margin-top:11px;
+			color:white;
+		}
+		ul li a span{
+			display: inline-block;
+			height: 34px;
+			line-height: 34px;
+			background: url("bg.png") right -191px;
+			margin-left: 20px;
+			padding-right: 20px;
+
+		}
+		ul li a:hover{
+			background: url("bg.png") no-repeat 0px -143px;
+		}
+		ul li a:hover span{
+			background: url("bg.png") no-repeat right -143px;
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="center">
+			<ul>
+				<li><a href="#"><span>首页</span></a></li>
+				<li><a href="#"><span>下载吧</span></a></li>
+				<li><a href="#"><span>公共平台</span></a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

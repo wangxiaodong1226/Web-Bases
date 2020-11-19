@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*基础选择器*/
+		/*标签选择器 特性：当前页面全部标签来执行代码*/
+		div{
+			width: 200px;
+			height: 200px;
+			background: red;
+		}
+		/*类选择器 特性：谁调生谁生效,且可被多次调用*/
+		.box{
+			width: 200px;
+			height: 200px;
+			background: green;
+		}
+		/*ID选择器 特性：谁调用谁生效 不可被多次调用，只能调用一次*/
+		#mix{
+			width: 200px;
+			height: 200px;
+			background: pink;
+		}
+		/*通配符选择器 特性：一般不用，针对当前页面所有的标签生效*/
+		*{
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div>adfasdf</div>
+	<div>adfasdf</div>
+
+	<span>;lkjk</span>
+	<span>;lkjk</span>
+
+	<p>;kl;lk</p>
+	<p>;kl;lk</p>
+
+	<strong>klkkk</strong>
+</body>
+</html>

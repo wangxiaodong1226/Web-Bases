@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		span::before{
+			content: "今天";
+			color: red;
+			background-color: pink;
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+		}
+
+		span{
+			border:1px solid;
+		}
+
+		span::after{
+			content: "真好！";
+			color:green;
+			background-color: red;
+			width: 50px;
+			height: 50px;
+		}
+
+	</style>
+</head>
+<body>
+	<span>天气</span>
+</body>
+</html>

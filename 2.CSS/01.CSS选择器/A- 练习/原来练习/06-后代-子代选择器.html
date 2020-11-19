@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*后代选择器*/
+        p em{
+            color: blue;
+        }
+        /*子代选择器*/
+        p>em{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<p>
+    p的文字
+    <span>
+        <em>
+            里面
+        </em>
+    </span>
+    <em>
+        外面
+    </em>
+</p>
+<em>
+    最外面
+</em>
+
+</body>
+</html>

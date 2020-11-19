@@ -1,0 +1,38 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:03:58
+ * @LastEditTime: 2020-10-15 21:36:08
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\04h5和css3\day25_css3\03-结构伪类问题.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		em:nth-child(3){
+			color: red;
+		}
+
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid;
+		}
+		div:empty{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<span>span</span>
+		<p>pppppp</p>
+		<em>emememem</em>
+	</div>
+
+	<div></div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+body{
+	background-color: #FBFBFB;
+}
+.header{
+	height: 40px;
+	border-bottom: 1px solid #ccc;
+}
+.header>.header_center{
+	width: 980px;
+	height: 40px;
+	margin: 0 auto;
+}
+.header>.header_center>a{
+	float: left;
+	width: 179px;
+	height: 39px;
+	background: url("images/logo.jpg") no-repeat;
+}
+.header>.header_center>input{
+	float: right;
+	height: 24px;
+	margin-top: 4px;
+	
+}
+.header>.header_center>img{
+	float: right;
+	margin-top: 4px;
+}
+.nav{
+	height: 55px;
+	background: url("images/nav_bg.png");
+}
+.nav>ul{
+	list-style: none;
+	margin: 0 auto;
+	width: 980px;
+	height: 55px;
+	padding: 0;
+}
+.nav>ul>li{
+	float: left;
+	height: 55px;
+	line-height: 55px;
+	background: url("images/nav_bg-line.png") no-repeat right;
+}
+.nav>ul>li>a{
+	padding:0 20px;
+	color: black;
+	text-decoration: none;
+}
+.big_img{
+	display: block;
+	margin:0 auto;
+}
+
+.news{
+	height: 20px;
+	background-color: #eee;
+
+}
+.news .news_center{
+	width: 980px;
+	height: 20px;
+	line-height: 20px;
+	margin:0 auto;
+}
+.news .text{
+	float: left;
+	font-size: 10px;
+}
+.news ul{
+	float: right;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.news ul li{
+	float: left;
+	margin: 2px 2px 0;
+}
+.list{
+	
+}
+.list .list_center{
+	width: 980px;
+	margin:0 auto;
+}
+.list .list_center>ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.list .list_center>ul>li{
+	float: left;
+	border: 1px solid #ccc;
+	height: 200px;
+	
+}
+.list .list_center>ul>li.left{
+	margin-right: 10px;
+	width: 290px;
+
+}
+.list .list_center>ul>li.center{
+	margin-right: 10px;
+	width: 400px;
+}
+.list .list_center>ul>li.right{
+	
+	width: 260px;
+}
+.list .list_center>ul>li span{
+	color: yellowgreen;
+	font-size: 12px;
+}
+img{
+	vertical-align: middle;
+}
+.list .list_center>ul>li>.bottom{
+	padding-top: 20px;
+}
+.list .list_center ol{
+	list-style: none;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.list .list_center ol li{
+	font-size: 12px;
+	line-height: 24px;
+	font-weight: bold;
+	border-bottom: 1px dashed #ccc;
+}
+.list .list_center .bottom div{
+	font-size: 12px;
+	font-weight: bold;
+	border-left: 3px solid yellowgreen;
+	margin:8px 30px 0;
+	padding-left: 5px;
+}
+.list .list_center .bottom p{
+	font-size: 12px;
+	font-weight: bold;
+	margin:20px 30px 0;
+	
+}

@@ -1,0 +1,35 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:03:57
+ * @LastEditTime: 2020-10-16 13:05:44
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\04h5和css3\day27\08-rotateX.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 300px;
+			height: 226px;
+			margin: 200px auto;
+			perspective: 110px;
+		}
+		img{
+			transition: all 2s;
+		}
+		.box:hover img{
+			transform: rotateX(360deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="images/x.jpg" alt="">
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.header{
+			width: 600px;
+			height: 80px;
+			background-color: red;
+		}
+		.main{
+			width: 600px;
+			/*height: 400px;*/
+			background-color: pink;
+			/*overflow: hidden;*/
+			/*溢出隐藏*/
+		}
+		.main .left{
+			width: 200px;
+			height: 400px;
+			background-color: blue;
+			float: left;
+		}
+		.main>.right{
+			width: 400px;
+			height: 400px;
+			background-color: green;
+			float: right;
+		}
+		.foot{
+			width: 600px;
+			height: 60px;
+			background-color: orange;
+		}
+		/*伪类清除浮动*/
+		.clearfix::after{
+			content: "";
+			height: 0;
+			line-height: 0;
+			display: block;
+			visibility: hidden;
+			clear: both;
+		}
+		/*兼容ie浏览器*/
+		.clearfix{
+			zoom:1;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="header"></div>
+	<div class="main clearfix">
+		<div class="left"></div>
+		<div class="right"></div>
+		<!-- <div style="clear: both;"></div> -->
+	</div>
+	<div class="foot"></div>
+</body>
+</html>

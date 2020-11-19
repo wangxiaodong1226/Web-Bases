@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			overflow: hidden;
+			/*margin-bottom: 50px;*/
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			margin-top: 100px;
+		}
+		span{
+			margin:50px;
+		}
+		/*上下忽略 左右生效*/
+	</style>
+</head>
+<body>
+	<!-- 外边距塌陷 -->
+	<div class="box1">
+		<div class="box2"></div>
+	</div>
+
+
+	<!-- <div class="box2"></div> -->
+	<span>span</span>
+</body>
+</html>

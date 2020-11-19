@@ -1,0 +1,91 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:03:56
+ * @LastEditTime: 2020-10-16 11:04:22
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\04h5和css3\day26\03-线性渐变.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 600px;
+			height: 100px;
+			margin: 30px auto;
+			border:1px solid;
+		}
+		div:nth-child(1){
+			background-image: linear-gradient(to right,yellow,green);
+		}
+		div:nth-child(2){
+			background-image: linear-gradient(yellow,green);
+		}
+		div:nth-child(3){
+			width: 200px;
+			height: 200px;
+			background-image: linear-gradient(0deg,yellow,green);
+		}
+		div:nth-child(4){
+			
+			background-image: linear-gradient(to right,
+				yellow 0%,
+				red 40%,
+				green 70%,
+				blue 100%
+
+				);
+		}
+		div:nth-child(5){
+			
+			background-image: linear-gradient(45deg,
+				yellow 0%,
+				yellow 25%,
+				blue 25%,
+				blue 50%,
+				red 50%,
+				red 75%,
+				green 75%,
+				green 100%
+
+				);
+		}
+		div:nth-child(6){
+			
+			background-image: linear-gradient(135deg,
+				black 0%,
+				black 25%,
+				white 25%,
+				white 50%,
+				black 50%,
+				black 75%,
+				white 75%,
+				white 100%
+
+				);
+			background-size: 100px 100%;
+			animation: gun 1s infinite linear;
+		}
+
+		@keyframes gun {
+			0%{
+
+			}
+			100%{
+				background-position: 100px 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

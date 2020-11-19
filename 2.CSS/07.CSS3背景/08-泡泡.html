@@ -1,0 +1,32 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:03:56
+ * @LastEditTime: 2020-10-16 11:32:31
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\04h5和css3\day26\08-泡泡.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 300px;
+			height: 100px;
+			margin: 100px auto;
+			background: url("images/paopao.png") no-repeat left top,
+				url("images/paopao.png") no-repeat right bottom;
+			background-color: blue;
+			transition: all 2s;
+		}
+		div:hover{
+			background-position: left bottom,right top;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

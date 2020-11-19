@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>div布局</title>
+	<style>
+		.header{
+			width: 970px;
+			height: 103px;
+			background-color: white;
+		}
+		.header>.left{
+			width: 277px;
+			height: 103px;
+			background-color: red;
+			float:left;
+		}
+		.header>.right{
+			width: 679px;
+			height: 103px;
+			background-color: white;
+			margin-left: 12px;
+			float:left;
+		}
+		.header>.right>.top{
+			width: 137px;
+			height: 49px;
+			background-color: green;
+			float: right;
+		}
+		.header>.right>.bottom{
+			width: 679px;
+			height: 46px;
+			background-color: green;
+			float: right;
+			margin-top: 8px;
+		}
+		.main{
+			width: 970px;
+			height: 435px;
+			background-color: white;
+			/*float:right;*/
+		}
+		.main>.left{
+			width: 310px;
+			height: 435px;
+			background-color: yellow;
+			margin-top: 10px;
+			float:left;
+		}
+		.main>.right{
+			width: 650px;
+			height: 435px;
+			background-color: white;
+			margin-left: 10px;
+			float:left;
+		}
+		.main>.right>.top{
+			width: 650px;
+			height: 400px;
+			background-color: white;
+			/*margin-top: 10px;*/
+			float:right;
+		}
+		.main>.right>.top>.left{
+			width: 450px;
+			height: 400px;
+			background-color: white;
+			float:left;
+		}
+		.main>.right>.top>.right{
+			width: 190px;
+			height: 400px;
+			background-color: pink;
+			margin-left: 10px;
+			float:left;
+			margin-top: 10px;
+		}
+		.main>.right>.top>.left>.top{
+			width: 450px;
+			height: 240px;
+			background-color: blue;
+			margin-top: 10px;
+		}
+		.main>.right>.top>.left>.middle{
+			width: 450px;
+			height: 110px;
+			background-color: blue;
+			margin-top: 10px;
+		}
+		.main>.right>.top>.left>.bottom{
+			width: 450px;
+			height: 30px;
+			background-color: blue;
+			margin-top: 10px;
+		}
+		.main>.right>.bottom{
+		    width: 650px;
+		    height: 25px;
+		    background-color: green;
+		    margin-top:20px;
+		    float:right;
+		}
+		.foot{
+			width: 970px;
+			height: 35px;
+			background-color: blue;
+			margin-top:20px;
+			/*float:right;*/
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="left"></div>
+		<div class="right">
+			<div class="top"></div>
+			<div class="bottom"></div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="left"></div>
+		<div class="right">
+			<div class="top">
+				<div class="left">
+					<div class="top"></div>
+					<div class="middle"></div>
+					<div class="bottom"></div>
+				</div>
+				<div class="right">
+				</div>
+			</div>
+			<div class="bottom"></div>
+		</div>
+	</div>
+	<div class="foot"></div>
+</body>
+</html>

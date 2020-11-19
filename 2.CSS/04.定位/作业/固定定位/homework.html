@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			position:fixed;
+			margin-top: -10px;
+		}
+		.box2{
+			width: 1000px;
+			height: 1000px;
+			background-color: white;	
+			float:left;
+		}
+		.box2 .img{
+			text-align: center;
+			top:0px;
+			text-indent: 10em;
+
+		}
+		.box3{
+			width: 200px;
+			height: 400px;
+			background-color: white;
+			float:left;
+			}
+		.box3>img{
+			left:0px;
+			top:100px;
+			position: fixed;
+		}
+		.box4{
+			width: 200px;
+			height: 600px;
+			background-color:white;
+			float:left;
+		}
+		.box4>.tt{
+			right:0px;
+			top:100px;
+			position: fixed;
+		}
+		.box4>.rr{
+			bottom:40px;
+			right:10px;
+			position:fixed;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"><img src="r1_c1.png" alt=""></div>
+	<div class="box3"><img src="r2_c1.png" alt=""></div>
+	<div class="box2"><img src="box.png" alt=""></div>
+	<div class="box4"><img class="tt" src="r2_c2.png" alt="">
+	                  <img class="rr" src="1.png" alt=""></div>
+</body>
+</html>

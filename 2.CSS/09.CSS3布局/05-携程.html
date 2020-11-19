@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+			/*color: #fff;*/
+		}
+		.layout{
+			width: 100%;
+			min-width: 320px;
+		}
+		header{
+			display: flex;
+		}
+		header a{
+			flex: 1;
+		}
+		header a img{
+			width: 100%;
+			display: block;
+		}
+		.nav .item{
+			display: flex;
+			height: 90px;
+			background-color: #FF697A;
+			margin-top: 10px;
+			border-radius: 10px;
+
+		}
+		.nav .item:nth-child(2){
+			background-color: #3D98FF;
+
+		}
+		.nav .item:nth-child(3){
+			background-color: #44C522;
+
+		}
+		.nav .item:nth-child(4){
+			background-color: orange;
+
+		}
+		.nav .item .pub{
+			flex: 1;
+			border-right: 1px solid white;
+			border-bottom: 1px solid white;
+		}
+
+		.nav .item .sub{
+			flex: 2;
+		}
+		.nav .item .sub a{
+			float: left;
+			width: 50%;
+			height: 45px;
+			line-height: 45px;
+			text-align: center;
+			box-sizing: border-box;
+			border-right: 1px solid white;
+			border-bottom: 1px solid white;
+			color: white;
+		}
+		.nav .item:nth-child(4) .sub a{
+			width: 33.33%;
+		}
+		.extra{
+			display: flex;
+		}
+		.extra a{
+			flex: 1;
+		}
+		.extra a img{
+			width: 100%;
+		}
+		footer section{
+			display: flex;
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+		}
+		footer section a{
+			flex: 1;
+			text-align: center;
+			color: #333;
+			padding: 20px 0;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="layout">
+		<header>
+			<a href="#">
+				<img src="images/banner.jpg" alt="">
+			</a>
+		</header>
+		<div class="nav">
+			<div class="item">
+				<div class="pub"></div>
+				<div class="sub">
+					<a href="#">海外酒店</a>
+					<a href="#">团购</a>
+					<a href="#">特惠酒店</a>
+					<a href="#">客栈公寓</a>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pub"></div>
+				<div class="sub">
+					<a href="#">火车票</a>
+					<a href="#">汽车票船票</a>
+					<a href="#">国际机票</a>
+					<a href="#">自家专车</a>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pub"></div>
+				<div class="sub">
+					<a href="#">攻略身边</a>
+					<a href="#">邮轮</a>
+					<a href="#">周末游</a>
+					<a href="#">保险签证</a>
+				</div>
+			</div>
+			<div class="item">
+				<!-- <div class="pub"></div> -->
+				<div class="sub">
+					<a href="#">门票玩乐</a>
+					<a href="#">美食</a>
+					<a href="#">全球购</a>
+					<a href="#">礼品卡</a>
+					<a href="#">出境wifi</a>
+					<a href="#">更多</a>
+				</div>
+			</div>
+		</div>
+		<section class="extra">
+			<a href="#">
+				<img src="images/extra_1.png" alt="">
+			</a>
+			<a href="#">
+				<img src="images/extra_2.png" alt="">
+			</a>
+		</section>
+
+		<footer>
+			<section>
+				<a href="#">电话预订</a>
+				<a href="#">下载客户端</a>
+				<a href="#">我的</a>
+			</section>
+		</footer>
+	</div>
+</body>
+</html>

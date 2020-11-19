@@ -1,0 +1,41 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:03:57
+ * @LastEditTime: 2020-10-16 13:19:59
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\04h5和css3\day27\13-transform-style.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.out{
+			width: 500px;
+			height: 500px;
+			border:1px solid;
+			background-color: pink;
+			margin: 100px auto;
+			transform: rotateY(60deg);
+			transform-style: preserve-3d;
+			/* backface-visibility:hidden;  */
+
+		}
+		.in{
+			width: 300px;
+			height: 400px;
+			background-color: red;
+			margin: 50px auto;
+			transform: rotateX(132deg);
+			/* backface-visibility:hidden; */
+		}
+	</style>
+</head>
+<body>
+	<div class="out">
+		<div class="in"></div>
+	</div>
+</body>
+</html>

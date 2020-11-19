@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滑动门</title>
+	<style>
+		.left{
+			width: 10px;
+			height: 200px;
+			background: url("l.png") no-repeat;
+			margin-left: 10px;
+			float:left;
+			/*padding-left: 10px;*/
+			/*display: inline-block;*/
+		}
+		.center{
+			height: 200px;
+			background: url("m.png") repeat-x;
+			float: left;
+		}
+		.right{
+			width: 10px;
+			height: 200px;
+			background: url("r.png") no-repeat;
+			/*display: inline-block;*/
+			float: left;
+		}
+		.center>.box{
+			/*line-height: 100px;*/
+			height: 200px;
+			line-height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="left"></div>
+	<div class="center">
+        <div class="box">这是一个滑动门hhhhhhhhhh</div>
+	</div>
+	<div class="right"></div>
+</body>
+</html>

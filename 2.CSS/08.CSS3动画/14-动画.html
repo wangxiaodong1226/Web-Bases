@@ -1,0 +1,62 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:03:57
+ * @LastEditTime: 2020-10-16 13:23:32
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\04h5和css3\day27\14-动画.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: green;
+			/* animation: move 4s; */
+			animation: gun 4s  backwards linear;
+			/* animation: move 2s  infinite alternate linear; */
+		}
+		/*body:hover div{
+
+		}*/
+		/* @keyframes move{
+			from{
+				transform: translateX(0px) rotate(0deg);
+			}
+			to{
+				transform: translateX(500px) rotate(555deg);
+			}
+		} */
+		@keyframes gun{
+			0%{
+				transform: translateX(0px) translateY(0px);
+				background-color: green;
+				border-radius: 0px;
+			}
+			25%{
+				transform:  translateX(500px) translateY(0px);
+			}
+			50%{
+				transform:  translateX(500px) translateY(300px);
+				border-radius: 50%;
+			}
+			75%{
+				transform:  translateX(0px) translateY(300px);
+				
+			}
+			100%{
+				transform:  translateX(0px) translateY(0px);
+				background-color: red;
+				border-radius: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

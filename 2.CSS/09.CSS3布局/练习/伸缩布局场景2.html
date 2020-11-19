@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.layout{
+			width: 300px;
+			height: 500px;
+			margin: 100px auto;
+			display: flex;
+			flex-direction: column;
+		}
+		.nav{
+			background-color: green;
+			flex:1;
+			text-align: center;
+		}
+		.section{
+			flex:5;
+			display: flex;
+		}
+		.section .left{
+			flex:1;
+			background-color: blue;
+			text-align: center;
+		}
+		.section .right{
+			flex:3;
+			background-color: yellow;
+			text-align: center;
+		}
+		.footer{
+			flex:1;
+			background-color: red;
+			text-align: center;
+			
+		}
+	</style>
+</head>
+<body>
+	<div class="layout">
+		<div class="nav">头部</div>
+		<div class="section">
+			<div class="left">侧边栏</div>
+			<div class="right">主体内容</div>
+		</div>
+		<div class="footer">底部</div>
+	</div>
+</body>
+</html>

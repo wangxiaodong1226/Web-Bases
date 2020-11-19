@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none
+		}
+		body{
+			font-size: 22px;
+		}
+		section{
+			width: 1000px;
+			margin: 40px auto;
+		}
+		ul{
+			border:1px solid;
+			display: flex;
+		}
+		li{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			margin: 10px;
+		}
+		section:nth-child(1) ul{
+			justify-content: flex-start;
+		}
+
+		section:nth-child(2) ul{
+			justify-content: flex-end;
+		}
+		section:nth-child(3) ul{
+			justify-content: center;
+		}
+		section:nth-child(4) ul{
+			justify-content: space-around;
+		}
+		section:nth-child(5) ul{
+			justify-content: space-between;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<section>
+		<h3>flex-start</h3>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</section>
+	<section>
+		<h3>flex-end</h3>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</section>
+	<section>
+		<h3>center</h3>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</section>
+	<section>
+		<h3>space-around</h3>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</section>
+	<section>
+		<h3>space-between </h3>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</section>
+</body>
+</html>
