@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<!-- 表单 -->
+	<form action="">
+		<fieldset>
+			<legend>基本信息</legend>
+			<!-- 文本控件 -->
+			手机号：<input type="text" maxlength="11"  value="请输入手机号" name="user">
+			<br>
+			<!-- 密码控件 -->
+			密码：<input type="password" maxlength="6" name="pwd">
+			<br>
+			<!-- 单选框 -->
+			<input type="radio" name="sex" checked="checked">男   <input type="radio" name="sex">女
+			<br>
+			<!-- 下拉列表 -->
+			<!-- multiple="multiple" -->
+			<select name="city" >
+				<optgroup label="东北">
+					<option id="hh">黑龙江</option>
+					<option selected="selected">吉林</option>
+					<option>河南</option>
+				</optgroup>
+
+				<optgroup label="南方">
+					<option>海南</option>
+					<option >广西</option>
+					<option>水</option>
+				</optgroup>
+
+				<optgroup label="外国">
+					<option>美国</option>
+					<option >英国</option>
+					<option>河南</option>
+				</optgroup>
+			</select>
+		</fieldset>
+		<br><br>
+		<fieldset>
+			<legend>详细信息</legend>
+			<!-- 多选框 -->
+			<input type="checkbox" checked="checked">吃
+			<input type="checkbox" checked="checked">喝
+			<input type="checkbox" checked="checked">玩
+			<input type="checkbox" checked="checked">乐
+			<br>
+			<!-- 多行文本 -->
+			<textarea name="bb" id="" cols="30" rows="10">请输入文字！</textarea>
+			<br>
+			<!-- 文件上传 -->
+			<input type="file">
+			<br><br>
+			<!-- 文件提交 -->
+			<input type="submit">
+			<br><br>
+			<!-- 普通按钮 -->
+			<input type="button" value="这是一个大大的按钮">
+			<br><br>
+			<!-- 图片按钮  特性：与提交按钮一样具有提交功能，但同时会提交你点击位置的X与Y的坐标-->
+			<input type="image" src="feng.jpg" width="100">
+			<br><br>
+			<!-- 重置按钮 -->
+			<input type="reset">
+		</fieldset>
+	</form>
+
+
+</body>
+</html>

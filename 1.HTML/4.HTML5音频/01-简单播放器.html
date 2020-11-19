@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<video src="video/movie.mp4"></video>
+	<br>
+	<button>播放</button>
+	<button>暂停</button>
+
+	<script>
+		var btns = document.querySelectorAll("button");
+		var video =document.querySelector("video");
+		btns[0].onclick = function () {
+			video.play();
+		}
+		btns[1].onclick = function () {
+			video.pause();
+		}
+
+	</script>
+</body>
+</html>

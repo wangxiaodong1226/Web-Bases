@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text">
+	<button>存储</button>
+	<button>获取</button>
+	<button>更新</button>
+	<button>删除</button>
+	<button>清除</button>
+	<script>
+		var inp = document.querySelector("input");
+		var btns = document.querySelectorAll("button");
+		btns[0].onclick = function () {
+			window.sessionStorage.setItem("username",inp.value);
+			window.sessionStorage.setItem("pwd","123456");
+			window.sessionStorage.setItem("age",18);
+
+		}
+		btns[1].onclick = function () {
+			inp.value = window.sessionStorage.getItem("username");
+		}
+		btns[2].onclick = function () {
+			window.sessionStorage.setItem("username",inp.value);
+		}
+		btns[3].onclick = function () {
+			window.sessionStorage.removeItem("username");
+		}
+		btns[4].onclick = function () {
+			window.sessionStorage.clear();
+		}
+	</script>
+</body>
+</html>

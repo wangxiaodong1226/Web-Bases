@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="box" title="盒子" data-my-name="hz" data-content="我是一个div"></div>
+
+	<script>
+
+		var div = document.querySelector("div");
+		console.log(div.dataset["content"]);
+		console.log(div.dataset["myName"]);
+	</script>
+</body>
+</html>

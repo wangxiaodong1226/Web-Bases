@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<input type="email" id="inp1">
+		<br>
+		<br>
+		<input type="text" id="inp2">
+		<br>
+		<br>
+		<input type="submit">
+
+	</form>
+	<script>
+	var inp1=document.getElementById("inp1");
+	var inp2=document.getElementById("inp2");
+	var num=0;
+	inp1.oninput=function(){
+		num++;
+		inp2.value=num;
+	}
+	inp1.oninvalid=function(){
+		this.setCustomValidity("亲，请输入正确的邮箱！")
+	}
+	</script>
+</body>
+</html>

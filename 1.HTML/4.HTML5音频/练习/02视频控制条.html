@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/font-awesome.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		figcaption{
+			text-align: center;
+			font-size: 24px;
+		}
+		.player{
+			width: 720px;
+			height: 360px;
+			margin: 100px auto;
+			background: black url("../images/loading.gif") no-repeat center;
+			background-size: auto 100%;
+			position: relative;
+		}
+		video{
+			height: 100%;
+			display: block;
+			margin: 0 auto;
+		}
+		.tiao{
+			position: absolute;
+			width: 700px;
+			height: 40px;
+			background: rgba(255,255,255,0.6);
+			left:10px;
+			bottom: 10px;
+			border-radius: 5px;
+		}
+		.switch{
+			position: absolute;
+			left:10px;
+			top:10px;
+			width: 20px;
+			height: 20px;
+			font-size: 18px;
+			text-align: center;
+			line-height: 20px;
+			color: red;
+			cursor: pointer;
+		}
+		.progress{
+			width: 430px;
+			height: 10px;
+			background: rgba(255,0,0,0.3);
+			position: absolute;
+			left:50px;
+			top:15px;
+			border-radius: 4px;
+			overflow: hidden;
+		}
+		.curr-progress{
+			height: 100%;
+			width: 100px;
+			background: red;
+		}
+		.time{
+			position: absolute;
+			width: 120px;
+			height: 20px;
+			left:515px;
+			top:10px;
+			font-size: 12px;
+			color:red;
+			text-align: center;
+			line-height: 20px;
+		}
+		.extend{
+			position: absolute;
+			right: 20px;
+			top:10px;
+			width: 20px;
+			height: 20px;
+			font-size: 18px;
+			cursor: pointer;
+			line-height: 20px;
+			text-align: center;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<figure>
+		<figcaption>视频案例</figcaption>
+		<div class="player">
+			<video src="../video/movie.mp4"></video>
+			<!-- 控制条 -->
+			<div class="tiao">
+				<!-- 开关 -->
+				<span class="switch icon-play"></span>
+				<!-- 进度条		 -->
+				<div class="progress">
+					<div class="curr-progress"></div>
+				</div>
+				<!-- 时间 -->
+				<div class="time">
+					<span class="curr-time">00:00:00</span>/<span class="total-time">00:00:00</span>
+				</div>
+				<span class="extend icon-resize-full"></span>
+			</div>
+		</div>	
+	</figure>
+	<script>
+		var video=document.querySelector("video");
+		var btn=document.querySelector(".switch");
+		var currProgress=document.querySelector(".curr-progress");
+		var currTime=document.querySelector(".curr-time");
+		var totalTime=document.querySelector(".total-time");
+		var extend=document.querySelector(".extend");
+
+		btn.onclick=function(){
+			if(video.paused){
+				video.play();
+				this.classList.remove("icon-play");
+				this.classList.add("icon-pause");
+			}else{
+				video.pause();
+				this.classList.remove("icon-pause");
+				this.classList.add("icon-play");
+			}
+		}
+		video.oncanplay=function(){
+			tTime=video.duration;
+			console.log(tTime);
+			var h=Math.floor(tTime/3600);
+			var m=Math.floor(tTime%3600/60);
+			var s=Math.floor(tTime%60);
+
+			h=h>10?h:"0"+h;
+			m=m>10?m:"0"+m;
+			s=s>10?s:"0"+s;
+			totalTime.innerHTML= h + ":" +m +":" + s;
+		}
+		video.ontimeupdate=function(){
+			var cTime=video.currentTime;
+			var h=Math.floor(cTime/3600);
+			var m=Math.floor(cTime%3600/60);
+			var s=Math.floor(cTime%60);
+
+			h=h>10?h:"0"+h;
+			m=m>10?m:"0"+m;
+			s=s>10?s:"0"+s;
+			currTime.innerHTML= h + ":"+ m + ":" + s;
+
+			var value=cTime/tTime;
+			currProgress.style.width=value*100+"%";
+		}
+		extend.onclick=function(){
+			video.webkitRequestFullScreen();
+		}
+
+
+	</script>
+</body>
+</html>
