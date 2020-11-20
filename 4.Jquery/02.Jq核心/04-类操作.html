@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			margin: 10px;
+		}
+		.current{
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<button>添加</button>
+	<button>删除</button>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div class="current"></div>
+	<script>
+		$(function () {
+			$("button").eq(0).click(function(){
+				$("div").addClass("current");
+				console.log($("div").hasClass("current"));
+			})
+			$("button").eq(1).click(function(){
+				// $("div").removeClass("current");
+				$("div").toggleClass("current");
+			})
+
+		})
+	</script>
+</body>
+</html>

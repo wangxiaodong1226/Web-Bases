@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+</head>
+<body>
+	<ul>
+		<li>在家憋的相当难受</li>
+		<li>在家憋的相当难受</li>
+		<li>在家憋的相当难受</li>
+		<li>在家憋的相当难受</li>
+		<li>在家憋的相当难受</li>
+		<li>在家憋的相当难受</li>
+		<li>在家憋的相当难受</li>
+		<li>在家憋的相当难受</li>
+		<li>在家憋的相当难受</li>
+	</ul>
+
+	<script>
+		$(function () {
+			$("li:odd").css("background","red");
+			$("li:even").css("background","yellow");
+			var color = "";
+
+			//在事件中this是dom元素，dom元素使用不了jq方法，所以需要转换成jq对象$(this)
+			$("li").mouseenter(function(){
+				color = $(this).css("background");
+				$(this).css("background","blue");
+			})
+			$("li").mouseleave(function(){
+				$(this).css("background",color);
+			})
+		})
+	</script>
+</body>
+</html>

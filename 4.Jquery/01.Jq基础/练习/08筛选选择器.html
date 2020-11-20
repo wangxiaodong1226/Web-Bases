@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>筛选选择器</title>
+</head>
+<body>
+	<ul>
+		<li>北京的天是晴朗的天，通州人民好喜欢，眼望丰台高声喊，我爱你，海淀....</li>
+		<li>北京的天是晴朗的天，通州人民好喜欢，眼望丰台高声喊，我爱你，海淀....</li>
+		<span>北京的天是晴朗的天，通州人民好喜欢，眼望丰台高声喊，我爱你，海淀....</span>
+		<li>北京的天是晴朗的天，通州人民好喜欢，眼望丰台高声喊，我爱你，海淀....</li>
+		<li>北京的天是晴朗的天，通州人民好喜欢，眼望丰台高声喊，我爱你，海淀....</li>
+		<li>北京的天是晴朗的天，通州人民好喜欢，眼望丰台高声喊，我爱你，海淀....</li>
+		<ol>
+			<li>我是ol中的li</li>
+			<li>我是ol中的li</li>
+			<li>我是ol中的li</li>
+			<li>我是ol中的li</li>
+		</ol>
+	</ul>
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+	$(function(){
+		var jqUl=$("ul");
+		jqUl.find("li").css("background","pink");
+		jqUl.children("li").css("background","green");
+		jqUl.children().eq(0).css("background","red");
+		jqUl.children().eq(0).siblings().css("background","yellow");
+		console.log(jqUl.children().eq(0).parent());
+		console.log(jqUl.children().eq(0).next().css("background","orange"));
+	})
+
+	</script>
+</body>
+</html>

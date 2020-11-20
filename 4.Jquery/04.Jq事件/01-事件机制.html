@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+	<style>
+		li{
+			background-color: pink;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+<button>创建</button>
+<button>解绑</button>
+	<ul>
+		<li>原始li</li>
+		<li>原始li</li>
+		<li>原始li</li>
+		<li>原始li</li>
+		<li>原始li</li>
+	</ul>
+	
+
+	<!-- ul>li{li}*5>img[src=xx.jpg] -->
+
+
+	<script>
+		$(function () {
+			// $(document).click(function(){
+			// 	alert(1);
+			// })
+			/*$("button").eq(0).bind("click",function(){
+				// alert(2);
+				// var str = "";
+				// for(var i = 0; i < 5;i++){
+				// 	str += "<li>新创建的li</li>";
+				// }
+				// $("ul").append($(str));
+			});*/
+			// $("li").bink("click",function(){
+			// 	alert(1);
+			// })
+			// $("ul").delegate("li","click",function(){
+			// 	alert(1);
+			// })
+			// $("ul").on("click mouseenter","li",{"aaa":123},function(e){
+			// 	console.log(e);
+			// })
+			// $("ul").on("click",function(){
+			// 	alert(1);
+			// })
+			// 
+			// 
+			// 
+			$("button").eq(0).bind("click",function(){
+				$("ul").on("click mouseenter","li",function(){
+					alert(1);
+				})
+				$("ul").on("mouseenter",function(){
+					alert(2);
+				})
+			});
+			$("button").eq(1).bind("click",function(){
+				$("ul").off("mouseenter","li");
+			})
+		})
+	</script>
+</body>
+</html>

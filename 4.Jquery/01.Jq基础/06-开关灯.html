@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+	<style>
+		div{
+			text-align: center;
+			margin:50px auto;
+		}
+	</style>
+</head>
+<body>
+	<button>开灯</button>
+	<button>关灯</button>
+	<div>
+		<img src="imgs/coder.jpg" alt="">
+	</div>
+	<script>
+		$(function(){
+			var btns = $("button");
+			var bd = $("body");
+			$(btns[0]).click(function(){
+				bd.get(0).style.background = "white";
+			})
+			$(btns[1]).click(function(){
+				bd[0].style.background = "black";
+			})
+		})
+	</script>
+</body>
+</html>

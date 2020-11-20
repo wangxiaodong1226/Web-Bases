@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script src="../jquery-1.11.1.js"></script>
+	<script>
+		$(function () {
+			/*var div = document.getElementsByTagName('div')[0];
+			//通过js DOM操作方式获取的元素，不能直接使用jq里面的方法
+			//如果想要使用，就需要将它转换成jq对象
+			div = $(div);
+			div.click(function(){
+				alert(123);
+			})*/
+
+			var div = $("div");
+
+			console.log(div);
+		
+
+			div.get(0).innerHTML = "我是div";
+
+			div[0].onclick = function(){
+				alert(123);
+			}
+
+			
+		})
+	</script>
+</body>
+</html>

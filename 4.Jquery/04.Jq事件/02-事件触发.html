@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+</head>
+<body>
+	<input type="text">
+	<script>
+		$(function(){
+			$("input").on("focus",function(){
+				console.log("我获取焦点了")
+			})
+
+			$(document).on("click",function(){
+				// $("input").trigger("focus");
+				$("input").triggerHandler("focus");
+			})
+
+
+		})
+	</script>
+</body>
+</html>

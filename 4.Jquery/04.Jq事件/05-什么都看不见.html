@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+	<style>
+		li{
+			width: 200px;
+			height: 200px;
+			margin:20px;
+			float: left;
+			list-style: none;
+			text-align: center;
+			font-size: 50px;
+			line-height: 200px;
+			background-color: pink;
+		}
+
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+	</ul>
+	<script>
+		$(function(){
+			$("li").each(function(index,ele){
+				$(ele).css("opacity",(index+1)/10);
+			})
+		})
+	</script>
+</body>
+</html>

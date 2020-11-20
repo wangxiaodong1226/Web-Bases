@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+</head>
+<body>
+	<button>添加</button>
+	<ul>
+		<li>原始li</li>
+		<li>原始li</li>
+		<li>原始li</li>
+		<li>原始li</li>
+	</ul>
+	
+	<script>
+		$(function () {
+			// console.log($("<li class='aaa'>我是li标签</li>"));
+			// $("ul").html($("<li class='aaa'>我是li标签</li>"));
+			// 
+			$("button").click(function(){
+				// var newLi = $("<li>新创建出来的li</li>");
+				// $("ul").append(newLi);
+				// $("ul").prepend(newLi);
+				
+				// $("li").after(newLi);
+				// $("li").before(newLi);
+				// $("ul").empty();
+				// $("ul").html("");
+				// $("ul").remove();
+				// 
+				// var newUl = $("ul").clone();
+				// $("body").append(newUl);
+				// 
+				var li = $("li").clone();
+				$("ul").append(li);
+			})
+		})
+	</script>
+</body>
+</html>

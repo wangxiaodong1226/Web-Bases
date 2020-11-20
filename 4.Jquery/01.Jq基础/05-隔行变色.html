@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+
+</head>
+<body>
+	<ul>
+		<li>祝大家情人节快乐！</li>
+		<li>祝大家情人节快乐！</li>
+		<li>祝大家情人节快乐！</li>
+		<li>祝大家情人节快乐！</li>
+		<li>祝大家情人节快乐！</li>
+		<li>祝大家情人节快乐！</li>
+		<li>祝大家情人节快乐！</li>
+	</ul>
+	<script>
+		$(function(){
+			var jqLi = $("li");
+			for(var i = 0; i<jqLi.length;i++){
+				if(i % 2 === 0 ){
+					jqLi[i].style.background = "red";
+				}else{
+					jqLi[i].style.background = "blue";
+				}
+
+				
+			}
+		})
+	</script>
+</body>
+</html>

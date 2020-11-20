@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.box{
+			width: 1000px;
+			height: 475px;
+			margin:100px auto 0;
+		}
+		ul{
+			border: 1px solid #ddd;
+			border-bottom: 0;
+			height: 36px;
+			width: 320px;
+		}
+		ul li{
+			position: relative;
+			float: left;
+			width: 80px;
+			height: 34px;
+			text-align: center;
+			cursor: pointer;
+			border-top:4px solid white;
+			line-height: 34px;
+		}
+		ul li span{
+			position: absolute;
+			right: 0;
+			background: #000;
+			width: 1px;
+			height: 14px;
+			top: 10px;
+
+		}
+		ul li.active{
+			border-top:4px solid red;
+		}
+		.main{
+			width: 1002px;
+			border: 1px solid #ddd;
+			height: 476px;
+		}
+		.main div{
+			display: none;
+		}
+		.main div.selected{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li class="active">国际大牌 <span></span></li>
+			<li>国妆名牌 <span></span></li>
+			<li>清洁用品 <span></span></li>
+			<li>男士精品</li>
+		</ul>
+		<div class="main">
+			<div class="selected"><a href="#"><img src="images/guojidapai.jpg" alt=""></a></div>
+			<div><a href="#"><img src="images/guozhuangmingpin.jpg" alt=""></a></div>
+			<div><a href="#"><img src="images/qingjieyongpin.jpg" alt=""></a></div>
+			<div><a href="#"><img src="images/nanshijingpin.jpg" alt=""></a></div>
+		</div>
+	</div>
+
+	<script>
+		$(function () {
+			$("li").mouseenter(function(){
+				$(this).addClass("active").siblings("li").removeClass("active");
+				$(".main>div").eq($(this).index()).addClass("selected").siblings("div").removeClass("selected");
+			})
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.box{
+			width: 330px;
+			height: 30px;
+			margin:100px auto;
+			background: url("imgs/bg.jpg");
+			padding-left: 10px;
+		}
+		.box li { 
+			background: url("imgs/libg.jpg");
+		 }
+		 .box>ul>li{
+		 	float: left;
+		 	margin-right: 10px;
+
+		 }
+		 .box a{
+		 	display: block;
+		 	width: 100px;
+		 	height: 30px;
+		 	text-decoration: none;
+		 	line-height: 30px;
+		 	text-align: center;
+		 	color: black;
+		 }
+		 .box li ul{
+		 	display: none;
+		 }
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li><a href="javascript:void(0);">一级菜单1</a>
+					<ul>
+						<li><a href="#">二级菜单1</a></li>
+						<li><a href="#">二级菜单2</a></li>
+						<li><a href="#">二级菜单3</a></li>
+					</ul>
+				
+			</li>
+			<li><a href="javascript:void(0);">一级菜单2</a>
+					<ul>
+						<li><a href="#">二级菜单1</a></li>
+						<li><a href="#">二级菜单2</a></li>
+						<li><a href="#">二级菜单3</a></li>
+					</ul>
+				
+			</li>
+			<li><a href="javascript:void(0);">一级菜单3</a>
+					<ul>
+						<li><a href="#">二级菜单1</a></li>
+						<li><a href="#">二级菜单2</a></li>
+						<li><a href="#">二级菜单3</a></li>
+					</ul>
+				
+			</li>
+		</ul>
+	</div>
+
+	<script>
+		$(function () {
+			var lis = $(".box>ul>li");
+			lis.mouseenter(function(){
+				$(this).children("ul").show();
+			});
+			lis.mouseleave(function(){
+				$(this).children("ul").hide();
+			});
+		})
+	</script>
+</body>
+</html>

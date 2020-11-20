@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<style>
+		div{
+			width: 300px;
+			height: 300px;
+			background-color: red;
+			display: none;
+			position: absolute;
+			left: 0;
+			top: 100px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<button>切换</button>
+	<div></div>
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+	$(function(){
+		$("button:eq(0)").click(function(){
+			// $("div").show(2000,function(){
+			// 	alert(123);
+			// })
+			// $("div").show(2000);
+			$("div").slideDown(2000);
+			$("div").slideUp(2000);
+			// $("div").fadeIn(2000);
+			// $("div").animate({"width":200,"height":400,"left":400},2000);
+		})
+		$("button:eq(1)").click(function(){
+			// $("div").hide(2000);
+			// $("div").slideUp(2000);
+			$("div").fadeOut(2000);
+		})
+		$("button:eq(2)").click(function(){
+			// $("div").slideToggle(2000);
+			// $("div").fadeTo(2000,0.5);
+			$("div").stop(false,false);
+		})
+
+	})
+
+	</script>
+</body>
+</html>

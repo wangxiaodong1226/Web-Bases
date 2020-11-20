@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+	<style>
+		div{
+			width: 500px;
+			height: 400px;
+			margin:100px auto;
+			text-align: center;
+			font-size: 40px;
+			background-color: pink;
+			line-height: 400px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		keycode为:
+		<span>80</span>
+	</div>
+	<script>
+		$(function(){
+			$(document).on("keyup",function(e){
+				switch(e.keyCode){
+					case 80:
+						$("div").css("background-color","pink");
+						$("span").html("80");
+					break;
+					case 66:
+						$("div").css("background-color","blue");
+						$("span").html("66");
+					break;
+					case 79:
+						$("div").css("background-color","orange");
+						$("span").html("79");
+					break;
+					case 82:
+						$("div").css("background-color","red");
+						$("span").html("82");
+					break;
+					case 89:
+						$("div").css("background-color","yellow");
+						$("span").html("89");
+					break;
+					default:
+
+						alert("没有这个颜色");
+				}
+			})
+		})
+	</script>
+</body>
+</html>

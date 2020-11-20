@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+	<style>
+		body{
+			height: 5000px;
+		}
+		.box1{
+			width: 300px;
+			height: 300px;
+			position: relative;
+			margin: 10px;
+			background-color: pink;
+		}
+		.box2{
+			width: 200px;
+			height: 400px;
+			position: absolute;
+			top: 50px;
+			left: 50px;
+			background-color: yellow;
+		}
+		button{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="box1">
+		<div class="box2"></div>
+	</div>
+	<button>offset().top获取</button>
+	<button>offset().top设置</button>
+	<button>position().top获取</button>
+	<button>position().top设置</button>
+	<button>scrollTop</button>
+	<button>scrollTop设置</button>
+	<script>
+		$(function(){
+			$("button").eq(0).click(function(){
+				console.log($(".box2").offset().top)
+			})
+			$("button").eq(1).click(function(){
+				// console.log($(".box2").offset().top)
+				$(".box2").offset({"left":100,"top":100})
+			})
+			$("button").eq(2).click(function(){
+				console.log($(".box2").position().top)
+				
+			})
+			$("button").eq(3).click(function(){
+				$(".box2").position({"left":100,"top":100})
+				
+			})
+			$("button").eq(4).click(function(){
+				console.log($(window).scrollTop());
+				
+			})
+			$("button").eq(5).click(function(){
+				$(window).scrollTop(100)
+				
+			})
+
+			window.onscroll = function(){
+				console.log($(window).scrollTop());
+			}
+		})
+	</script>
+</body>
+</html>

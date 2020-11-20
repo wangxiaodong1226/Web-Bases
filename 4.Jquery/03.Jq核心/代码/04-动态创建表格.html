@@ -1,0 +1,87 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:02:56
+ * @LastEditTime: 2020-10-27 19:29:04
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\03jq\day21\代码\04-动态创建表格.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../jquery-1.11.1.js"></script>
+	<style>
+		table{
+			border-collapse: collapse;;
+			border-spacing: 0;
+			border:1px solid #ccc;
+		}
+		th,td{
+			border:1px solid #ccc;
+			padding: 10px;
+		}
+		th{
+			background: blue;
+			color: #fff;
+		}
+		tbody tr{
+			background: #f0f0f0;
+			cursor: pointer;
+		}
+		tbody tr:hover{
+			background: #fafafa;
+		}
+	
+	</style>
+</head>
+<body>
+	<button>获取数据</button>
+	<table>
+		<thead>
+			<tr>
+				<th>标题</th>
+				<th>地址</th>
+				<th>说明</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- <tr>
+				
+			</tr> -->
+		</tbody>
+	</table>
+	<script>
+		$(function(){
+			var data= [
+				{
+					"name":"布卡科技",
+					"url":"http://bukaedu.com",
+					"type":"IT最强培训机构"
+				},
+				{
+					"name":"布卡猫头鹰IT俱乐部",
+					"url":"http://bukaedu.com",
+					"type":"大学生IT培训结构"
+				},
+				{
+					"name":"布卡科技",
+					"url":"http://bukaedu.com",
+					"type":"布卡科技"
+				}
+
+			];
+			$("button").click(function(){
+				var str = "";
+				for(var i = 0 ; i < data.length;i++){
+					str += "<tr><td>"+data[i].name+"</td><td>"+data[i].url+"</td><td>"+data[i].type+"</td></tr>";
+				}
+				$("tbody").html(str);
+			})
+
+
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+
+	<style>
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		li{
+			float: left;
+			cursor: pointer;
+			font-size: 80px;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>☆</li>
+		<li>☆</li>
+		<li>☆</li>
+		<li>☆</li>
+		<li>☆</li>
+	</ul>
+	<script>
+		$(function () {
+			$("li").on("mouseenter",function(){
+				$(this).text("★").prevAll("li").text("★").end().nextAll("li").text("☆")
+			})
+
+			$("li").on("mouseleave",function(){
+				if($("li.current").length === 0){
+					$("li").text("☆");
+				}else{
+					$("li.current").text("★").prevAll("li").text("★").end().nextAll("li").text("☆")
+				}
+			})
+
+			$("li").on("click",function(){
+				$(this).attr("class","current").siblings("li").removeAttr("class");
+			})
+		})
+	</script>
+</body>
+</html>

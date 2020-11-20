@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+	<script src="jquery.lazyload.min.js"></script>
+	<style>
+
+		div{
+			height: 3000px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<!-- <img src="02.jpg" alt=""> -->
+	<img data-original="02.jpg">
+	<script>
+		$(function () {
+			$("img").lazyload();
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>隔行变色</title>
+</head>
+<body>
+	<script src="../../jquery-1.11.1.js"></script>
+	<ul>
+		<li>在家憋得相当难受</li>
+		<li>在家憋得相当难受</li>
+		<li>在家憋得相当难受</li>
+		<li>在家憋得相当难受</li>
+		<li>在家憋得相当难受</li>
+	</ul>
+	<script>
+	$("li:odd").css("background","red");
+	$("li:even").css("background","yellow");
+	var color="";
+	$("li").mouseenter(function(){
+		color=$(this).css("background");
+		$(this).css("background","blue");
+	})
+	$("li").mouseleave(function(){
+
+		$(this).css("background",color);
+	})
+	</script>
+</body>
+</html>

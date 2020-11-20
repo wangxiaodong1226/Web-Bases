@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<button>显示</button>
+	<!-- <script>
+		var div = document.getElementsByTagName('div')[0];
+		var btn = document.getElementsByTagName('button')[0];
+		btn.onclick = function () {
+			div.style.display = "block";
+			div.innerHTML = "我是一个div";
+		}
+	
+	</script> -->
+
+	<script src="../jquery-1.11.1.js"></script>
+	<script>
+		$(function(){
+			var btn = $("button");
+			console.log(btn);
+			// var btn = $(".box");
+			// var btn = $("#box");
+
+			btn.click(function(){
+				$("div").show(3000).html("我是div");
+			})
+		});
+
+		// function $(x){
+
+		// }
+	</script>
+</body>
+</html>

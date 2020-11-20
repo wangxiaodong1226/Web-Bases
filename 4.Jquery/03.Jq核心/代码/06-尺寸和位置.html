@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+	<style>
+
+		div{
+			width: 200px;
+			height: 200px;
+			border:10px solid ;
+			padding-left: 10px;
+		}
+	</style>
+</head>
+<body>
+	<button>获取</button>
+	<button>设置</button>
+	<div></div>
+	<script>
+		$(function(){
+			$("button").eq(0).click(function(){
+				console.log($("div").width());
+			})
+			$("button").eq(1).click(function(){
+				console.log($("div").width(300));
+			})
+		})
+	</script>
+</body>
+</html>

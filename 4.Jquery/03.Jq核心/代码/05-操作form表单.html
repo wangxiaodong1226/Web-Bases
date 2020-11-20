@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+</head>
+<body>
+	<button>绑定</button>
+	<input type="text">
+	<input type="checkbox">
+	<div><span>我是一个span</span></div>
+	<script>
+		$(function () {
+
+			var inp1 = $("input").eq(0);
+			var inp2 = $("input").eq(1);
+			$("button").click(function(){
+				// $("input:eq(0)").attr("title",1111);
+				// $("input:eq(0)").attr("aaa",1111);
+				// console.log($("input:eq(0)").attr("aaa"));
+				// inp1.attr("class" ,"inp");
+				// inp1.removeAttr("class");
+				// inp2.prop("checked",true);
+				// console.log(inp1.val());
+				// inp1.val("哈哈哈");
+				console.log($("div").text());
+				console.log($("div").html());
+			})
+		})
+	</script>
+</body>
+</html>
