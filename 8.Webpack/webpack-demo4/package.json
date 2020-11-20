@@ -1,0 +1,19 @@
+{
+  "name": "webpack-demo4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+      "show":"webpack -v",
+      "build":"webpack",
+      "start":"node ./src/main.js",
+      "watch": "webpack --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.6"
+  }
+}
