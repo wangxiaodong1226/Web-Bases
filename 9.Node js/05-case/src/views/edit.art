@@ -1,0 +1,51 @@
+{{extend './common/base.art'}}
+{{block 'link'}}
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+{{/block}}
+
+{{block 'header'}}
+    {{include './common/header.art'}}
+{{/block}}
+
+{{block 'content'}}
+    <div class="container">
+        <h2>修改用户</h2>
+        <form action="{{'/doedit?_id='+user._id}}" method="POST">
+            <div class="form-group">
+                <label>用户名</label>
+                <input value="{{user.username}}" name="username" type="text" class="form-control" placeholder="请输入用户名">
+            </div>
+            <div class="form-group">
+                <label>用户密码</label>
+                <input value="{{user.password}}"  name="password" type="password" class="form-control" placeholder="请输入密码">
+            </div>
+            <div class="form-group">
+                <label>用户年龄</label>
+                <input value="{{user.age}}"  name="age" type="text" class="form-control" placeholder="请输入用户年龄">
+            </div>
+            <div class="form-group">
+                <label>用户爱好</label>
+                <div>
+                    {{each hobbies}}
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="{{$value}}" name="hobby" {{user.hobby.includes($value)? 'checked':''}}>{{$value}}
+                    </label>
+                    {{/each}}
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">添加用户</button>
+            
+        </form>
+    </div>
+{{/block}}
+
+{{block 'footer'}}
+    {{include './common/footer.art'}}
+{{/block}}
+
+
+
+
+
+
+

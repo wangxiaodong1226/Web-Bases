@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>promise ajax page</h1>
+    <script src="./js/jquery.js"></script>
+    <script>
+        //返回值
+        // var result = fetch('http://localhost:3000/api-ajax')
+        // console.log(result);// Promise {<pending>}
+
+        // fetch('http://localhost:3000/api-fetch1')
+        // .then(response=>{
+        //     return response.text()
+        // })
+        // .then(result=>{
+        //     console.log(result);
+        // })
+
+        // fetch('http://localhost:3000/api-fetchJson')
+        // .then(response=>{
+        //     return response.text()
+        // })
+        // .then(result=>{
+        //    console.log(typeof result);//是字符串
+        //     console.log(JSON.parse(result));
+        // })
+
+        fetch('http://localhost:3000/api-fetchJson')
+        .then(response=>{
+            return response.json()
+        })
+        .then(result=>{
+            console.log(result);
+        })
+
+        
+    </script>
+</body>
+
+</html>

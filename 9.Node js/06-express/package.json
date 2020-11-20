@@ -1,0 +1,17 @@
+{
+  "name": "day15-express",
+  "version": "1.0.0",
+  "description": "express\r 01 web应用\r 02 特性\r    路由\r    参数处理\r    模板引擎\r    中间件 请求的拦截 并进行相应的处理\r    拓展能力\r 03 搭建服务",
+  "main": "01-demo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "express": "^4.17.1",
+    "express-art-template": "^1.0.1"
+  }
+}

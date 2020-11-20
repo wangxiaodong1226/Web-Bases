@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/axios.js"></script>
+</head>
+
+<body>
+    <h1>axios restful api</h1>
+    <script>
+        
+    
+
+    async function getUser(id){
+        let result = await axios.get('http://localhost:3000/staffs?id'+id)
+        return result.data;
+    }
+    async function postUser(user){
+        let result = await axios.post('http://localhost:3000/staffs',user)
+        return result.data;
+    }
+    async function putUser(id,user){
+        let result = await axios.put('http://localhost:3000/staffs?id=${id}',user)
+        return result.data;
+    }
+    async function deleteUser(id){
+        let result = await axios.delete('http://localhost:3000/staffs?id=${id}')
+        return result.data;
+    }
+    async function getData(){
+        let data1 = await getUser(123)
+        let data2 = await postUser({
+            username:'wyd',age:20
+        })
+        let data3 = await putUser(30,{
+            username:'wyd',age:20
+        })
+        let data4 = await deleteUser(123)
+        console.log(data1);
+        console.log(data2);
+        console.log(data3);
+        console.log(data4);
+    }
+    getData()
+
+
+
+    // axios.post('http://localhost:3000/users?id=123',{
+    //     body:JSON.stringify({
+    //         username:'admin',
+    //         age:29
+    //     })
+    // })
+    // .then(result=>{
+    //     console.log(result.data);
+    // })
+
+    // axios.put('http://localhost:3000/users?id=123',{
+    //     body:JSON.stringify({
+    //         username:'admin1',
+    //         age:30
+    //     })
+    // })
+    // .then(result=>{
+    //     console.log(result.data);
+    // })
+
+    // axios.delete('http://localhost:3000/users?id=123')
+    // .then(result=>{
+    //     console.log(result.data);
+    // })
+
+        
+    </script>
+</body>
+
+</html>

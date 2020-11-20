@@ -1,0 +1,61 @@
+{{extend './common/base.art'}}
+{{block 'link'}}
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+{{/block}}
+
+{{block 'header'}}
+    {{include './common/header.art'}}
+{{/block}}
+
+{{block 'content'}}
+    <div class="container">
+        <h2>添加用户</h2>
+        <form action="/doadd" method="POST">
+            <div class="form-group">
+                <label>用户名</label>
+                <input name="username" type="text" class="form-control" placeholder="请输入用户名">
+            </div>
+            <div class="form-group">
+                <label>用户密码</label>
+                <input name="password" type="password" class="form-control" placeholder="请输入密码">
+            </div>
+            <div class="form-group">
+                <label>用户年龄</label>
+                <input name="age" type="text" class="form-control" placeholder="请输入用户年龄">
+            </div>
+            <div class="form-group">
+                <label>用户爱好</label>
+                <div>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="coding" name="hobby">敲代码
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="swimming" name="hobby">游泳
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="playing" name="hobby">游戏
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="reading" name="hobby">看书
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="filming" name="hobby">电影
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">添加用户</button>
+            
+        </form>
+    </div>
+{{/block}}
+
+{{block 'footer'}}
+    {{include './common/footer.art'}}
+{{/block}}
+
+
+
+
+
+
+

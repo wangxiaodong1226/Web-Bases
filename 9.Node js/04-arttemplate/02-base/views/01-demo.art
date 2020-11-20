@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 输出语法 -->
+    <h2>{{name}}</h2>
+    <h2>{{2+2}}</h2>
+    <h2>{{name=='hello'?'等于':'不等于'}}</h2>
+    <!-- @能够解析里面的标签 -->
+    <h2>{{@content}}</h2>
+</body>
+
+</html>

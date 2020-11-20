@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- <script src="./js/jquery.js"></script> -->
+</head>
+
+<body>
+    <h1>promise ajax page</h1>
+    <script>
+        //api-ajax1->api-ajax2->api-ajax3
+        function ajaxPromise(url) {
+            return new Promise(function(resolve,reject){
+                var xhr = new XMLHttpRequest();
+                // 请求
+                xhr.open('get',url);
+                //响应
+                xhr.onreadystatechange = function () {
+                    //readyState 0 1 2 3 4
+                    if (xhr.readyState != 4) return
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var result = xhr.responseText;
+                        // console.log(result);
+                        resolve(result)
+                    } else {
+                        reject('server is wrong')
+                    }
+                }
+                //发送
+                xhr.send();
+            })
+        }
+
+        let p1= ajaxPromise('http://localhost:3000/api-ajax1')
+        let p2= ajaxPromise('http://localhost:3000/api-ajax2')
+        let p3= ajaxPromise('http://localhost:3000/api-ajax3')
+        
+        // Promise.all([p1,p2,p3])
+        // .then(result=>{
+        //     console.log(result);
+        // })
+        // .catch(err=>{
+        //     console.log(err);
+        // })
+
+        Promise.race([p1,p2,p3])
+        .then(result=>{
+            console.log(result);
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+    </script>
+</body>
+
+</html>

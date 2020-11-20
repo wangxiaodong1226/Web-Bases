@@ -1,0 +1,5 @@
+{{include './common/header.art'}}
+
+<div>{{content}}</div>
+
+{{include './common/footer.art'}}

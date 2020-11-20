@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login Form</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/public/admin/css/style.css" rel='stylesheet' type='text/css' />
+</head>
+
+<body>
+  <div class="main">
+    <div class="login">
+      <h1>管理系统</h1>
+      <div class="inset">
+        <!--start-main-->
+        <form action="/admin/dologin?_csrf={{ctx.csrf| safe}}" method="POST" >
+
+          <!-- <input type="hidden" name="_csrf" value="{{ctx.csrf| safe}}"> -->
+
+          <div>
+            <h2>管理登录</h2>
+            <span><label>用户名</label></span>
+            <span><input type="text" class="textbox" name="username"></span>
+          </div>
+          <div>
+            <span><label>密码</label></span>
+            <span><input type="password" class="password" name="password"></span>
+          </div>
+          <div>
+            <span><label>验证码</label></span>
+            <span><input type="text" class="verify" name="code"></span>
+          </div>
+          <div>
+            <img  id="verify_img" src="/admin/verify" onclick="javascript:this.src='/admin/verify?random='+Math.random()" >
+          </div>
+          <!-- 浏览器缓存  重新刷新就不走了   项目中遇到的问题 -->
+          <div class="sign">
+            <input type="submit" value="登录" class="submit" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--//end-main-->
+  </div>
+
+  <div class="copy-right">
+    <p>&copy; 2015 Ethos Login Form. All Rights Reserved</p>
+
+  </div>
+  <div style="text-align:center;">
+    <p>更多模板：<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
+  </div>
+
+  <script type="text/javascript">
+    (function () {
+      var s = "_" + Math.random().toString(36).slice(2);
+      document.write('<div style="" id="' + s + '"></div>');
+      (window.slotbydup = window.slotbydup || []).push({
+        id: "u4923786",
+        container: s
+      });
+    })();
+  </script>
+  <script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer"></script>
+</body>
+
+</html>

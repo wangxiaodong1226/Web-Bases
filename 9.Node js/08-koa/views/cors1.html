@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>cors1</h2>
+    <script>
+        // fetch('http://localhost:3000/cors2')
+        fetch('http://localhost:3001/cors2')
+        .then(response=>{
+            return response.text()
+        })
+        .then(result=>{
+            console.log(result);
+        })
+    </script>
+</body>
+</html>

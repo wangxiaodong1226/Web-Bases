@@ -1,0 +1,22 @@
+
+
+
+{{extend './common/base.art'}}
+
+{{block 'link'}}
+    <link rel="stylesheet" href="bootstrap.css">
+{{/block}}
+
+{{block 'header'}}
+    {{include './common/header.art'}}
+{{/block}}
+
+{{block 'content'}}
+   <div>{{content}}</div>
+{{/block}}
+
+{{block 'footer'}}
+    {{include './common/footer.art'}}
+{{/block}}
+
+

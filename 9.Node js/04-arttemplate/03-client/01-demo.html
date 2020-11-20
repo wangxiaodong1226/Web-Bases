@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    <!-- 01 引入模板引擎文件 -->
+   <script src="./template-web.js"></script>
+
+   <!-- 02 准备模板 -->
+   <script type="text/html" id="templateId">
+       <div>
+            {{msg}}
+        </div>
+   </script>
+
+   <!--03 模板渲染   -->
+   <script>
+       var data = {msg:'hello world'}
+       var html = template('templateId',data)
+       //04 添加到页面容器中
+       document.getElementById('container').innerHTML=html
+   </script>
+</body>
+</html>

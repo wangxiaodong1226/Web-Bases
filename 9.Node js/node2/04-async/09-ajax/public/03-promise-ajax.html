@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>promise ajax page</h1>
+    <script src="./js/jquery.js"></script>
+    <script>
+        //api-ajax1->api-ajax2->api-ajax3
+        function ajaxPromise(url) {
+            return new Promise(function (resolve, reject) {
+                var xhr = new XMLHttpRequest();
+                // 请求
+                xhr.open('get',url);
+                //响应
+                xhr.onreadystatechange = function () {
+                    //readyState 0 1 2 3 4
+                    if (xhr.readyState != 4) return;
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var result = xhr.responseText;
+                        // console.log(result);
+                        resolve(result)
+                    } else {
+                        reject('server is wrong')
+                    }
+                }
+                //发送
+                xhr.send();
+            })
+        }
+
+        ajaxPromise('http://localhost:3000/api-ajax1')
+        .then(function (result) {
+            console.log(result);
+            return ajaxPromise('http://localhost:3000/api-ajax2')
+        })
+        .then(function (result) {
+            console.log(result);
+            return ajaxPromise('http://localhost:3000/api-ajax3')
+        })
+        .then(function (result) {
+            console.log(result);
+        })
+        .catch(function (err) {
+            console.log(err);
+        })
+
+    </script>
+</body>
+
+</html>

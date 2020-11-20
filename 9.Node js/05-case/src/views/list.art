@@ -1,0 +1,44 @@
+{{extend './common/base.art'}}
+{{block 'link'}}
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+{{/block}}
+{{block 'header'}}
+    {{include './common/header.art'}}
+{{/block}}
+
+{{block 'content'}}
+  <div class="container">
+      <h5>
+          <a href="/add">增加用户</a>
+      </h5>
+      <table class="table table-striped table-bordered">
+          <tr>
+              <td>用户名称</td>
+              <td>用户年龄</td>
+              <td>用户爱好</td>
+              <td>操作</td>
+          </tr>
+          {{each users}}
+          <tr>
+              <td>{{$value.username}}</td>
+              <td>{{$value.age}}</td>
+              <td>
+                  {{each $value.hobby}}
+                  <span>{{$value}}</span>
+                  {{/each}}
+              </td>
+              <td>
+                  <a href="{{'/delete?id='+$value._id}}" class="btn btn-xs btn-danger">删除</a>
+                  <a href="{{'/edit?id='+$value._id}}" class="btn btn-xs btn-success">修改</a>
+              </td>
+          </tr>
+          {{/each}}
+      </table>
+  </div>
+{{/block}}
+
+{{block 'footer'}}
+  {{include './common/footer.art'}}
+{{/block}}
+
+

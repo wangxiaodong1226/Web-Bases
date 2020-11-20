@@ -1,0 +1,22 @@
+{% extends "../common/iframebase.html" %}
+
+{% block content %}
+   <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">角色添加</h3>
+    </div>
+    <div class="panel-body">
+        <form action="/admin/role/doadd" method="post">
+            <ul>
+                <li><input type="text" name="role_name"></li>
+                <li><input type="text" name="role_desc"></li>
+                <li><input type="submit" value="添加角色"></li>
+            </ul>
+        </form>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+
