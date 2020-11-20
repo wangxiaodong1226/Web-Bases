@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        1,什么是闭包
+            闭：闭合，关闭，封闭
+            包：包裹，包起来
+            一个具有封闭的对外不公开的，包裹结构或空间
+        2，js中的闭包
+            就是函数
+        3，闭包的原理就是作用域访问原则
+            上级作用域无法直接访问下级作用域中的变量  
+        4，闭包要解决问题
+            1，闭包内部的数据不允许外界访问
+            2，要解决的问题就是间接访问该数据  
+        */
+       /* function fn(){
+           var num = Math.floor(Math.random()*1000);
+           return num;
+       }
+    //    console.log(fn());
+       var res1 = fn();
+       var res2 = fn();
+       console.log(res1);
+       console.log(res2); */
+
+       function fn(){
+        var num = Math.floor(Math.random()*1000);
+        function foo(){
+            return num
+        }
+        return foo;
+       }
+
+       var f = fn();
+       console.log(f);
+       console.log(f());
+       console.log(f());
+       console.log(f());
+       
+       
+
+       
+    </script>
+</body>
+</html>

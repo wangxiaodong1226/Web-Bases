@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(){}
+        Person.prototype.say = function(){
+            console.log("说点什么");
+            
+        }
+        console.log(Person.prototype);
+        
+
+        var obj = {
+            say:function(){
+                console.log("新的说点什么");
+                
+            },
+            sayHello:function(){
+                console.log("say Hello");
+                
+            }
+        }
+        //要注意如果将构造的原型替换成其他对象的话，一定要加上constructor属性指明当前对象的构造是谁
+        Person.prototype = obj;
+        Person.prototype.constructor = Person;
+        console.log(Person.prototype);
+
+        var obj2 = {
+            aaa:function(){
+                console.log("aaaa");
+                
+            },
+            bbb:function(){
+                console.log("bbb");
+                
+            }
+        }
+
+        for(var k in obj2){
+            Person.prototype[k] = obj2[k];
+        }
+        console.log(Person.prototype);
+        
+    </script>
+</body>
+</html>

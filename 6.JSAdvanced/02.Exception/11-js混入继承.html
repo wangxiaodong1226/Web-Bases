@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj1 = {
+            name:"小明",
+            age:3,
+            gender:"男"
+        }
+        var obj2 = {
+            say1:function(){
+                console.log("汪汪叫");
+                
+            },
+            say2:function(){
+                console.log("叫叫叫");
+                
+            }
+        }
+        // for(var key in obj2){
+        //     obj1[key] = obj2[key]
+        // }
+        console.log(obj2.say1);
+        
+        obj1.say1 = obj2.say1;
+        obj1.say2 = obj2.say2;
+        console.log(obj1);
+
+
+
+        obj1.aaa = "xxx";
+        
+    </script>
+</body>
+</html>

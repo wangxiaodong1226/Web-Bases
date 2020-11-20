@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn1(){
+            console.log(arguments);
+            
+        }
+        fn1(1,'a','哈哈');
+
+
+        console.log(fn2(3,5,2,8,4));
+
+        function fn2(){
+            var arg = arguments;
+            var max = 0;
+            for(var i = 0; i < arg.length;i++){
+                if(max < arg[i]){
+                    max = arg[i];
+                }
+            }
+            return max;
+        }
+
+        console.log(fn3(1,1,1,2,3,3,3,2,2,5,7,7,9,9,6,8,6));
+
+        function fn3(){
+            var arg = arguments;
+            var tempArr = [];
+            for(var i = 0; i < arg.length;i++){
+                if(tempArr.indexOf(arg[i]) === -1){
+                    tempArr.push(arg[i])
+                }
+            }
+            return tempArr;
+        }
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*  //1,字面量
+         var fn1 = function(){
+         
+         }
+         //2,关键字
+         function fn2(){
+ 
+         }
+         //3,ES6箭头函数 没有this不能当作构造函数
+         var fn3 = (str) => {
+             console.log(str);
+             
+         }
+         //4，通过Function创建对象
+         var fn4 = new Function("console.log('这是一个函数')");
+         fn4();
+ 
+         var fn5 = new Function('num1','num2','return num1 + num2');
+         //Function中的参数除最后一个被解析为函数体，其他的都会被解析为函数的参数
+         console.log(fn5);
+         console.log(fn5(2,3)); */
+
+        var arr = [12, 3, 5, 8, 2, 1, 4];
+
+        /* for (var i = 0; i < arr.length; i++) {
+            for (var j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    var temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        console.log(arr); */
+        
+
+        /* var fn = new Function('arr',
+            'for (var i = 0; i < arr.length; i++) {'+
+            'for (var j = i + 1; j < arr.length; j++) {'+
+            'if (arr[i] > arr[j]) {'+
+            'var temp = arr[i];'+
+            'arr[i] = arr[j];'+
+            'arr[j] = temp;'+
+            '}}}'
+        )
+
+        fn(arr); */
+        // console.log(arr);
+        /* window.onload = function(){
+            var sc = document.getElementById("fn");
+            var str = sc.innerHTML;
+            console.log(str);
+            var fn1 = new Function('arr',str);
+            console.log(fn1);
+
+            
+        } */
+
+       /*  var str = `
+            床前明月光
+            疑是地上霜
+            举头望明月
+            低头思故乡
+        
+        `;
+        console.log(str); */
+        var fn = new Function('arr',`
+            for (var i = 0; i < arr.length; i++) {
+                for (var j = i + 1; j < arr.length; j++) {
+                    if (arr[i] > arr[j]) {
+                        var temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+        `
+        
+        )
+        fn(arr);
+        console.log(arr);
+        
+        
+        
+       
+    </script>
+    <script type="text/template" id="fn">
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    var temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

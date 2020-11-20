@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(){
+            this.name = "zhangsan";
+            this.say = function(){
+                console.log("构造里的say");
+                
+            }
+        }
+        Person.prototype.say = function(){
+            console.log("原型中的say");
+            
+        }
+        var  p = new Person();
+        p.say();
+    </script>
+</body>
+</html>

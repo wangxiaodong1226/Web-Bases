@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(){
+            this.name = "小明";
+            console.log(this);
+            var t = this;
+            setTimeout(function(){
+                console.log(this);
+                console.log(t);
+                
+            },1000);
+            
+        }
+        var p = new Person();//this指向的是实例对象
+        // Person();//this指向window
+    </script>
+</body>
+</html>

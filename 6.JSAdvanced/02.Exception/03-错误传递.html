@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn1(){
+            fn2()
+        }
+        function fn2(){
+            fn3()
+        }
+        function fn3(){
+            throw new Error("一个错误")
+        }
+
+        try{
+            fn1();
+        }catch(e){
+            console.log(e);
+            
+        }
+    </script>
+</body>
+</html>

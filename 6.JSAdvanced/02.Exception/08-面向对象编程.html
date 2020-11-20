@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-bottom: 5px;
+        }
+
+        span {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="id_div"></div>
+    <div></div>
+    <div></div>
+    <hr>
+    <span>span1</span>
+    <span>span2</span>
+    <span>span3</span>
+    <script>
+        var tool = {
+            getEle: {
+                getTag: function (tag) {
+                    return document.getElementsByTagName(tag);
+                },
+                getId: function (id) {
+                    return document.getElementById(id)
+                },
+                getClass: function (className) {
+                    return document.getElementsByClassName(className);
+                }
+            },
+            setCss: function (objs, attr, value) {
+                for (var i = 0; i < objs.length; i++) {
+                    objs[i].style[attr] = value;
+                }
+                
+            }
+        }
+        // var divs = tool.getEle.getTag("div");
+        var divs = tool.getEle.getId("id_div");
+        var arr = [divs];
+        tool.setCss(arr,"border","1px solid blue")
+    </script>
+</body>
+
+</html>

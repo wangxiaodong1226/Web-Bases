@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(Object.prototype);
+        console.log(Function.prototype.prototype);
+        /* 
+        Object 可以看作是对象的构造函数 是通过Function构造函数实例化出来的
+        Object = new Function();
+        Function构造函数 也是通过 是通过Function构造函数实例化出来的
+
+        Object=>Function.prototype=>Object.prototype => null
+        */
+       console.log(Object instanceof Function);
+       console.log(Function instanceof Function);
+       console.log(Object instanceof Object);
+       console.log(Function instanceof Object);
+       
+    </script>
+</body>
+</html>

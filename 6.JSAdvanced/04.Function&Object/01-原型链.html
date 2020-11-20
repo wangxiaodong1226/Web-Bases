@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //实例对象=》构造函数.原型=》。。。=》Object.prototype =>null
+        function Animal(){
+            this.name = "动画"
+        }
+        console.log(Animal.prototype === new Animal().__proto__);
+        Human.prototype = new Animal();
+        Human.prototype.constructor = Human;
+        function Human(){
+            this.name = "人类";
+            this.say = function(){
+                console.log("人类会说话");
+                
+            }
+        }
+        console.log(Human.prototype);
+
+        Student.prototype = new Human();
+        Student.prototype.constructor = Student;
+        function Student(){
+            this.name = "学生";
+            this.say = function(){
+                console.log("会学习，长大以后当老师");
+                
+            }
+        }
+        console.log(Student.prototype);
+        
+
+        Teacher.prototype = new Student();
+        Teacher.prototype.constructor = Teacher;
+        function Teacher(){
+            this.name = "老师";
+            this.say = function(){
+                console.log("会讲课");
+                
+            }
+        }
+        console.log(Teacher.prototype);
+        
+        
+    </script>
+</body>
+</html>

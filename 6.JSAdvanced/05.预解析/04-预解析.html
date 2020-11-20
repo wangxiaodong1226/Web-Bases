@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* func();
+
+        function func() {
+
+            alert("Funciton has been called");
+
+        } */
+        /* 预解析
+        function func() {
+
+            alert("Funciton has been called");
+
+        }
+        func();
+         */
+
+        /* console.log(a);
+        var a = 123; */
+
+        /* 
+        预解析
+        var a;
+        console.log(a);
+        a = 123;
+         */
+
+        /* fn1();
+        function fn1(){
+            console.log('1');
+            
+        }  
+
+        fn1();
+        function fn1(){
+            console.log('2');
+            
+        }   */
+
+        /* 
+        function fn1(){
+            console.log('1');
+            
+        } 
+        function fn1(){
+            console.log('2');
+            
+        }
+        fn1();
+        fn1();
+        
+         */
+
+        /* alert(foo);
+
+        function foo() { 
+            console.log('函数');
+            
+        }
+
+        var foo = 2;
+        foo(); */
+        /* 
+        
+        function foo() { 
+            console.log('函数');
+            
+        }
+        alert(foo);
+        foo = 2;
+         */
+
+         var num = 1;
+         function num(){
+             console.log(num);
+             
+         }
+         num();
+
+
+         function num(){
+             alert(num);
+         }
+         num = 1;
+         num();
+
+         /* 
+         function num(){
+             console.log(num);
+             
+         }
+         function num(){
+             alert(num);
+         }
+         num = 1;
+         num();
+         num();
+          */
+    </script>
+</body>
+
+</html>

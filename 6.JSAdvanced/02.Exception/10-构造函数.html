@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //构造函数通常是给对象初始化属性的
+        function Person(name,age,gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            /* this.say = function(){
+                console.log("sayHello");
+                
+            } */
+            this.say = fn;
+        }
+        function fn(){
+            console.log("sayHello");
+        }
+        var p1 = new Person("小明",12,"男");
+        var p2 = new Person("小红",11,"女");
+        p1.say();
+        p2.say();
+        console.log(p1.say === p2.say);
+        
+    </script>
+</body>
+</html>

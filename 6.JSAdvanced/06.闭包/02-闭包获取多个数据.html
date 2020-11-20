@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn(){
+            var num1 = Math.floor(Math.random()*1000);
+            var num2 = Math.floor(Math.random()*1000);
+
+            return {
+                getNum1 : function(){
+                    return num1;
+                },
+                getNum2 : function(){
+                    return num2;
+                }
+            }
+        }
+        var obj = fn();
+        console.log(obj.getNum1());
+        console.log(obj.getNum1());
+        console.log(obj.getNum2());
+        console.log(obj.getNum2());
+        
+    </script>
+</body>
+</html>

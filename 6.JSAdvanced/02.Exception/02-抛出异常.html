@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn(param1,param2){
+            if(param1 === undefined || param2 === undefined){
+                // throw "哥们给个参数啊";
+                throw new Error(5);
+                // throw {
+                //     errno:0,
+                //     erroor:'给个参数啊！'
+                // }
+            }
+
+
+
+            console.log(param1,param2);
+            
+        }
+        try{
+            fn();
+        }catch(xiaoman){
+            console.log(xiaoman);
+            
+        }
+        
+
+        console.log('fn之后的内容');
+        
+
+    </script>
+</body>
+</html>'

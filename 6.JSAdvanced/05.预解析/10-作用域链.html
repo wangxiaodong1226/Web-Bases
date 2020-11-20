@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num0_1 = 123;//全局
+        function fn0_1() {//fn0_1 全局
+            var num1_1 = 456;//作用范围 ：fn0_1内
+            function fn1_1() {//作用范围 ：fn0_1内
+                var num2_1 = 789;//作用范围 ：fn1_1内
+                function fn2_1() {
+                    var num3_1 = 987;
+
+                }
+                function fn2_2() {
+                    var num3_2 = 987;
+                }
+            }
+            function fn1_2() {//作用范围 ：fn0_1内
+                var num2_2 = 789;//作用范围 ：fn1_1内
+            }
+        }
+
+
+
+        var a = 5;
+
+        function fn(){
+            console.log(b);
+
+            function fn1(){
+                var b = 7;
+            }
+            
+        }
+    </script>
+
+</body>
+
+</html>

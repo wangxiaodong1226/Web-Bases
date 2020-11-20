@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function fn(){
+            console.log(this);
+        }
+        fn();
+
+        fn.apply(new Object);
+        fn.apply("xxx");
+        fn.apply(123);
+        fn.apply(false);
+        fn.apply(null);
+        fn.apply(undefined);
+        fn.apply([]);
+        fn.apply(new Array());
+        fn.apply({});
+
+        /* 
+        1,基本数据类型 this会指向该数据类型的对象
+        2，空类型 null undefined this指向window
+        3，数组 对象 this指向数据和对象
+
+        */
+
+        function fn1(x,y){
+            
+
+        }
+
+        var arr = [5,6]
+        /* fn1();
+        fn1.apply(null,arr);
+        fn1.call(null,7,8); */
+
+       
+    </script>
+</body>
+</html>

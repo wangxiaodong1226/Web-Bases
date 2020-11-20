@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(Object.prototype);
+        /*
+        1,constructor
+        原型对象的一个属性，指向原型相关联的构造函数
+        可读可写
+        */
+        /* 
+        2,.hasOwnProperty()
+        一个方法，用来判断对象本身(不包含原型)是否拥有某个属性
+         */
+          function Person(){
+             this.name = 'tom';
+             this.age = "18";
+             this.say = function(){
+                 console.log("hello");
+                 
+             }
+         }
+         Person.prototype.gender = '男';
+         Person.prototype.sayHello = function(){
+             console.log("say Hello");
+             
+         }
+         var p = new Person();
+         /*console.log(p.hasOwnProperty('name'));
+         console.log(p.hasOwnProperty('say'));
+         console.log(p.hasOwnProperty('gender'));
+         console.log(p.hasOwnProperty('sayHello')); */
+         
+         /* 
+         3,obj1.isPrototypeOf(obj2)
+         判断 obj1 是否在obj2的原型链中
+          */
+
+        function Animal(){};
+        var a  = new Animal();
+        Human.prototype = new Animal();
+        Human.prototype.constructor = Human;
+        function Human(){}
+        var h = new Human()
+        console.log(h);
+
+        console.log(Animal.prototype.isPrototypeOf(h));
+        console.log(Human.prototype.isPrototypeOf(h));
+        console.log(a.__proto__.isPrototypeOf(h));
+        console.log(Animal.prototype.isPrototypeOf(Human.prototype));
+        
+        /* 
+        obj1 instanceof obj2
+        其他语言中代表 obj1 是否是 obj2或者obj2父类的实例
+        在js中 obj1是否是obj2原型或者原型链上的构造实例
+         */
+
+         /* console.log("-------------------------");
+         console.log(h instanceof Human);
+         console.log(h instanceof Animal);
+         console.log(a instanceof Animal); */
+         
+         /* 
+        toString()  toLocaleString();
+          */
+         console.log(p.toString());
+         console.log(typeof p.toString());
+         console.log(p.toLocaleString());
+         console.log(typeof p.toLocaleString());
+
+
+         var date = new Date();
+         console.log(date);
+         console.log(Date());
+
+         console.log(date.toString());
+         console.log(date.toLocaleString());
+         
+         console.log("------------------------");
+         console.log(p.valueOf());
+         console.log(typeof p.valueOf());
+         
+         
+         
+         
+
+    </script>
+</body>
+</html>

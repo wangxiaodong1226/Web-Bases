@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = { length: 2, 0: "a", 1: "b" };
+        /* var arr = [];
+        for(var k in obj){
+            if(k === "length"){
+                continue;
+            }
+            arr.push(obj[k]);
+        }
+        console.log(arr); */
+
+        // [].push(1)
+        /* var arr = [];
+        [].push.apply(arr,obj);
+        console.log(arr); */
+
+        // var arr = [].concat.apply([],obj);
+        // console.log(arr);
+        
+        
+        //伪数组是否可以使用数组的方法
+        /* var obj4 = { length: 5, 0: "a", 1: "b", 2: "c", 3: "d", 4: "e" };
+        [].pop.apply(obj4);
+        console.log(obj4); */
+        
+        
+        var arr1 = [3,5,27,2,4,6];
+
+        console.log(Math.max.apply(null,arr1));
+        
+    </script>
+</body>
+
+</html>

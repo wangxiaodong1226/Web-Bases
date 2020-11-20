@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+1. JavaScript 包含: __ECMAScript__, __DOM__, 和 __BOM__.
+
+2. JavaScript 的基本类型有 __stirng__, __number__, 和 __boolean__.
+
+3. JavaScript 的复合类型有 __Array__, __Object__, __RegExp__, __String__, __Number__, __Boolean__, 和 __Date__. 还有两个核心类型: __Object__ 和 __function__.
+
+4. JavaScript 还有两个空类型: __null__ 和 __undefined__.
+
+5. JavaScript 中获得类型的运算符是 __typeof__. 使用该运算符返回的结果是什么类型? __string__.
+
+6. JavaScript 中 === 和 == 有什么区别? __===带着数据类型比较，==不带数据类型比较，只比较值是否相等__.
+
+7. JavaScript 中 in 运算符有什么用? ____.
+答：1，常用在for in 循环中 遍历对象的key
+    2，判断属性/某个值,在对象/数组中是否存在
+
+8. JavaScript 的关系运算符是: __=== !== == != < <= > >=__.
+
+9. JavaScript 中创建对象使用 __new__ 运算符.
+
+10. 什么是引用类型, 什么是值类型? ____
+答：
+    值类型：string number boolean undefined
+    引用类型：object
+    存储的数据在内存中的地址，数据在内存中单独存储，就是引用类型的数据
+
+11. JavaScript 什么叫逻辑中断: __&& ||__.
+
+12. JavaScript 中 delete 运算符的作用是 ____.
+答：
+    delete关键字可以用来删除对象的属性，还有未使用var声明的变量
+    delete关键字有返回值 用来表示删除属性是否成功
+    如果删除的是不存在的属性，返回值为true
+    如果删除的属性存在原型当中，那么返回值为true，并删除
+
+13. JavaScript 中循环语句有 __4__ 种. 分别是: __for__, __while__, __do while__, 和 __for in__.
+
+14. JavaScript 中分支语句有 __2__ 种. 分别是: __if else__, __switch__.
+
+15. JavaScript 中跳转语句 break 与 continue 如何使用? ____.
+答：如果应用在循环当中，
+    break：立即跳出循环，不再进行循环操
+    continue：结束当次循环，继续执行下一次循环
+        */
+
+
+      var json = {
+          "name":"xiaoming",
+          "age":"18"
+      }
+      for(var key in json){
+        console.log(key);
+        
+      } 
+      console.log("name2" in json);
+      var arr = [1,2,3,4];
+      console.log(5 in arr);
+      
+       
+    </script>
+</body>
+</html>

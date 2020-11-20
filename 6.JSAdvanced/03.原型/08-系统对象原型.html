@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = new Array();
+        // arr.push(1)
+        console.log(arr.__proto__);
+        
+        /* Array.prototype.push = function(){
+            console.log("累死你也填不进去");
+            
+        }
+        var arr1 = new Array(1,2,3);
+        arr1.push(4);
+        console.log(arr1);
+ */
+        //千万不要修改系统内置的方法 
+
+        function MyArr(){}
+        MyArr.prototype.extend = function(obj){
+            for(var k in obj){
+                this[k] = obj[k]
+            }
+        };
+        MyArr.prototype.extend(arr.__proto__)
+        MyArr.prototype.push = function(){
+            console.log("aaa");
+            
+        }
+        /* var a = new MyArr();
+        console.log(a);
+        a.push(123);
+        console.log(a); */
+
+
+
+        arr.push("haha");
+        console.log(arr);
+        
+        
+        
+        
+    </script>
+</body>
+</html>

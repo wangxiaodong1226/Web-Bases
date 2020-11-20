@@ -1,0 +1,27 @@
+@color-red:rgb(201,21,35);
+@color-black:black;
+.round-border(@radius:5px){
+    border-radius: @radius;
+}
+ul{
+    list-style: none;
+    width: 300px;
+    border:1px solid @color-red;
+    padding: 10px;
+    .round-border;
+    overflow:hidden;
+    li{
+        width: 100px;
+        height: 40px;
+        border:1px solid @color-black;
+        .round-border(20px);
+        float: left;
+        a{
+            display: block;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+    }
+}

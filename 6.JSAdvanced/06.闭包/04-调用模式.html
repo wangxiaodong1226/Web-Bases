@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数模式
+        /* function fn(){
+            console.log(this);//window
+            
+        }
+        fn(); */
+        //方法模式
+       /*  var obj = {
+            fn:function(){
+                console.log(this);
+            }
+        }
+        obj.fn(); */
+
+        /* function Fn(){
+            this.name = "xxx";
+            this.fn = function(){
+                console.log(this);
+            }
+        }
+        var f = new Fn();
+        f.fn();
+        在构造函数中不写return 默认会return this;
+        构造函数写 return null/undefined/基本数据类型 都等同于 return this
+        如果 return 对象  会返回新的对象
+        */
+
+        function Fn1(){
+            this.name = "xxxx";
+            var t = this;
+            this.o = {
+                get:function(){
+                    return t.name;
+                },
+                set:function(value){
+                    t.name = value;
+                }
+            }
+
+            return this.o;
+
+        }
+
+        var f = new Fn1();
+        console.log(f);
+        
+    </script>
+</body>
+</html>

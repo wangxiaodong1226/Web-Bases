@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /*  num();//在这一步的时候num这个方法名被提升上来，打印的是函数体
+        var num =123;//这一步相当于给num重新赋值
+        console.log(num);//输出的是重新赋值后的123
+        function num(){
+            console.log(num);
+            
+        }
+        num();//在这一步的时候num里面存放的值已经不是一个函数了，而是123这个值，所以他用过小括号调用的话会报错
+        
+ */
+        /* function num(){
+            console.log(num);
+            
+        }
+        num();
+        num = 123;
+        console.log(num);
+        num(); */
+
+
+
+
+        /* console.log(num1);
+        console.log(num2);//不会被提升 */
+
+        var num1 = 123;
+        num2 = 456;
+
+        delete num1;
+        delete num2;
+        console.log(num1);//delete 不能伤处var声明的变量
+        console.log(num2);
+        
+        
+        
+    </script>
+</body>
+</html>

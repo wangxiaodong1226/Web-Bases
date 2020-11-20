@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fn() {
+            var name = "小明";
+            var age = 12;
+            return {
+                getAge: function () {
+                    return age;
+                },
+                setAge: function (value) {
+                    if(value < 0 || value > 130){
+                        alert("年龄不合法");
+                        return null;
+                    }
+
+                    return age = value;
+                }
+            }
+        }
+
+        var obj = fn();
+        console.log(obj.getAge());
+        console.log(obj.setAge(13));
+        
+        console.log(obj.getAge());
+        
+    </script>
+</body>
+
+</html>

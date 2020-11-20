@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        真数组：
+            1,索引型数组 ，数组下标是数字的数组
+                1.1稀疏型数组
+                    数组中某些下标(索引)不连贯，数组长度为最大下标+1
+                    var arr = new Array();
+                    arr[0] = 1;
+                    arr[2] = 3;
+                    arr[9] = 5;
+                1.2非稀疏型数组：数组长度为最大下标+1
+                    数组下标连贯从0开始
+            2，关联型数组：数组下标是有意义字符串 js中需要自己维护length属性，不添加length属性默认是0
+            var arr = new Array();
+            arr['name'] = 'xxxx';
+            arr['age'] = 12;
+            arr['length'] = 2;
+            console.log(arr);
+        伪数组/类数组:就是一个对象
+        1，必须有length属性
+        2，length的值为0 对象中可以有任意个元素
+        3，length的值 元素最大下标+1
+        */
+
+        var obj1 = { length: 0 }
+        var obj2 = { length: 4, 3: "a" };
+        var obj3 = { length: 2, 0: "a", 1: "b" }
+        var obj4 = { length: 10, 0: "a", 1: "a", 2: "a", 3: "a", 4: "a" };
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

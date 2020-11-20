@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //字面量方式
+        var cat = {
+            name:'Tom',
+            age:4,
+            gender:"male",
+            say:function(){
+                console.log('喵喵叫');
+                
+            }
+        }
+        //新建对象，赋值
+        var obj = new Object();
+        obj.name = "Jerray";
+        obj.age = 3;
+        obj.gender = "male";
+        obj.say = function(){
+            console.log('吱吱叫');
+        }
+        //以上两种方式重用性低
+
+        //工厂模式
+        function person(name,age,gender){
+            var o = new Object();
+            o.name = name;
+            o.age = age;
+            o.gender = gender;
+            o.say = function(jiao){
+                console.log(jiao);
+                
+            }
+            return o;
+        }
+        // console.log(person());
+        var p1 = person("Tom",4,"male");
+        var p2 = person("Tom2",3,"male");
+        console.log(p1);
+        console.log(p2);
+        p1.say('喵喵叫');
+        p2.say('吱吱叫');
+        
+        console.log(p1.say === p2.say);
+        
+
+        
+    </script>
+</body>
+</html>

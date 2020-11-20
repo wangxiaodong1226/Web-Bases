@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var Animal = {
+            name:"Animal",
+            gender:'male',
+            age:5,
+            say:function(){
+                console.log("动物会说什么");
+                
+            }
+        }
+
+        function Dog(){
+            this.color = 'black';
+        }
+        Dog.prototype.extend = function(obj){
+            for(var k in obj){
+                this[k] = obj[k];
+            }
+        }
+        Dog.prototype.extend(Animal);
+        console.log(Dog.prototype);
+
+        /* var d = new Dog();
+        for(var k  in Animal){
+            d[k] = Animal[k]
+        }
+        var d1 = new Dog();
+        console.log(d.name); */
+        
+        
+    </script>
+</body>
+</html>

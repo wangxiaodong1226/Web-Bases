@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        /* var num = 123;
+        function fn1(){
+            console.log(num);
+            
+        }
+        fn1(); */
+
+        /* if(false){
+           var num = 123
+        }
+        console.log(num);
+
+
+        var num;
+        if(false){
+           num = 123;
+        }
+        console.log(num); */
+        /* 
+        · 函数允许访问函数外的数据.
+
+        · 整个代码结构中只有函数可以限定作用域.
+
+        · 作用域规则首先使用提升规则分析
+
+        · 如果当前作用规则中有名字了, 就不考虑外面的名字
+         */
+        /* var num = 123;
+
+        function foo() {
+
+            var num = 456;
+
+            function func() {
+
+                console.log(num);
+
+            }
+
+            func();
+
+        }
+
+        foo(); */
+
+        /* var num1 = 123;
+
+        function foo1() {
+
+            var num1 = 456;
+
+            function foo2() {
+
+                num1 = 789;
+
+                function foo3() {
+
+                    console.log(num1);
+
+                }
+
+                foo3();
+
+            }
+
+            foo2();
+
+        }
+
+        foo1();
+
+        console.log(num1); */
+
+        var num = 123;
+
+        function func1() {
+
+            console.log(num);
+
+        }
+
+        function func2() {
+
+            var num = 456;
+
+            func1();
+
+        }
+
+        func1();
+
+        func2();
+
+
+    </script>
+</body>
+
+</html>

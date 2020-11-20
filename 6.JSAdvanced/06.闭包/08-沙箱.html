@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        沙箱：
+        与外界隔绝的环境，外界无法修改沙箱环境内的任何信息，沙箱内的东西单独属于一个世界
+
+        js中的沙箱模式
+        */
+        /*  (function(){
+             var a = 123;
+         })()
+  
+         console.log(a); */
+
+        /*  var sum = 0; 
+         for(var i = 1; i <=10;i++){
+              sum+=i;
+         }
+         console.log(sum); */
+
+
+        (function (win) {
+            var sum = 0;
+            for (var i = 1; i <= 10; i++) {
+                sum += i;
+            }
+
+            win.s = sum;
+            // console.log(sum);
+        })(window)
+
+
+        console.log(s);
+
+        /* 
+            沙箱模式一般用域书写第三方框架，或者为第三方框架书写插件或者书写一些功能独立的组件
+
+            沙箱模式优势
+
+                Imediately-Invoked Function Expression
+            1，沙箱用的是IIFE,不会暴露内部属性方法，不会污染全局变量
+            2，沙箱内部所有的属性方法都是和外部隔离的，外界无法进行修改，保证了代码的安全性
+        */
+        
+
+    </script>
+</body>
+
+</html>

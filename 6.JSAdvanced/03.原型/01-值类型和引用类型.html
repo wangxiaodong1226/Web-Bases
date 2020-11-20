@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str1 = "1";
+        var str2  = str1;
+        console.log(str1);
+        console.log(str2);
+        
+        str1 = "2";
+        console.log(str1);//2
+        console.log(str2);//2
+
+        //值类型
+        //直接将存储的数据复制一份进行赋值，这两份数据在内存中是完全独立
+
+        var o1 = {
+            name:"海洋",
+            age:"40"
+        }
+        var o2 = o1;
+        console.log(o1);
+        console.log(o2);
+
+        o1.name = "大西洋";
+        o2.age = "100";
+        console.log(o1);//大西洋
+        console.log(o2);//
+        
+        
+    </script>
+</body>
+</html>

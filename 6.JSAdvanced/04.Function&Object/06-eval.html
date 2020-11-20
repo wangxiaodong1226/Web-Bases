@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //eval 可以运算字符串中的内容
+        var num = 1;
+        console.log('num + "dsfsdf"');
+        console.log(eval('num + "dsfsdf"'));
+        console.log(eval('num + 1'));
+
+        var json ={"name":"tom","age":"4"};
+        var json_str = '{"name":"tom","age":"4"}';
+
+        console.log(JSON.parse(json_str));
+
+        console.log(eval("("+json_str+")"));
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* 
+        构造是给对象赋初值 初始化属性
+        那么构造中只需要定义属性 或者调用初始化的一些方法
+        不要再构造中定义方法
+        所有共有的方法定义在原型中
+       */
+        function Person(name,age,gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+
+        Person.prototype.say = function(){
+            console.log("hello");
+            
+        }
+        Person.prototype.sayHello = function(){
+            console.log("say Hello");
+            
+        }
+        var p1 = new Person("小米","12","男");
+        var p2 = new Person("小红","12","女");
+        p1.say();
+        p2.sayHello();
+        console.log(p1.say === p2.say);
+        console.log(p1.sayHello === p2.sayHello);
+        console.log(p1);
+        console.log(p1.__proto__ === Person.prototype);
+        
+        
+        
+    </script>
+</body>
+</html>
