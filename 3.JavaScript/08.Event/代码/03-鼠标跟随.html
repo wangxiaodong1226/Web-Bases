@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		img{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<img src="img.jpg" width="100">
+	<script src="../../tools.js"></script>
+	<script>
+		var img = getTag("img")[0];
+		var timer = null,targetX = 0,targetY = 0,larderX = 0,larderY = 0;
+		document.onclick = function (e) {
+			e = event || window.event;
+			var pageX = e.pageX || e.clientX + myScroll().left;
+			var pageY = e.pageY || e.clientY + myScroll().top;
+			targetX = pageX - img.offsetWidth / 2;
+			targetY = pageY - img.offsetHeight / 2;
+			clearInterval(timer);
+			timer = setInterval(function(){
+				var stepX = (targetX - larderX) / 10;
+				stepX = stepX > 0 ? Math.ceil(stepX) : Math.floor(stepX);
+				var stepY = (targetY - larderY) / 10;
+				stepY = stepY > 0 ? Math.ceil(stepY) : Math.floor(stepY);
+				larderX = larderX + stepX;
+				larderY = larderY + stepY;
+				img.style.left = larderX + "px";
+				img.style.top = larderY + "px";
+			},10)
+
+		}
+	</script>
+</body>
+</html>

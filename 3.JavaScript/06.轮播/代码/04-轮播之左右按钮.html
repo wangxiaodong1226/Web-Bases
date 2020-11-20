@@ -1,0 +1,134 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 490px;
+			height: 170px;
+			border: 1px solid;
+			margin:50px auto;
+			padding: 5px;
+		}
+		.inner{
+			width: 490px;
+			height: 170px;
+			overflow: hidden;
+			position:relative;
+		}
+		ul{
+			width: 2450px;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			list-style: none;
+		}
+		li{
+			float: left;
+		}
+		.btnbox{
+			position: absolute;
+			left: 0;
+			top: 50%;
+			width: 490px;
+			margin-top: -25px; 
+			display: none;
+		}
+		.btnbox span{
+			display: inline-block;
+			width: 30px;
+			height: 50px;
+			background: rgba(0,0,0,0.5);
+			color:white;
+			text-align: center;
+			line-height: 50px;
+			cursor: pointer;
+		}
+		.btnbox .right{
+			position: absolute;
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="inner">
+			<ul>
+				<li><img src="images/01.jpg" alt=""></li>
+				<li><img src="images/02.jpg" alt=""></li>
+				<li><img src="images/03.jpg" alt=""></li>
+				<li><img src="images/04.jpg" alt=""></li>
+				<li><img src="images/05.jpg" alt=""></li>
+			</ul>
+			<div class="btnbox">
+				<span class="left"> < </span>
+				<span class="right"> > </span>
+			</div>
+		</div>
+	</div>
+	<script>
+		window.onload = function () {
+			var inner = document.getElementsByClassName('inner')[0];
+			var btnBox = document.getElementsByClassName('btnbox')[0];
+			var btns = btnBox.children;
+			var ul = document.getElementsByTagName('ul')[0];
+			var liArr = ul.children;
+			var num = 0;
+			inner.onmouseover = function () {
+				btnBox.style.display = "block";
+			}
+			inner.onmouseout = function () {
+				btnBox.style.display = "none";
+			}
+			btns[0].onclick = function () {
+				num--;
+				if(num < 0){
+					num = 0;
+					alert("已经是第一张了");
+				}
+				animation(ul,-inner.offsetWidth * num);
+				
+
+				// if(ul.offsetLeft >=0){
+				// 	ul.style.left = 0 + "px";
+				// }else{
+				// 	animation(ul,inner.offsetWidth + ul.offsetLeft)
+				// }
+				
+
+			}
+			btns[1].onclick = function () {
+				num++;
+				if(num > liArr.length-1){
+					num = liArr.length-1;
+					alert("已经是最后一张了");
+				}
+				animation(ul,-inner.offsetWidth * num)
+
+
+				
+				// if(ul.offsetLeft <= -(liArr.length-1)*inner.offsetWidth){
+				// 	ul.style.left = -(liArr.length-1)*inner.offsetWidth + "px";
+				// }else{
+				// 	animation(ul,-inner.offsetWidth + ul.offsetLeft)
+				// }
+				
+			}
+
+			function animation(ele,target) {
+				clearInterval(ele.timer);
+				var step = target - ele.offsetLeft > 0 ? 10:-10;
+				ele.timer = setInterval(function () {
+					if(Math.abs(target - ele.offsetLeft) <= Math.abs(step)){
+						ele.style.left = target+"px";
+						clearInterval(ele.timer);
+					}else{
+						ele.style.left = ele.offsetLeft + step + "px";
+					}
+				},10)
+			}
+		}
+	</script>
+</body>
+</html>

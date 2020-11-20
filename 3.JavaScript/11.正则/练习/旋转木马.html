@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>旋转木马</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none
+		}
+		.box{
+			width: 1200px;
+			margin: 10px auto;
+		}
+		.inner{
+			height: 500px;
+			position: relative;
+		}
+		.inner li{
+			position: absolute;
+			left: 200px;
+			top: 0;
+
+		}
+		.inner li img{
+			width: 100%;
+		}
+		.prev,.next{
+			width: 76px;
+			height: 112px;
+			position: absolute;
+			top: 50%;
+			margin-top: -56px;
+			background: url("images/prev.png") no-repeat;
+			z-index: 99;
+		}
+		.next{
+			right: 100px;
+			background: url("images/next.png") no-repeat;
+		}
+		.arrow{
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="inner">
+			<ul>
+				<li><a href="#"><img src="../images/slidepic1.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../images/slidepic2.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../images/slidepic3.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../images/slidepic4.jpg" alt=""></a></li>
+				<li><a href="#"><img src="../images/slidepic5.jpg" alt=""></a></li>
+			</ul>
+		</div>
+		<div class="arrow">
+			<a href="#" class="prev"></a>
+			<a href="#" class="next"></a>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-10-17 20:00:48
+ * @LastEditTime: 2020-10-17 20:14:06
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day11\代码和图片\03-1广告栏.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            height: 300px;
+            background-color: red;
+        }
+        .box1 .center{
+            width: 800px;
+            height: 300px;
+            background-color: yellow;
+            margin: 0 auto;
+            position: relative;
+        }
+        a{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+            color:white;
+            text-decoration: none;
+            text-align: center;
+            line-height: 20px;
+            right:0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="center">
+            <a href="#">x</a>
+        </div>
+    </div>
+    <script>
+        window.onload=function(){
+            var box1=document.getElementsByClassName("box1")[0];
+            var a = document.getElementsByTagName("a")[0];
+            console.log(box1);
+            console.log(a);
+            a.onclick = function(){
+                box1.style.display="none";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.title{
+			position: fixed;
+			left: 0;
+			top: 0;
+			z-index: 99;
+
+		}
+		.left{
+			position: absolute;
+			left: 10px;
+			top: 200px;
+		}
+		.right{
+			position: absolute;
+			right: 10px;
+			top: 200px;
+		}
+		.up{
+			position: fixed;
+			bottom: 100px;
+			right: 20px;
+			cursor: pointer;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<img src="images/r1.png" class="title">
+	<img src="images/box.png" alt="" class="main">
+	<img src="images/r2_c1.png" alt="" class="left">
+	<img src="images/r2_c2.png" alt="" class="right">
+	<img src="images/20150717215921.png" alt="" class="up">
+	<script src="../tools.js"></script>
+	<script>
+		window.onload = function(){
+			var left = getClass("left")[0];
+			var right = getClass("right")[0];
+			var up = getClass("up")[0];
+			window.onscroll = function(){
+				if(myScroll().top >= 500){
+					up.style.display = "block";
+				}else{
+					up.style.display = "none";
+				}
+				animateBox(left , myScroll().top+200);
+				animateBox(right , myScroll().top+200);
+			}
+			up.onclick = function(){
+				animate(0,myScroll().top);
+			}
+
+			function animateBox(ele,target){
+				clearInterval(ele.timer);
+				ele.timer = setInterval(function(){
+					var step = (target - ele.offsetTop) / 10;
+					step = step > 0 ? Math.ceil(step) : Math.floor(step);
+					if(Math.abs(target - ele.offsetTop) <= Math.abs(step)){
+						ele.style.top = target+"px";
+						clearInterval(ele.timer);
+					}else{
+						ele.style.top = ele.offsetTop + step + "px";
+					}
+				},30);
+			}
+
+			function animate(target,larder){
+				clearInterval(this.timer);
+				this.timer = setInterval(function(){
+					var step = (target - larder) / 10;
+					step = step > 0 ? Math.ceil(step) : Math.floor(step);
+					larder = larder + step; 
+					window.scrollTo(0,larder);
+					if(larder <= 0){
+						clearInterval(this.timer);
+					}
+
+
+				},30)
+			}
+		}
+	</script>
+</body>
+</html>

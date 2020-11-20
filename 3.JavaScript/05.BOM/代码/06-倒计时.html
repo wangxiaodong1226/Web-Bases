@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<script>
+		window.onload = function () {
+			var div = document.getElementsByTagName('div')[0];
+			var timer = setInterval(function () {
+				var today = new Date().getTime();
+				var funture = new Date("2020/02/07 10:59:00").getTime();
+				// console.log(today);
+				// console.log(funture);
+				var distance = funture - today;
+
+
+				var day = parseInt(distance/1000/60/60/24);
+				var hour = parseInt(distance/1000/60/60%24);
+				var minute = parseInt(distance/1000/60%60);
+				var sec = parseInt(distance/1000%60);
+				var mill = parseInt(distance%1000);
+
+                day=day>10?day:"0"+day;
+                hour=hour>10?hour:"0"+hour;
+                minute=minute>10?minute:"0"+minute;
+                sec=sec>10?sec:"0"+sec;
+				// console.log("距离目标日期还有"+day+"天"+hour+"小时"+minute+"分钟"+sec+"秒"+mill+"毫秒");
+				div.innerHTML = "距离目标日期还有"+day+"天"+hour+"小时"+minute+"分钟"+sec+"秒"+mill+"毫秒";
+				if(distance<=0){
+					div.innerHTML = "距离目标日期还有"+0+"0天"+0+"0小时"+0+"0分钟"+0+"0秒"+0+"0毫秒";
+					clearInterval(timer);
+				}
+
+				/**
+				 * 在天时分秒 是一位数（个位）01天
+				 * 在天时分秒 是两位数（十位）12小时
+				 */
+
+
+			},10)
+		}
+	</script>
+</body>
+</html>

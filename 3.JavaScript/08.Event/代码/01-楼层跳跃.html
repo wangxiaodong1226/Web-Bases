@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body,html{
+			height: 100%;
+		}
+		ul{
+			list-style: none;
+			height: 100%;
+		}
+		ul li{
+			height: 100%;
+		}
+		ol{
+			list-style:none;
+			position: fixed;
+			left: 50px;
+			top: 100px;
+		}
+		ol li{
+			width: 50px;
+			height: 50px;
+			border:1px solid;
+			margin-top: -1px;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<ol>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ol>
+	<script src="../../tools.js"></script>
+	<script>
+		var ul = getTag("ul")[0];
+		var ol = getTag("ol")[0];
+		var ulLiArr = ul.children;
+		var olLiArr = ol.children;
+		var colors = ["green","red","yellow","orange","pink"];
+		var timer = null;//循环定时器
+		var liHeight = ulLiArr[0].offsetHeight;
+		var target = 0;//目标位置
+		var larder = 0;//当前位置
+		for(var i = 0; i < ulLiArr.length;i++){
+			ulLiArr[i].style.background = colors[i];
+			olLiArr[i].style.background = colors[i];
+			olLiArr[i].index = i;
+			olLiArr[i].onclick = function () {
+				target = this.index*liHeight;
+				clearInterval(timer);
+				timer = setInterval(function(){
+					var step = (target-larder) / 10;
+					step = step > 0 ? Math.ceil(step) : Math.floor(step);
+					// larder = larder + step;
+					window.scrollTo(0,larder + step);
+					if(Math.abs(target - larder) <= Math.abs(step)){
+						window.scrollTo(0,target);
+						clearInterval(timer);
+					}
+				},30)
+			}
+
+		}
+		window.onscroll = function(){
+			larder = myScroll().top;
+		}
+
+	</script>
+</body>
+</html>

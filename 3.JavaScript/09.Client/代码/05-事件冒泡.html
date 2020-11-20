@@ -1,0 +1,79 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:29
+ * @LastEditTime: 2020-10-25 20:56:45
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day16\代码\05-事件冒泡.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			width: 300px;
+			height: 300px;
+			background: red;
+			position: absolute;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background: blue;
+			position: absolute;
+		}
+		.box3{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<div class="box2">
+			<div class="box3"></div>
+		</div>
+	</div>
+	<script src="../../tools.js"></script>
+	<script>
+		var box1 = getClass("box1")[0];
+		var box2 = getClass("box2")[0];
+		var box3 = getClass("box3")[0];
+		// box1.onclick = function () {
+		// 	alert(1);
+		// }
+		// box2.onclick = function () {
+		// 	alert(2);
+		// }
+		// box3.onclick = function () {
+		// 	alert(3);
+		// 	var e = event || window.event;
+		// 	if(e && e.stopPropagation){
+		// 		e.stopPropagation();
+		// 	}else {
+		// 		e.cancelBubble = true;
+		// 	}
+			
+		// }
+		box1.addEventListener("click",function(){
+			alert(1);			
+		},true);
+		box2.addEventListener("click",function(){
+			alert(2);
+		},true);
+		box3.addEventListener("click",function(){
+			alert(3);
+			var e = event || window.event;
+			if(e && e.stopPropagation){
+				e.stopPropagation();
+			}else {
+				e.cancelBubble = true;
+			}
+		},true);
+	</script>
+</body>
+</html>

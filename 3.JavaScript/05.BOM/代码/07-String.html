@@ -1,0 +1,51 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:55
+ * @LastEditTime: 2020-10-21 15:39:48
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day12\代码\07-String.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var str="asdfghjdASD";
+		console.log(str.charAt(2)); //d
+		console.log(str.charCodeAt(2));  //100
+		console.log(str.indexOf("d"));  //2 
+		console.log(str.lastIndexOf("y"));  //-1
+
+		var url = "http://bukaedu.com?username=张三&pwd=123";
+		url = encodeURIComponent(url);
+		console.log(url);
+		console.log(decodeURIComponent(url));
+		
+		var str2 = "123456";
+		console.log(str.concat(str2));  //asdfghjdASD123456
+		console.log(str+str2);  //asdfghjdASD123456
+		console.log(str.slice(5,2));  //空
+		console.log(str.substr(5,2));  //hj
+		console.log(str.substring(5,2));  //dfg
+
+		console.log(str.trim()); //去空格
+		console.log(str.replace(/asd/gi,"haha"));  //hahafghjdhaha
+		console.log(str.toUpperCase());  //ASDFGHJDASD
+		
+		
+		console.log(Math.abs(-5));  //5
+		console.log(Math.floor(-5.123));  //-6
+		console.log(Math.ceil(-5.123)); //-5
+
+		var x = parseInt(Math.random()*10)+1;
+		console.log(x);
+
+
+
+	</script>
+</body>
+</html>

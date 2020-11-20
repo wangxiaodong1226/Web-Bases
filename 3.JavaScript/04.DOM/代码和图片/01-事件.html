@@ -1,0 +1,83 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:53
+ * @LastEditTime: 2020-10-21 14:33:46
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day11\代码和图片\01-事件.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+
+		li{
+			background-color: green;
+			margin: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="id_div" onclick="fn();"></div>
+
+	<ul>
+		<li>我是一个li</li>
+		<li>我是一个li</li>
+		<li>我是一个li</li>
+		<li>我是一个li</li>
+		<li>我是一个li</li>
+	</ul>
+
+	<script>
+		//1,获取事件源
+		var box = document.getElementsByTagName("div")[0];
+		var box = document.getElementsByClassName("box")[0];
+		var box = document.getElementById("id_div");
+		console.log(box);
+		//2绑定事件
+		box.onclick = function () {
+			//3,事件驱动程序
+			alert(123);
+		}
+
+		/**
+		 * 需求：给5个li一起绑定鼠标单击事件，在触发鼠标单击的时候弹窗显示123
+		 */
+		
+		//1,获取事件源
+		var lis = document.getElementsByTagName("li");
+		console.log(lis);
+		//2,绑定事件
+		for(var i = 0; i < lis.length;i++){
+			lis[i].onclick = function(){
+				//3,事件驱动程序
+				alert(123);
+			}
+		}
+
+		//1,获取事件源
+		// var div = document.getElementsByTagName("div")[0];
+		//2,绑定事件
+		//绑定匿名函数
+		/*div.onclick = function(){
+			//3，事件驱动程序
+			alert(123);
+		}*/
+
+		//绑定有名字的函数
+		// div.onclick = fn;
+
+		function fn(){
+			alert(456);
+		}
+
+	</script>
+</body>
+</html>

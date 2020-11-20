@@ -1,0 +1,65 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-10-18 10:10:58
+ * @LastEditTime: 2020-10-18 12:57:17
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day11\代码和图片\15-jd.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../tools.js"></script>
+    <style>
+       ul,body{
+           margin: 0;
+           padding: 0;
+           list-style-type: none;
+       }
+       body{
+           background: url("images/1.jpg") no-repeat;
+           /* background-size: cover; */
+       }
+       .box{
+           height: 200px;
+           background: rgba(0,0,0,0.3);
+           text-align: center;
+       }
+       li{
+           height: 100px;
+           display: inline-block;
+           /* float:left; */
+       }
+       img{
+           width: 200px;
+           margin-top: 38px;
+           cursor: pointer;
+       }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li> <img src="images/1.jpg" > </li>
+            <li><img src="images/2.jpg" ></li>
+            <li><img src="images/3.jpg" ></li>
+            <li><img src="images/4.jpg" ></li>
+            <li><img src="images/5.jpg" ></li>
+        </ul>
+    </div>
+    <script>
+        window.onload=function(){
+            var img = getTag("img");
+            var body = getTag("body")[0];
+            for(var i = 0;i<img.length;i++){
+                img[i].onclick = function(){
+                    body.style.background = "url("+this.src+")"
+                }
+            }
+        }
+    </script>
+</body>
+</html>

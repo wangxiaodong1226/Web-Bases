@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//一、把1-10之间所有的奇数，放到数组中
+	// var arr=new Array(5);
+	// var j=0;
+	// for(var i=1;i<10;i++){
+	// 	if(i%2==0){
+	// 		continue;
+	// 	}
+	// 	arr[j]=i;
+	// 	j++;
+	// }
+	// for(var x=0;x<arr.length;x++){
+	// document.write(arr[x]);}
+
+
+	//二、1-10之间能被3整数的数字，存到数组中
+	// var arr=new Array(2);
+	// var j=0;
+	// for(var i=1;i<10;i++){
+	// 	if(i%3==0){
+	// 	arr[j]=i;
+	// 	j++;
+	//  }
+	// }
+	// for(var x=0;x<arr.length;x++){
+	// document.write(arr[x]);}
+	// document.write("<br>");
+
+	//三、求一组数中的所有数的和和平均值
+	// var sum=0;
+	// var arr=[1,2,34,4,5];
+	// for(var i=0;i<arr.length;i++){
+	// 	sum=sum+arr[i];
+	// }
+	// document.write(sum);
+	// document.write("<br>");
+	// document.write(sum/5);
+	// document.write("<br>");
+
+	//四、求一组数中的最大值和最小值，以及所在位置
+	// var arr=[5,9,6,0,1,7,3,4];
+	// var max=arr[0];
+	// var min=arr[7];
+	// var position_max,position_min;
+	// for(var i=0;i<arr.length;i++){
+	// 	if(arr[i]>max){
+	// 		max=arr[i];
+	// 		position_max=i
+	// 	}
+	// 	if(arr[i]<min){
+	// 		min=arr[i];
+	// 		position_min=i
+	// 	}
+	// }
+	// document.write(max);
+	// document.write(position_max);
+	// document.write(min);
+	// document.write(position_min);
+
+    // document.write("<br>");
+
+
+    //五、将字符串数组用|或其他符号分割
+	// var arr=["张飞","赵云","关羽"];
+	// str="";
+	// for(var i=0;i<arr.length;i++){
+	// 	if(i<arr.length-1){
+	// 		str=str+arr[i]+"|";
+	// 	}
+	// 	else{
+	// 		str=str+arr[i];
+	// 	}
+	// }
+	// document.write(str);
+	// document.write("<br>");
+
+	//六、将数组中值为0的去掉，不为0的存入一个新数组
+	// var arr1=[];
+	// var j=0;
+	// var arr=[5,9,6,0,1,7,3,4];
+	// for(var i=0;i<arr.length;i++){
+	// 	if(arr[i]!==0){
+	// 		arr1[j]=arr[i];
+	// 		j++;
+	// 	}
+	// }
+	// document.write(arr1);
+
+	// document.write("<br>");
+
+	//七、翻转数组
+	// var arr=[5,9,6,0,1,7,3,4];
+	// for(var i=0;i<arr.length;i++){
+	// 	if(i<arr.length/2){
+	// 		var temp=arr[i];
+	// 		arr[i]=arr[arr.length-i-1];
+	// 		arr[arr.length-i-1]=temp;
+	// 	}
+	// }
+	// document.write(arr);
+
+	// document.write("<br>");
+
+	//冒泡排序
+	var arr=[5,9,6,0,1,7,3,4];
+	for(var i=0;i<arr.length-1;i++){
+		for(var j=0;j<arr.length-1-i;j++){
+			if(arr[j]>arr[j+1]){
+			var temp=arr[j];
+			arr[j]=arr[j+1];
+			arr[j+1]=temp;}
+		}
+	}
+	document.write(arr);
+	</script>
+</body>
+</html>

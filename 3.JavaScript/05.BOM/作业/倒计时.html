@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+<div id="box">
+还剩：
+<label for="" id="hour">00</label>小时
+<label for="" id="minute">00</label>分
+<label for="" id="second">00</label>秒
+</div>
+<script type="text/javascript">
+var o_b=document.getElementById("box");
+//获取界面标签对象
+var o_h=document.getElementById("hour");
+var o_m=document.getElementById("minute");
+var o_s=document.getElementById("second");
+function showTime(){
+var nowDate=new Date();
+//把结束时间转化为日期对象
+console.log(nowDate)
+var nowTime=nowDate.getTime();
+var endDate=new Date("2020/02/10 00:07:35");
+var endTime=endDate.getTime();
+//距离结束时间剩余的秒数
+var diffTime=parseInt((endTime-nowTime)/1000);
+console.log(diffTime)
+if(diffTime<=0){
+o_b.innerHTML="秒杀结束";
+clearInterval(t);//清除定时器
+}
+//将剩余时间(秒)转换为时、分、秒
+var hour=parseInt(diffTime/60/60);
+var minute=parseInt(diffTime/60%60);
+var second=diffTime%60;
+if(hour<10){
+hour="0"+hour;
+}
+if(minute<10){
+minute="0"+minute;
+}
+if(second<10){
+second="0"+second;
+}
+console.log(o_h);
+console.log(o_m);
+console.log(o_s);
+o_h.innerHTML=hour;
+o_m.innerHTML=minute;
+o_s.innerHTML=second;
+// setTimeout(showTime,1000);
+}
+showTime();
+var t=setInterval(showTime,1000);
+console.log(t);
+</script>
+</body>
+</html>

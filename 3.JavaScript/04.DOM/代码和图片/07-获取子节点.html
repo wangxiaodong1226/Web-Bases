@@ -1,0 +1,81 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:53
+ * @LastEditTime: 2020-10-17 20:36:57
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day11\代码和图片\07-获取子节点.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		li{
+			float: left;
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			margin: 10px;
+			text-align: center;
+			line-height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script>
+		window.onload = function () {
+			// 1，获取事件源
+			var ul = document.getElementsByTagName("ul")[0];
+			var fc = ul.firstElementChild || ul.firstChild;
+			var lc = ul.lastElementChild || ul.lastChild;
+			console.log(fc);
+			console.log(lc);
+			var cn = ul.childNodes;
+			console.log(cn);
+			var newArr = [];
+			for(var i = 0 ; i < cn.length;i++){
+				if(cn[i].nodeType === 1){
+					newArr.push(cn[i]);
+				}
+			}
+			console.log(newArr);
+			console.log(ul.children);
+			var li = document.getElementsByTagName("li")[2];
+			var liArr = siblings(li);
+			console.log(liArr);
+			/**
+			 * 获取某个元素所有兄弟节点
+			 * ele:要获取的某个元素
+			 */
+			function siblings(ele){
+				var arr = [];
+				//通过当前元素获取它的父节点，然后再通过父节点获取所有子节点（包含传入的元素本身）
+				var sib = ele.parentNode.children;
+				// console.log(sib);
+				// 遍历所有的子元素，把不是当前传入的元素放入到数组中，遍历之后数组中存放的就是除自己之外的所有兄弟节点
+				for(var i = 0 ; i < sib.length;i++){
+					if(sib[i]!==ele){
+						arr.push(sib[i]);
+					}
+				}
+				return arr;
+			}
+
+		}
+	</script>
+</body>
+</html>

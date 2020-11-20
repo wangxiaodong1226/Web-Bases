@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>按钮</button>
+	<input type="text">
+	<div>
+		<span>我是一个span</span>
+	</div>
+	<script>
+		window.onload=function () {
+			var btn = document.getElementsByTagName("button")[0];
+			var inp = document.getElementsByTagName("input")[0];
+			var div = document.getElementsByTagName("div")[0];
+			btn.onclick = function(){
+				console.log(inp.value);
+				console.log(div.innerHTML);
+				console.log(div.innerText);
+			}
+		}
+	</script>
+</body>
+</html>

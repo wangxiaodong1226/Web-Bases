@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var obj =new Object();
+     obj.name="晓明";
+     obj.age=18;
+     obj.run=function(){
+     	document.write("say...");
+     }
+     obj.run();
+
+     document.write("<br>");
+
+     function Student(name,age){
+     	this.name=name;
+     	this.age=age;
+     	this.sayHi=function(){
+     		console.log(this.name+"说：大家好");
+     	}
+     }
+     var stu= new Student("王华","20");
+     document.write(this.name);
+     stu.sayHi();
+	</script>
+</body>
+</html>

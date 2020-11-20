@@ -1,0 +1,78 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>	
+		body,ul,li{
+			padding: 0;
+			margin: 0;
+		}
+		.box{
+			background-color: #ccc;
+			overflow: hidden;
+			padding-left: 50px;
+		}
+		.box .box_text{
+			color: orange;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		.box ul{
+			list-style: none;
+			margin-top: 20px;
+			overflow: hidden;
+		}
+		.box ul li{
+			float: left;
+			padding-right: 20px;
+		}
+		.img_big{
+			width: 400px;
+			height: 250px;
+			margin:50px 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h1>美女画廊</h1>
+		<div class="box_text">注册</div>
+		<ul>
+			<li>
+				<a href="images/1.jpg"></a>
+				<img src="images/1-small.jpg">
+				
+			</li>
+			<li>
+				<a href="images/2.jpg"></a>
+				<img src="images/2-small.jpg">
+			</li>
+			<li>
+				<a href="images/3.jpg"></a>
+				<img src="images/3-small.jpg">
+			</li>
+			<li>
+				<a href="images/4.jpg"></a>
+				<img src="images/4-small.jpg">
+			</li>
+		</ul>
+		<img src="images/placeholder.png" class="img_big">
+		<p>选择一张图片</p>
+	</div>
+	<script>
+		window.onload = function () {
+			var lis = document.getElementsByTagName("li");
+			var big = document.getElementsByClassName("img_big")[0];
+			for(var i = 0;i<lis.length;i++){
+				lis[i].onclick = function(){
+					var content = this.firstElementChild || this.firstChild;
+					console.log(content);
+					big.src = content.href;
+					// big.src = this.title;
+				}
+			}
+		}
+	</script>
+</body>
+</html>

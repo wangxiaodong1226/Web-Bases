@@ -1,0 +1,87 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:28
+ * @LastEditTime: 2020-10-23 15:39:19
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day14\02-筋斗云.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			margin: 0;
+			background: rgba(0,0,0,0.3);
+		}
+		.box{
+			width: 700px;
+			height: 42px;
+			border-radius: 6px;
+			background: url("images/wifi.png") no-repeat right;
+			background-color: white;
+			margin:100px auto;
+			position: relative;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			position: absolute;
+			left: 0;
+		}
+		li{
+			float: left;
+			width: 83px;
+			height: 42px;
+			text-align: center;
+			line-height: 42px;
+			cursor: pointer;
+		}
+		span{
+			position: absolute;
+			width: 83px;
+			height: 42px;
+			background: url("images/cloud.gif");
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<span></span>
+		<ul>
+			<li>列表项1</li>
+			<li>列表项2</li>
+			<li>列表项3</li>
+			<li>列表项4</li>
+			<li>列表项5</li>
+			<li>列表项6</li>
+			<li>列表项7</li>
+			<li>列表项8</li>
+		</ul>
+	</div>
+	<script src="../tools.js"></script>
+	<script>
+		window.onload = function(){
+			var liArr = getTag("li");
+			var span = getTag("span")[0];
+			var liWidth = liArr[0].offsetWidth;
+			var num = 0;
+			for(var i = 0; i < liArr.length;i++){
+				liArr[i].index = i;
+				liArr[i].onmouseover = function(){
+					slowAnimation(span,liWidth*this.index);
+				}
+				liArr[i].onmouseout = function(){
+					slowAnimation(span,liWidth*num);
+				}
+				liArr[i].onclick = function(){
+					num = this.index;
+				}
+			}
+		}
+	</script>
+</body>
+</html>

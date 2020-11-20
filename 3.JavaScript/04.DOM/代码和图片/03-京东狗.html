@@ -1,0 +1,54 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:53
+ * @LastEditTime: 2020-10-21 14:39:10
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day11\代码和图片\03-京东狗.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		a{
+			display: block;
+			width: 160px;
+			height: 170px;
+			background: url("jd1.png");
+			cursor: pointer;
+		}
+	</style>
+	<script>
+		window.onload = function () {
+			//1,获取事件源
+			//
+			var a = document.getElementsByTagName("a")[0];
+			//2，绑定事件
+			//
+			a.onmouseover = function(){
+				//3，事件驱动程序
+				a.style.background = "url('jd2.png')";
+			}
+			a.onmouseout = function(){
+				a.style.background = "url('jd1.png')";
+			}
+			var img = document.getElementsByTagName("img")[0];
+			img.onmouseover = function(){
+				//3，事件驱动程序
+				img.src = "jd2.png";
+				img.width = "200";
+				img.style.width = "200px";
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<a href="#"></a>
+
+	<img src="jd1.png">
+
+</body>
+</html>

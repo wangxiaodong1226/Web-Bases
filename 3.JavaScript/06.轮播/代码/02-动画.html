@@ -1,0 +1,83 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:55
+ * @LastEditTime: 2020-10-19 16:18:10
+ * @LastEditors: Please set LastEditors
+ <* @Description: In User Settings Edit -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			left: 0;
+			top: 100px;
+		}
+	</style>
+</head>
+<body>
+	<button>200</button>
+	<button>400</button>
+	<div></div>
+	<script>
+		window.onload = function () {
+			var btns = document.getElementsByTagName('button');
+			var div = document.getElementsByTagName("div")[0];
+			// var timer;
+			btns[0].onclick = function () {
+				animation(div,200);
+				clearInterval(timer);
+				div.style.left = 200 + "px";
+				// 在循环定时器中执行
+				// 盒子的位置 = 盒子原有位置 + 一步的长度 + "px";
+				
+				console.log(e);
+				timer = setInterval(function () {
+					//如果元素移动到目标位置了，就清空动画
+
+					if(div.offsetLeft >= 200){
+						clearInterval(timer);
+					}else{//元素没有到达目标位置，就正常移动
+						div.style.left = div.offsetLeft + 10 + "px";
+					}
+					
+				},100)
+			}
+			btns[1].onclick = function () {
+				animation(div,400);
+			}
+			/**
+			 * 匀速运动动画方法
+			 * @param ele   要执行动画的元素
+			 * @param target 目标位置
+			 * 
+			 */
+			
+			function animation(ele,target) {
+				//防止多次点击加速
+				clearInterval(ele.timer);
+				var step = target - ele.offsetLeft > 0 ? 10 : -10;
+				ele.timer = setInterval(function () {
+					if(Math.abs(target - ele.offsetLeft) <= Math.abs(step)){
+						ele.style.left = target + "px";
+						clearInterval(ele.timer);
+					}else{
+						ele.style.left = ele.offsetLeft + step + "px"
+					}
+					console.log(ele.offsetLeft);
+				},50)
+
+			}
+
+
+			// var obj = new Object();
+			// obj.name = "hahaha";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:55
+ * @LastEditTime: 2020-10-21 15:20:57
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day12\代码\01-bom测试.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a href="02-回退.html">跳转</a>
+	<button>关闭</button>
+	<script>
+		// window.alert(1);
+
+		function fn() {
+			x = 6;
+		}
+		window.fn();
+		console.log(window.x);
+		console.log(window.x === x);
+
+		var nw = window.open("http://www.baidu.com","aaa","_blank");
+		location.href = "http://www.baidu.com";
+		var btn = document.getElementsByTagName('button')[0];
+		btn.onclick = function () {
+			window.close();
+		}
+		
+		nw.moveTo(500,500)
+	</script>
+</body>
+</html>

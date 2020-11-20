@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			left: 0;
+			top: 100px;
+			opacity: 1;
+			z-index: 1;
+		}
+	</style>
+</head>
+<body>
+	<button>运动</button>
+	<div></div>
+	<script src="../tools.js"></script>
+	<script>
+		var btn = getTag("button")[0];
+		var div = getTag("div")[0];
+
+		var j = {"left":400,"top":150,"width":200,"height":300,"opacity":30,"zIndex":10};
+		btn.onclick =function(){
+
+			slowAnimation(div,j);
+			
+		}
+
+
+		
+		function slowAnimation(ele,json,fn){
+
+			clearInterval(ele.timer);
+			ele.timer = setInterval(function(){
+				var bool = true;
+				for(var key in json){
+					var larder;
+					if(key === "opacity"){
+						larder = getStyle(ele,key) * 100;
+					}else{
+						larder = parseInt(getStyle(ele,key));
+					}
+					var step = (json[key] - larder) / 10;
+					step = step > 0 ? Math.ceil(step) : Math.floor(step);
+					larder = larder + step;
+
+					if(key === "opacity"){
+						ele.style[key] = larder / 100;
+					}else if(key === "zIndex"){
+						ele.style["zIndex"] = json[key];
+					}else{
+						ele.style[key] = larder + "px";
+					}
+
+					
+
+					if(larder != json[key]){
+						bool = false;
+					}
+
+				}
+				if(bool == true){
+					clearInterval(ele.timer);
+
+					fn && fn();
+
+				}
+
+
+
+			},30)
+		}
+	</script>
+</body>
+</html>

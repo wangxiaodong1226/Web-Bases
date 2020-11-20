@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			border:5px solid red;
+			border-radius: 50%;
+			position: absolute;
+			left: 0;
+			top: 100px;
+		}
+	</style>
+</head>
+<body>
+	<button>200</button>
+	<button>400</button>
+	<div></div>
+	<script src="../../tools.js"></script>
+	<script>
+		var btns = getTag("button");
+		var div = getTag("div")[0];
+		btns[0].onclick = function(){
+			slowAnimation(div,200,"width");
+		}
+		btns[1].onclick = function(){
+			slowAnimation(div,400,"width");
+		}
+		/*function slowAnimation(ele,target,attr){
+			clearInterval(ele.timer);
+			ele.timer = setInterval(function(){
+				var step = (target - ele.offsetLeft) / 10;
+				step = step > 0 ? Math.ceil(step) : Math.floor(step);
+				if(Math.abs(target- ele.offsetLeft) <= Math.abs(step)){
+					ele.style[attr] = target+"px";
+					clearInterval(ele.timer);
+				}else{
+					// ele.style.left = ele.offsetLeft + step + "px";
+					ele.style[attr] = ele.offsetLeft + step + "px";
+				}
+			},30)
+		}*/
+
+		function slowAnimation(ele,target,attr){
+			clearInterval(ele.timer);
+			ele.timer = setInterval(function(){
+				var larder = parseInt(getStyle(ele,attr));
+
+
+				var step = (target - larder) / 10;
+				step = step > 0 ? Math.ceil(step) : Math.floor(step);
+				larder = larder + step;
+				if(Math.abs(target- larder) <= Math.abs(step)){
+					ele.style[attr] = target+"px";
+					clearInterval(ele.timer);
+				}else{
+					// ele.style.left = ele.offsetLeft + step + "px";
+					ele.style[attr] = larder  + "px";
+				}
+			},30)
+		}
+
+		function getStyle(ele,attr){
+			if(window.getComputedStyle){
+				return window.getComputedStyle(ele,null)[attr];
+			}else{
+				return ele.currentStyle[attr];
+			}
+		}
+	</script>
+</body>
+</html>

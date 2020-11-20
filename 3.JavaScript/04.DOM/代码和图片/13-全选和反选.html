@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		td{
+			text-align: center;
+		}
+		
+	</style>
+</head>
+<body>
+	<table border="1" width="500" height="300" cellspacing="0" cellpadding="0" align="center">
+	<thead bgcolor="skyblue">
+		<tr>
+			<th width="50" height="50"><input type="checkbox" id="check_all"></th>
+			<th>菜名</th>
+			<th>饭店名</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td> <input type="checkbox"></td>
+			<td>aaaa</td>
+			<td>1111</td>
+		</tr>
+		<tr>
+			<td> <input type="checkbox"></td>
+			<td>bbbb</td>
+			<td>2222</td>
+		</tr>
+		<tr>
+			<td> <input type="checkbox"></td>
+			<td>cccc</td>
+			<td>3333</td>
+		</tr>
+		<tr>
+			<td> <input type="checkbox"></td>
+			<td>dddd</td>
+			<td>4444</td>
+		</tr>
+	</tbody>
+		
+	</table>
+	<script>
+		window.onload = function () {
+			
+
+			var check_all = document.getElementById('check_all');
+			var tbody = document.getElementsByTagName('tbody')[0];
+			var inps = tbody.getElementsByTagName("input");
+			var trArr=tbody.getElementsByTagName("tr");
+			// console.log(trArr);
+			var color="";
+			for(var i=0;i<trArr.length;i++){
+				if(i%2==0){
+					trArr[i].style.background="#666";
+				}else{
+					trArr[i].style.background="#ccc";
+				}
+				trArr[i].onmouseover=function(){
+					color=this.style.background;
+					this.style.background="white";
+				}
+				trArr[i].onmouseout=function(){
+					this.style.background=color;
+				}
+			}
+
+
+
+
+			// console.log(inps);
+			check_all.onclick = function () {
+				//牛劲版
+				/*if(check_all.checked == true){
+					for(var i = 0; i < inps.length;i++){
+						inps[i].checked = true;
+					}
+				}else{
+					for(var i = 0; i < inps.length;i++){
+						inps[i].checked = false;
+					}
+				}*/
+				// 费劲版
+				// for(var i = 0 ; i<inps.length;i++){
+				// 	if(check_all.checked == true){
+				// 		inps[i].checked = true;
+				// 	}else{
+				// 		inps[i].checked = false;
+				// 	}
+				// }
+				// 精简版
+				
+				for(var i = 0; i < inps.length;i++){
+					inps[i].checked = check_all.checked;
+				}
+			}
+			//第一层循环是为了给每一个input设置点击事件
+			for(var i = 0 ; i < inps.length;i++){
+				inps[i].onclick = function () {
+					// console.log(i);
+					var bool = true;
+					//第二层循环是为了判断每一个input是否勾选
+					for(var j = 0;j < inps.length;j++){
+						// console.log(j);
+						if(inps[j].checked ===false){
+							bool = false;
+							// check_all.checked = true;
+						}
+					}
+					check_all.checked = bool;
+				}
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:39
+ * @LastEditTime: 2020-10-21 14:07:30
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\DAY009-js08后续\练习\03函数.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//1、求圆的周长和面积
+	// function area(r){
+	// 	return(3.14*r*r);
+	// }
+	// function zhouchang(r){
+	// 	return(2*3.14*r);
+	// }
+	// document.write(area(2));
+	// document.write(zhouchang(2));
+
+	//2、求2个数中的最大值，求3个数中的最大值
+	// var max;
+	// function max(a,b,c){
+	// 	if(a>b&&a>c) max=a;
+	// 	if(b>a&&b>c) max=b;
+	// 	if(c>a&&c>b) max=c;
+	// 	return max;
+	// }
+	// document.write(max(5,8,6));
+
+    //3、求一组数中的最大值和最小值
+    // function getArrmax_min(arr){
+    // 	var max=arr[0];
+    // 	var min=arr[0];
+    // 	for(var i=0;i<arr.length;i++){
+    // 		if(arr[i]>max){
+    // 			max=arr[i];
+    // 		}
+    // 		if(min>arr[i]){
+    // 			min=arr[i];
+    // 		}
+    // 	}
+    // 	return [max,min];
+    // }
+    // document.write(getArrmax_min([4,2,6,1]));
+	
+	//4 翻转数组，返回一个新数组
+	function reverse(array){
+		var newArray = [];
+		for(var i=array.length-1;i>=0;i--){
+			newArray[newArray.length] = array[i];
+		}
+		return newArray;
+	}
+	var arr = [5,3,2,1];
+	console.log(reverse(arr));
+	//求阶乘
+	function jc(num){
+		var sum = 1;
+		for(var i=1;i<=num;i++){
+			sum*=i;
+		}
+		return sum;
+	}
+	console.log(jc(3));
+
+
+	function jc(num){
+		var sum = 1;
+		var temp = 0;
+		for(var i=1;i<=num;i++){
+			sum*=i;
+			temp+=sum;
+		}
+		return temp;
+	}
+	console.log(jc(3));
+
+	//判断一个数是否是素数
+	function ss(n){
+		var flag = false;
+		for(var i=2;i<n;i++){
+			if(n%i===0){
+				flag=false;
+				break;
+			}else{
+				flag=true;
+			}
+		}
+		return flag;
+	}
+	console.log(ss(9));
+
+	var y=parseInt(prompt());
+	var m=parseInt(prompt());
+	var d=parseInt(prompt());
+	function getDay(y1,m1,d1){
+		var days = 0;
+		for(var i=1;i<m1;i++){
+			if(i===2){
+				days+=28;
+				if(y1%4===0&&y1%100!=0||y1%400===0){
+					days+=1;
+				}
+			}else if(i===1||i===3||i===5||i===7||i===8||i===10||i===11){
+				days+=31;
+			}else{
+				days+=30;
+			}
+		}
+		days+=d1;
+		return days;
+	}
+	console.log(getDay(y,m,d));
+	
+	</script>
+</body>
+</html>

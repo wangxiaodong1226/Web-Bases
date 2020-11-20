@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body,html{
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			background: rgba(0,0,0,0.6);
+			display: none;
+		}
+		.login{
+			width: 400px;
+			height: 300px;
+			cursor: pointer;
+			background: white;
+			margin:200px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="login"></div>
+	</div>
+	<a href="#">登录</a>
+	<script src="../../tools.js"></script>
+	<script>
+		var a = getTag("a")[0];
+		var box = getClass("box")[0];
+		a.onclick = function () {
+			box.style.display = "block";
+			var e = event || window.event;
+			if(e && e.stopPropagation){
+				e.stopPropagation();
+			}else{
+				e.cancelBubble = true;
+			}
+		}
+		document.onclick = function(){
+			var e = event || window.event;
+			// console.log(e);
+			// aaa这个变量里面存放的就是当前点击事件触发在哪一个元素身上
+			var aaa = e.target || e.srcElement;
+			if(aaa.className !== "login"){
+				box.style.display = "none";
+			}
+			
+		}
+	</script>
+</body>
+</html>

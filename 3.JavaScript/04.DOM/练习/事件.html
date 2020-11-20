@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+		li{
+			background-color: green;
+			margin:5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="id_div"></div>
+	<ul>
+		<li>我是一个li</li>
+		<li>我是一个li</li>
+		<li>我是一个li</li>
+		<li>我是一个li</li>
+		<li>我是一个li</li>
+	</ul>
+	<script>
+	// 1获取事件源
+	// var box=document.getElementsByTagName("div")[0];
+	// var box=document.getElementsByClassName("box")[0];
+	// var box=document.getElementById("id_div");
+	// console.log(box);
+	// // 2绑定事件
+	// box.onclick=function(){
+	// 	// 3事件驱动程序
+	// 	alert(123);
+	// }
+    var lis=document.getElementsByTagName("li");
+    console.log(lis);
+    for(var i=0;i<lis.length;i++){
+    	lis[i].onclick=function(){
+    		alert(456);
+    	}
+    }
+
+
+	</script>
+</body>
+</html>

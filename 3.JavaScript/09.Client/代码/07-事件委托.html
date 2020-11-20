@@ -1,0 +1,63 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:29
+ * @LastEditTime: 2020-10-23 20:56:19
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day16\代码\07-事件委托.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		li{
+			background: red;
+			margin:10px;
+		}
+	</style>
+</head>
+<body>
+<button>创建</button>
+	<ul>
+		<li>原始li</li>
+		<li>原始li</li>
+		<span>span</span>
+		<li>原始li</li>
+		<li>原始li</li>
+		<li>原始li</li>
+	</ul>
+	<script src="../../tools.js"></script>
+	<script>
+		var btn = getTag("button")[0];
+		var ul = getTag("ul")[0];
+		var liArr = getTag("li");
+		// for(var i = 0; i < liArr.length;i++){
+		// 	liArr[i].onclick = function () {
+		// 		alert(123);
+		// 	}
+		// }
+		btn.onclick = function(){
+			for(var i = 0; i < 5;i++){
+				var newLi = document.createElement("li");
+				newLi.innerHTML = "新创建出来的li";
+				ul.appendChild(newLi);
+			}
+		}
+		ul.onclick = function(e){
+			e = event || window.event;
+			// console.log(e.target);
+			var aaa = e.target || e.srcElement;
+			console.log(aaa.tagName);//LI
+			if(aaa.tagName === "LI"){
+				alert(123);
+			}
+			
+		}
+
+
+
+	</script>
+</body>
+</html>

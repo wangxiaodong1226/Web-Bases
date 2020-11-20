@@ -1,0 +1,37 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:28
+ * @LastEditTime: 2020-10-23 16:46:49
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Editg
+ * @FilePath: \buka\02js\day15\代码\02-event.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			height: 5000px;
+		}
+	</style>	
+
+</head>
+<body>
+	<script src="../../tools.js"></script>
+	<script>
+		document.onclick = function () {
+			var e = event || window.event;
+			console.log(e);
+			console.log(e.pageY);//总页面可视区域
+			console.log(e.clientY);//网页可视区域
+			console.log(e.screenY);//屏幕
+			console.log(myScroll().top)
+
+			var py = e.pageY || e.clientY + myScroll().top;
+			console.log(py);
+		}
+	</script>
+</body>
+</html>

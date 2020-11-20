@@ -1,0 +1,46 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:53
+ * @LastEditTime: 2020-10-17 21:24:29
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day11\代码和图片\08-节点操作.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>按钮</button>
+	<div>
+		<p>我是一个p标签</p>
+		<p>我是一个p标签</p>
+		<p>我是一个p标签</p>
+	</div>
+	<script>
+	//在div里添加一个span标签 
+	window.onload=function(){
+		//1.获取事件源
+		var btn=document.getElementsByTagName("button")[0];
+		var div=document.getElementsByTagName("div")[0];
+		var p2=document.getElementsByTagName("p")[1];
+		// 2.绑定事件
+		btn.onclick=function(){
+			var cSpan=document.createElement("span");//创建节点
+			cSpan.innerHTML="我是一个span";                                                                                                                                                   
+			cSpan.className="xxx";
+			// div.appendChild(cSpan);//父节点的最后一个插入节点 
+			// div.insertBefore(cSpan,p2);//在参考节点前插入节点
+			// div.removeChild(p2);//父节点删除p2节点
+			// div.parentNode.removeChild(div);//自己删除自己
+			var newDiv=div.cloneNode(div);
+			document.body.appendChild(newDiv);
+		}
+	}
+
+
+	</script>
+</body>
+</html>

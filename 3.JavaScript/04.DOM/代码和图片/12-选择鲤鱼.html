@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>选中鲤鱼</button>
+	<button>取消选中</button>
+	<select id="id_s" multiple>
+		<option value="">苹果</option>
+		<option value="">香蕉</option>
+		<option value="">大鸭梨</option>
+		<option value="">鲤鱼</option>
+		<option value="">榴莲</option>
+		<option value="">山竹</option>
+	</select>
+	<script>
+		window.onload = function(){
+			var btns = document.getElementsByTagName('button');
+			var sel = document.getElementsByTagName("select")[0];
+			var opArr = sel.children;
+			btns[0].onclick = function(){
+				for(var i = 0 ; i < opArr.length;i++){
+					if(opArr[i].innerHTML=="鲤鱼"){
+						opArr[i].selected = true;
+					}
+				}
+			}
+			btns[1].onclick = function(){
+				for(var i = 0 ; i < opArr.length;i++){
+					if(opArr[i].innerHTML=="鲤鱼"){
+						opArr[i].selected = false;
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			left: 0;
+			top: 100px;
+			border-radius: 50%;
+		}
+	</style>
+</head>
+<body>
+	<button>200</button>
+	<button>400</button>
+	<div></div>
+	<script>
+		window.onload = function () {
+			var btns = document.getElementsByTagName('button');
+			var div = document.getElementsByTagName('div')[0];
+			btns[0].onclick = function(){
+				slowAnimation(div,200);
+			}
+			btns[1].onclick = function(){
+				slowAnimation(div,400);
+			}
+
+			function slowAnimation(ele,target){
+				clearInterval(ele.timer);
+				
+				ele.timer = setInterval(function(){
+					//计算步长，目标位置 - 当前位置 / 10 ，（400 - 0 ） /10 ，第一步走40像素
+					var step = (target - ele.offsetLeft) / 10;
+					//由于offsetLeft会自动四舍五入，所以走到396这个位置的时候
+					//（400 - 396） step = 0.4 当前位置会走到396.4 但是下一次走的时候取当前位置的时候会四舍五入又变回396，所以一直在396.4和396之间来回循环着走
+					//判断step>0的话就是向右边走，向上取整 step<0的话就是向左走，向下取整，也就是最后4步都是1px
+					step = step > 0 ? Math.ceil(step) : Math.floor(step);
+					if(Math.abs(target - ele.offsetLeft) <= Math.abs(step)){
+						ele.style.left = target + "px";
+						clearInterval(ele.timer);
+					}else{
+						ele.style.left = ele.offsetLeft + step + "px";
+					}
+				},80);
+			}
+		}
+	</script>
+</body>
+</html>

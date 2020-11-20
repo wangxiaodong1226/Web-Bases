@@ -1,0 +1,30 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:53
+ * @LastEditTime: 2020-10-17 21:39:33
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day11\代码和图片\09-节点属性.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<img src="jd1.png" class="box" title="图片" alt="京东狗" id="aaa">
+	<script>
+	window.onload=function(){
+		//1获取事件源
+		var img=document.getElementsByTagName("img")[0];
+		console.log(img.getAttribute("class"));
+		img.setAttribute("title","这是一个图片");
+		
+		img.removeAttribute("alt");
+	}
+
+
+	</script>
+</body>
+</html>

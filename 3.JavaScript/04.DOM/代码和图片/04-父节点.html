@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+
+		}
+		.box1>.box2{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<div class="box2"></div>
+	</div>
+
+	<script>
+	/*
+	需求：
+	只获取box2(黄色的盒子)，通过box2获取它的父元素，然后给父元素改变背景颜色
+
+
+	 */
+		window.onload = function () {
+			//1,获取事件源
+			var box2 = document.getElementsByClassName("box2")[0];
+			//2,绑定事件
+			box2.onclick = function(){
+				//3，事件驱动程序
+				var pn = box2.parentNode;
+				console.log(pn);
+				pn.style.backgroundColor = "green";
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:53
+ * @LastEditTime: 2020-10-21 14:36:33
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day11\代码和图片\02-事件练习.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+		.aaa{
+			border: 1px solid green;
+		}
+		.box{
+			width: 300px;
+			height: 100px;
+			background-color: yellow;
+			color: blue;
+			font-size: 25px;
+			font-weight: 700;
+			font-style: italic;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="aaa">我是一个div</div>
+	<script>
+		// 需求：点击盒子,改变盒子的宽高颜色等样式，并弹出对话框alert(1)
+		//1.获取事件源
+		var box = document.getElementsByTagName("div")[0];
+		console.log(box);
+		//2,绑定事件
+		box.onclick = function(){
+			//3，事件驱动程序
+			// box.style.width = "300px";
+			// box.style.height = "100px";
+			box.style.backgroundColor = "yellow";
+			// box.style.color = "blue";
+			// box.style.fontSize = "20px";
+			// box.style.fontWeight="700";
+			alert(1);
+			// 
+			box.className = "aaa box";
+		}
+	</script>
+</body>
+</html>

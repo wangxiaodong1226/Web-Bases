@@ -1,0 +1,123 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-10-18 10:10:58
+ * @LastEditTime: 2020-10-18 19:49:34
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day11\代码和图片\15-jd.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../tools.js"></script>
+    <style>
+      
+      ul{
+          margin: 0;
+          padding: 0;
+          list-style: none;
+      }
+      li{
+          height: 100px;
+          float:left;
+      }
+      li img{
+          width: 200px;
+          cursor:pointer;
+          opacity: 0.6;
+      }
+      li img:hover{
+          opacity: 1;
+      }
+      .bg_box{
+          background:rgba(0,0,0,0.4);
+          position: relative;
+          left: 0;
+          top: 0;
+      }
+      .box_center{
+          position: absolute;
+          width: 300px;
+          background:white;
+          top: 200px;
+          left:50%;
+          margin-left:-150px;
+          border-radius: 5px;
+      }
+      .box_center img{
+          width: 280px;
+      }
+      a{
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          color:white;
+          background: #ccc;
+          border:1px solid white;
+          text-decoration: none;
+          text-align: center;
+          line-height: 16px;
+          right: 0;
+          top: 0;
+          border-radius: 50%;
+      }
+    </style>
+</head>
+<body>
+        <ul>
+            <li> <img src="images/1.jpg" > </li>
+            <li><img src="images/2.jpg" ></li>
+            <li><img src="images/3.jpg" ></li>
+            <li><img src="images/4.jpg" ></li>
+            <li><img src="images/5.jpg" ></li>
+        </ul>
+        <div class="bg_box">
+            <div class="box_center">
+                <a href="#">x</a>
+                <img src="images/1.jpg" >
+                <p>kjjhciud</p>
+            </div>
+        </div>
+    <script>
+        window.onload=function(){
+            var imgArr = getTag("img");
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+            for(var i = 0;i<imgArr.length;i++){
+                imgArr[i].onclick = function(){
+                    var bg_box = document.createElement("div");
+                    bg_box.className ="bg_box";
+                    bg_box.style.width = w+"px";
+                    bg_box.style.height = h+"px";
+                    document.body.appendChild(bg_box);
+
+                    var box_center = document.createElement("div");
+                    box_center.className = "box_center";
+                    bg_box.appendChild(box_center);
+
+                    var a = document.createElement("a");
+                    a.href = "#";
+                    a.innerHTML="x";
+                    box_center.appendChild(a);
+
+                    var img= document.createElement("img");
+                    img.src=this.src;
+                    box_center.appendChild(img);
+
+                    var p =document.createElement("p");
+                    p.innerHTML = this.getAttribute("src");
+                    box_center.appendChild(p)
+                    
+                    a.onclick = function(){
+                        bg_box.parentNode.removeChild(bg_box);
+                        box_center.parentNode.removeChild(box_center);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

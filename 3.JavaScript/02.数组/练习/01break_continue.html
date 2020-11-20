@@ -1,0 +1,64 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:39
+ * @LastEditTime: 2020-10-21 12:48:38
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\DAY009-js08后续\练习\01break_continue.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var sum=0;
+	// for(var i=1;i<=100;i++){
+	// 	if(i%7==0){
+	// 		continue;
+	// 	}
+	// 	sum=sum+i;
+	// }
+	// console.log(sum);
+	
+	// var sum=0;
+	// for(var i=1;i<=100;i++){
+	// 	if(i%3==0){
+	// 		continue;
+	// 	}
+	// 	sum=sum+i;
+	// 	if(sum>2000){                                                
+	// 		break;
+	// 	}
+	// }
+	// document.write(sum);
+
+	// var sum=0;
+	// for(var i=200;i<=300;i++){
+	// 	if(i%2==0){
+	// 		continue;
+	// 	}
+	// 	sum=sum+i;
+	// }
+	// document.write(sum+"<br>");
+	
+	
+	for(var i=200;i<=300;i++){
+		if(i%7==0){
+			document.write(i);
+			break;
+		}
+	}
+	
+	while(true){
+		var bool = confirm("你爱我吗?");
+		console.log(bool);
+		if(bool === true){
+			break;
+		}
+	}
+	</script>
+</body>
+</html>

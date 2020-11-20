@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var age=16;
+	console.log(typeof age);//判断数据类型 number
+
+    console.log("acc"/18);// NaN
+    console.log(isNaN("abc"));// true 判断是不是非数字的
+
+    var str1="abc";
+    var str2='efg';//单双表示都行
+
+    var str="a\bc"//转译
+    console.log(str);
+
+    str="jko";
+    str="jdk";   //字符串不可变
+    console.log(str);
+
+    str1=true;
+    str2=" haha";//字符串拼接true haha
+    console.log(str1+str2);
+
+    console.log(undefined==null);//true
+    console.log("123"==123);//true
+    //==不包含数据类型 ===包含数据类型
+    console.log("123"===123);//false
+
+    var a=54;
+    console.log(a+"");
+    console.log(String(a));//转换成String类型
+    console.log(a.toString());
+
+    console.log(null+"abc"); //nullabc
+    console.log(String(undefined));
+    //console.log(null.toString());无toString方法
+	
+	console.log("11"-0);
+	console.log("11"*1);//11
+	console.log("11a"/1);//NaN
+
+	var num1=Number("18");
+	var num2=Number("18.99");
+
+	console.log(parseInt("123..123"));//123
+	console.log(parseFloat("123.12aa"));//123.12
+
+	console.log(Boolean("1111"));
+	console.log(!!123);
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var content = prompt("请输入日期");
+	var date=new Date(content);
+	var week=date.getDay();
+	console.log(week);
+	switch(week){
+		case 1:
+		document.write("今天是星期一");
+		break;
+		case 2:
+		document.write("今天是星期二");
+		break;
+		case 3:
+		document.write("今天是星期三");
+		break;
+		case 4:
+		document.write("今天是星期四");
+		break;
+		case 5:
+		document.write("今天是星期五");
+		break;
+		case 6:
+		document.write("今天是星期六");
+		break;
+		case 0:
+		document.write("今天是星期日");
+		break;
+		default:
+		document.write("输入错误");
+	}
+
+
+	</script>
+</body>
+</html>

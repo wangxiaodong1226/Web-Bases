@@ -1,0 +1,51 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-10-18 10:10:58
+ * @LastEditTime: 2020-10-18 10:39:59
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day11\代码和图片\15-jd.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            color:#ccc;
+            font-size:12px;
+            position: absolute;
+            left:12px;
+            top:12px;
+        }
+    </style>
+</head>
+<body>
+    <label for="tb">淘宝</label>
+    <input type="text" id="tb" >
+
+    <script>
+        window.onload = function(){
+            var inp = document.getElementsByTagName("input")[0];
+            var tb = document.getElementsByTagName("label")[0];
+           //当输入框内容改变时触发的事件
+           inp.oninput = function(){
+
+            if(inp.value.length >=6 && inp.value.length<=12){
+                inp.style.border = "1px solid green";
+            }else{
+                inp.style.border = "1px solid red";
+            }
+
+            if(inp.value === ""){
+                tb.innerHTML = "淘宝";
+            }else{
+                tb.innerHTML = "";
+            }
+           }
+        }
+    </script>
+</body>
+</html>

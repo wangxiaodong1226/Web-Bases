@@ -1,0 +1,70 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:29
+ * @LastEditTime: 2020-10-25 21:10:14
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day17\03-手风琴.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 1202px;
+			height: 460px;
+			margin:100px auto;
+			border:1px solid red;
+			overflow: hidden;
+		}
+		ul{
+			list-style: none;
+			width: 2160px;
+		}
+		li{
+			width: 240px;
+			height: 460px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		
+	</div>
+	<script src="../tools.js"></script>
+	<script>
+		var box = getClass("box")[0];
+		var liArr =getTag("li");
+		for(var i = 0; i < liArr.length;i++){
+			liArr[i].innerHTML = '<img src="images/'+(i+1)+'.jpg">';
+
+			liArr[i].onmouseenter = function(){
+				for(var j = 0 ; j < liArr.length;j++){
+					slowAnimation(liArr[j],{"width":100},10);
+				}
+				slowAnimation(this,{"width":800},10)
+			}
+			liArr[i].onmouseleave = function(){
+				for(var j = 0 ; j < liArr.length;j++){
+					slowAnimation(liArr[j],{"width":240},10);
+				}
+			}
+
+		}
+	</script>
+</body>
+</html>

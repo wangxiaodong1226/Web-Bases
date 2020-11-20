@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			width: 200px;
+			height: 200px;
+			background: red;
+			position: absolute;
+			left: 100px;
+			top: 100px;
+			border: 10px solid;
+			padding:10px;
+			/*margin-top: 200px;*/
+		}
+		.box2{
+			width: 50px;
+			height: 50px;
+			background: yellow;
+			position: absolute;
+			left: 50px;
+			top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1" style="width: 200px;">
+
+		<div class="box2"></div>
+	</div>
+	<script>
+		window.onload = function () {
+			// 1,获取事件源
+			var box1 = document.getElementsByClassName('box1')[0];
+			var box2 = document.getElementsByClassName('box2')[0];
+			//某元素.style.某属性 只能获取行内样式设置的属性值
+			console.log(box1.style.width);
+
+			//offset家族获取的宽高=width/height+padding+border
+			console.log(box1.offsetWidth);
+			console.log(box1.offsetLeft);
+			console.log(box2.offsetTop);
+			console.log(box2.offsetParent);
+
+			box1.style.left = "200px";
+
+			//记住一句话：设置的时候用style.某属性
+			//获取的时候用offset
+			//style.某属性 = offset某属性+xxx(算式)
+		}
+	</script>
+</body>
+</html>

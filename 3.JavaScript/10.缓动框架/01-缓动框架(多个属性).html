@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			left: 0;
+			top: 100px;
+			
+		}
+	</style>
+</head>
+<body>
+	<button>运动</button>
+	<div></div>
+	<script src="../tools.js"></script>
+	<script>
+		var btn = getTag("button")[0];
+		var div = getTag("div")[0];
+
+		var j = {"left":400,"top":150,"width":200,"height":300};
+		var j2 = {"left":0,"top":100,"width":100,"height":100};
+		btn.onclick =function(){
+			slowAnimation(div,j,function(){
+				// alert(123);
+				slowAnimation(div,j2,function(){
+					slowAnimation(div,j);
+				})
+			})
+			// slowAnimation(div,j);
+			
+		}
+
+
+		
+		function slowAnimation(ele,json,fn){
+			// fn = function(){
+			// 	alert(123);
+			// }
+			clearInterval(ele.timer);
+			ele.timer = setInterval(function(){
+				var bool = true;
+				for(var key in json){
+					var larder = parseInt(getStyle(ele,key));
+					var step = (json[key] - larder) / 10;
+					step = step > 0 ? Math.ceil(step) : Math.floor(step);
+					larder = larder + step;
+					ele.style[key] = larder + "px";
+
+					if(larder != json[key]){
+						bool = false;
+					}
+
+
+
+					/*if(Math.abs(json[key] - larder) <= Math.abs(step)){
+						ele.style[key] = json[key] + "px";
+						clearInterval(ele.timer);
+					}else{
+						ele.style[key] = larder + "px";
+					}*/
+				}
+				if(bool == true){
+					clearInterval(ele.timer);
+
+					// fn = function(){
+					// 	alert(123);
+					//}
+					// 
+					fn && fn();
+
+				}
+
+
+
+			},30)
+		}
+	</script>
+</body>
+</html>

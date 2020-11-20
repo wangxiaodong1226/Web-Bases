@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var reg1 = new RegExp(/abc/);
+
+		var reg2 = /def/;
+		// console.log(reg1);
+		// console.log(typeof reg2);
+		// console.log(reg1.test("qwe"));
+		/*console.log(/./.test(""));
+		console.log(/\d/.test("qwerty2"));
+		console.log(/\D/.test("1123452q"));
+
+		console.log(/\s/.test("a 1"));
+		console.log(/\S/.test("a     "));
+
+		console.log(/\w/.test("w%"));
+		console.log(/\W/.test("123wa~"));*/
+
+
+		/*console.log(/buka/.test("buka "));
+		console.log(/buka/.test("bukaqwer"));
+		console.log(/buka/.test("buk"));*/
+		/*console.log(/[buka]/.test("buk"));
+		console.log(/[buka]/.test("bqewretyu"));
+		console.log(/[buka]/.test("qwer"));*/
+
+
+
+		// console.log(/[^buka]/.test("bukaqwer"));
+		// console.log(/[a-zA-Z]/.test("qweP"));
+		// console.log(/buka$/.test("qewrteybuka"));
+		// console.log(/^buka$/.test("buka"));
+		// 
+		// 
+		// 
+		console.log(/^aa*$/.test("aaaaa"));//?
+		/*console.log(/^a+$/.test(""));
+		console.log(/^a?$/.test("aa"));
+		console.log(/^a{0}$/.test("a"));
+		console.log(/^a{3,}$/.test("aaa"));
+		console.log(/^a{3,5}$/.test("aaaaaa"));*/
+
+
+
+		// console.log(/(abc)|(xyz)/.test("qwexyz"));
+		// 
+		var str = "today is fine day,Today is fine day";
+		console.log(str.replace(/today/gi,"tomorrow"));
+
+
+		var str1 = "     ab   cd    ";
+		// console.log(str1.trim());
+
+
+		function fn(str) {
+			return str.replace(/(^\s+)|(\s+$)/g,"")
+		}
+
+		console.log(fn(str1));
+
+
+	</script>
+</body>
+</html>

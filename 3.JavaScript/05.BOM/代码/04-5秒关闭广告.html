@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		img{
+			position: fixed;
+			top: 50%;
+			margin-top: -220px;
+		}
+		.left{
+			left: 20px;
+		}
+		.right{
+			right: 20px;
+		}
+	</style>
+</head>
+<body>
+	<img src="1.gif" class="left">
+	<img src="2.gif" class="right">
+	<script>
+		window.onload = function () {
+			var imgs = document.getElementsByTagName('img');
+			setTimeout(function () {
+				imgs[0].style.display = "none";
+				imgs[1].style.display = "none";
+			},5000)
+		}
+	</script>
+</body>
+</html>

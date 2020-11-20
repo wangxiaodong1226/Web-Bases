@@ -1,0 +1,34 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-10-18 10:10:58
+ * @LastEditTime: 2020-10-21 14:55:24
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day11\代码和图片\15-jd.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="京东">
+    <script>
+        window.onload = function(){
+            var inp = document.getElementsByTagName("input")[0];
+            inp.onfocus = function(){
+                if(inp.value === "京东"){
+                    inp.value = "";
+                }
+            }
+            inp.onblur = function(){
+                if(inp.value === ""){
+                    inp.value=""
+                }
+            }
+        }
+    </script>
+</body>
+</html>

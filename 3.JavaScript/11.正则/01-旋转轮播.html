@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none
+		}
+		.box{
+			width: 1200px;
+			margin: 10px auto;
+		}
+		.inner{
+			height: 500px;
+			position: relative;
+		}
+		.inner li{
+			position: absolute;
+			left: 200px;
+			top: 0;
+
+		}
+		.inner li img{
+			width: 100%;
+		}
+		.prev,.next{
+			width: 76px;
+			height: 112px;
+			position: absolute;
+			top: 50%;
+			margin-top: -56px;
+			background: url("images/prev.png") no-repeat;
+			z-index: 99;
+		}
+		.next{
+			right: 100px;
+			background: url("images/next.png") no-repeat;
+		}
+		.arrow{
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="inner">
+			<ul>
+				<li><a href="#"><img src="images/slidepic1.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/slidepic2.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/slidepic3.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/slidepic4.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/slidepic5.jpg" alt=""></a></li>
+			</ul>
+		</div>
+		<div class="arrow">
+			<a href="#" class="prev"></a>
+			<a href="#" class="next"></a>
+		</div>
+	</div>
+	<script src="../tools.js"></script>
+	<script>
+		var json = [
+	        {   //  1
+	            width:400,
+	            top:70,
+	            left:50,
+	            opacity:20,
+	            zIndex:2
+	        },
+	        {  // 2
+	            width:600,
+	            top:120,
+	            left:0,
+	            opacity:80,
+	            zIndex:3
+	        },
+	        {   // 3
+	            width:800,
+	            top:100,
+	            left:200,
+	            opacity:100,
+	            zIndex:4
+	        },
+	        {  // 4
+	            width:600,
+	            top:120,
+	            left:600,
+	            opacity:80,
+	            zIndex:3
+	        },
+	        {   //5
+	            width:400,
+	            top:70,
+	            left:750,
+	            opacity:20,
+	            zIndex:2
+	        }
+	        
+    	];
+    	var arrow = getClass("arrow")[0];
+    	var box = getClass("box")[0];
+    	var liArr = getTag("li");
+    	var as = arrow.children;
+    	box.onmouseenter = function(){
+    		slowAnimation(arrow,{"opacity":100},null,30);
+    	}
+    	box.onmouseleave = function(){
+    		slowAnimation(arrow,{"opacity":0},null,30);
+    	}
+
+    	for(var i = 0; i < liArr.length; i++){
+    		slowAnimation(liArr[i],json[i])
+    	}
+
+    	as[0].onclick = function(){
+    		json.unshift(json.pop())
+
+    		for(var i = 0; i < liArr.length; i++){
+    			slowAnimation(liArr[i],json[i])
+    		}
+    	}
+    	as[1].onclick = function(){
+    		json.push(json.shift())
+
+    		for(var i = 0; i < liArr.length; i++){
+    			slowAnimation(liArr[i],json[i])
+    		}
+    	}
+
+	</script>
+</body>
+</html>

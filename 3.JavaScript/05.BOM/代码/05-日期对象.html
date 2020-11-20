@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>	
+	<script>
+		var d1 = new Date();
+		// console.log(d1);
+		// var d2 = new Date("2020/02/06 00:00:00");
+		// console.log(d2);
+		var year = d1.getFullYear();
+		var month = d1.getMonth()+1;
+		var day = d1.getDate();
+		var week = d1.getDay();
+		console.log("当前日期是："+year+"年"+month+"月"+day+"日，星期"+week);
+		var hour = d1.getHours();
+		var minu = d1.getMinutes();
+		var sec = d1.getSeconds();
+		var mill = d1.getMilliseconds();
+		console.log("当前时间:"+hour+":"+minu+":"+sec+":"+mill+"毫秒");
+		console.log(d1.getTime());
+		console.log(Date.now());
+		console.log(+new Date());
+		console.log(d1.valueOf());
+	</script>
+</body>
+</html>

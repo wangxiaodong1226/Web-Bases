@@ -1,0 +1,59 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-02-27 08:00:53
+ * @LastEditTime: 2020-10-17 20:23:06
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\02js\day11\代码和图片\05-关闭二维码.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			position: absolute;
+			top: 50%;
+			right: 0;
+			/*height: 100px;*/
+		}
+		.btn{
+			width: 51px;
+			height: 51px;
+			background: url("bgs.png") no-repeat -160px -51px;
+			margin-right: 20px;
+			float: right;
+		}
+		.erweima{
+			width: 149px;
+			height: 152px;
+			background: url("456.png");
+			float: right;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="btn"></div>
+		<div class="erweima"></div>
+	</div>
+	<script>
+		window.onload = function(){
+			//1.获取事件源
+			var btn = document.getElementsByClassName("btn")[0];
+			var erweima = document.getElementsByClassName("erweima")[0];
+			//2,绑定事件
+			btn.onmouseover = function(){
+				//3，事件驱动程序
+				erweima.style.display = "block";
+			}
+			btn.onmouseout = function(){
+				//3，事件驱动程序
+				erweima.style.display = "none";
+			}
+		}
+	</script>
+</body>
+</html>

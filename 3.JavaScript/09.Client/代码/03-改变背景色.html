@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="../../tools.js"></script>
+	<script>
+		window.onresize = function(){
+			document.title = myClient().width;
+			if(myClient().width > 960){
+				document.body.style.background = "red";
+			}else if(myClient().width > 640){
+				document.body.style.background = "yellow";
+			}else{
+				document.body.style.background = "green";
+			}
+		}
+	</script>
+</body>
+</html>
