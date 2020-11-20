@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" >
+	<br>
+	<button>按钮</button>
+	<script>
+		window.onload = function () {
+			var inp = document.querySelector("input");
+			var btn = document.querySelector("button");
+			btn.onclick = function(){
+				var xhr = new XMLHttpRequest();
+				xhr.open("post","01-test.php");
+				xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				xhr.send("username="+inp.value+"&pwd=123");
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState == 4 && xhr.status == 200){
+						// console.log(xhr.responseText);
+
+						var res = xhr.responseText;
+
+						var arr = res.split("|");
+						console.log(arr);
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>

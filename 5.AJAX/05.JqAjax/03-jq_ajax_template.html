@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+	<script src="template-native.js"></script>
+</head>
+<body>
+	<button>获取数据</button>
+		<!-- <ul>
+			<li>xiaoming</li>
+			<li>18</li>
+			<li>卖萌</li>
+		</ul> -->
+	<div></div>
+	<script type="text/html" id="a">
+		<!-- <p><%=name%></p>
+		<p><%=age%></p>
+		<p><%=skill%></p> -->
+		<style>
+			li{
+				background-color: red;
+			}
+		</style>
+
+		<ul>
+			<li><%=name%></li>
+			<li><%=age%></li>
+			<li><%=skill%></li>
+			<li>
+				<ul>
+					<% for(var i = 0;i<foods.length;i++){%>
+						<li><%=foods[i]["food1"]%></li>
+						<li><%=foods[i]["food2"]%></li>
+					<%}%>
+
+					<% if(4>5){%>
+		
+					<%}else{%>
+
+					<%}%>
+
+					
+				</ul>
+			</li>
+		</ul>
+	</script>
+
+	<script type="text/javascript">
+		$(function(){
+			var obj = {
+				"name":"xiaoming",
+				"skill":"卖萌",
+				"age":"18",
+				"foods":[
+					{
+						food1:"apple",
+						food2:"orange"
+					},
+					{
+						food1:"apple2",
+						food2:"orange2"
+					}
+				]
+			};
+			$("button").on("click",function(){
+				var res = template("a",obj);
+				console.log(res);	
+				$("div").html(res);
+			})
+		})
+
+	</script>
+</body>
+</html>

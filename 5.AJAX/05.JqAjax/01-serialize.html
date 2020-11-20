@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+</head>
+<body>
+	<form id="testForm">
+		<input type="text" placeholder="您的姓名" name="username">
+		<input type="text" placeholder="您的爱好" name="userHabbit">
+		<input type="text" placeholder="您的年龄" name="userAge">
+
+	</form>
+	<button>格式化表单数据</button>
+	<script>
+		$(function () {
+			//username=xxx&userHabbit=xxx&userAge=xxxx
+			$("button").click(function(){
+				console.log($("#testForm").serialize());
+			})
+		})
+	</script>
+</body>
+</html>

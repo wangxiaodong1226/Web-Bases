@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			height: 100px;
+			border:1px solid ;
+			line-height: 100px;
+			font-size: 50px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<button>获取数据</button>
+	<script>
+		window.onload = function () {
+			var btn = document.querySelector("button");
+			var div = document.querySelector("div");
+			btn.onclick = function(){
+				var ajax = new XMLHttpRequest();
+				ajax.open("post","04-ajaxxml.php");
+				ajax.setRequestHeader("content-type","application/x-www-form-urlencoded");
+				ajax.send();
+				ajax.onreadystatechange = function(){
+					if(ajax.readyState==4&&ajax.status==200){
+						// console.log(ajax.responseText);
+						console.log(ajax.responseXML);
+						div.innerHTML = ajax.responseXML.querySelector("name").innerHTML;
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>

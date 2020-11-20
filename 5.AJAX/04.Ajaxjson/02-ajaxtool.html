@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>获取数据</button>
+	<script src="tool.js"></script>
+	<script>
+		var btn = document.querySelector("button");
+
+
+		btn.onclick = function(){	
+			/*ajax_get("02-ajaxtool.php",function(d){
+				console.log(d);
+			})*/
+			// ajax_post("02-ajaxtool.php",function(d){
+			// 	console.log(d);
+			// })
+			// 
+			ajax_tool({
+				"method":"get",
+				"url":"02-ajaxtool.php",
+				"data":"name=xiaoming",
+				"fn":function(data){
+					// console.log(data);
+					var arr = JSON.parse(data);
+					console.log(arr);
+				}
+
+			})
+		}
+	</script>
+</body>
+</html>

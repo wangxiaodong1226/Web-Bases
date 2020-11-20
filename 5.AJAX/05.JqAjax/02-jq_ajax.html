@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.11.1.js"></script>
+</head>
+<body>
+	<form id="testForm">
+		<input type="text" placeholder="您的姓名" name="username">
+		<input type="text" placeholder="您的爱好" name="userHabbit">
+		<input type="text" placeholder="您的年龄" name="userAge">
+	</form>
+	<button>获取数据</button>
+	<script>
+		$(function () {
+			
+			// $.get("02-jq_ajax.php",res,function(data){
+			// 	console.log(data);
+			// })
+			$("button").click(function(){
+			var res = $("#testForm").serialize();
+				$.ajax({
+					url:"02-jq_ajax.php",
+					data:res,
+					type:'get',
+					success:function(data){ 
+						console.log(data);
+					},
+					beforeSend:function(){
+						console.log("发送之前");
+						return false;
+					},
+					error:function(argument){
+						console.log(argument);
+					}
+				})
+			})
+			
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+Q<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{
+			margin: 0;
+			padding: 50px;
+			list-style: none;
+		}
+		.box{
+			width: 800px;
+			margin: 50px auto;
+			border:1px solid #ccc;
+			border-radius: 5px;
+		}
+		li{
+			display: flex;
+			margin: 20px 0;
+		}
+		label,input{
+			float: left;
+			height: 46px;
+			font-size: 24px;
+			box-sizing: border-box;
+
+		}
+		label{
+			width: 200px;
+			line-height: 46px;
+			text-align: right;
+			margin-right: 30px;
+			color:blue;
+		}
+		input{
+			width: 320px;
+			padding: 8px;
+			outline:none;
+		}
+		.code{
+			width: 120px;
+		}
+		.verify{
+			width: 190px;
+			margin-left: 10px;
+		}
+		input[type=button]{
+			border:none;
+			background-color: red;
+			color: #fff;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		.tips{
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 40px;
+			text-align: center;
+		}
+		.tips p{
+			line-height: 40px;
+			max-width: 400px;
+			min-width: 300px;
+			margin: 0 auto;
+			background: red;
+			color: #fff;
+			display: none;
+		}
+		h2 div{
+			width: 800px;
+			height: 40px;
+			margin:0 auto;
+			text-align: center;
+			line-height: 40px;
+			color:hotpink;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h2><div>欢迎来到网络水果超市系统</div></h2>
+		<form >
+			<ul>
+				<li>
+					<label>用户名</label>
+					<input type="text" name="name" class="name">
+				</li>
+				<li>
+					<label>请输入密码</label>
+					<input type="password" name="pass" class="pass" minlength="5">
+				</li>
+				
+				<li>
+					<label></label>
+					<input type="button" value="提交" class="subimt">
+				</li>
+				
+			</ul>
+		</form>
+	</div>
+	<div class="tips">
+		<p>用户名不能为空</p>
+	</div>
+	<script src="../../jquery-1.11.1.js"></script>
+	<script>
+		$(function () {
+			$(".name").blur(function(){
+				var val = $(this).val();
+				$.ajax({
+					url:"04-login.php",
+					type:"post",
+					data:"name="+val,
+					success:function(data){
+						if(data==="重名了"){
+							$(".tips p").text("帅哥，还没注册，请先注册").fadeIn(8000).delay(1000).fadeOut(300);
+						}else{
+							$(".tips p").text("此用户名可以注册").css("background-color","green").fadeIn(300).delay(1000).fadeOut(300);
+						}
+					}
+				})
+			})
+		})
+	</script>
+</body>
+</html>

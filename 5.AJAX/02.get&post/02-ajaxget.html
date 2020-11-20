@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text">
+	<br>
+	<br>
+	<button>提交</button>
+
+	<script>
+		window.onload = function () {
+			var btn = document.querySelector("button");
+			var inp = document.querySelector("input");
+			btn.onclick = function(){
+				var ajax = new XMLHttpRequest();
+				ajax.open("get","02-ajaxget.php?username="+ inp.value +"&pwd=123");
+				ajax.send();
+
+				//后台传回来的数据，每一次状态改变时都会执行以下事件
+				ajax.onreadystatechange = function(){
+					
+					// console.log(ajax.responseText);
+					if(ajax.readyState == 4 && ajax.status == 200){
+						console.log(ajax.responseText);
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>

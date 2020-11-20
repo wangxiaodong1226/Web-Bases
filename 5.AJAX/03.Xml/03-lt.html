@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 800px;
+			height: 500px;
+			margin: 20px auto;
+			border:1px solid;
+		}
+		.messageBox{
+			width: 800px;
+			height: 450px;
+			background-color: skyblue;
+			overflow: auto;
+
+		}
+		.inputBox{
+			width: 800px;
+			height: 50px;
+			line-height: 50px;
+		}
+		.messageText{
+			width: 73%;
+			height: 40px;
+		}
+		.sendBtn{
+			width: 25%;
+			height: 50px;
+			line-height: 50px;
+			background-color: pink;
+		}
+		.messageBox div{
+			height: 30px;
+			line-height: 30px;
+			border-bottom: 1px solid #666;
+		}
+		.self{
+			text-align: left;
+		}
+		.other{
+			text-align: right;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="messageBox"></div>
+		<div class="inputBox">
+			<input type="text" class="messageText">
+			<input type="button" class="sendBtn" value="发送">
+		</div>
+	</div>
+	<script>
+		window.onload = function () {
+			var messageBox = document.querySelector(".messageBox");
+			var messageText = document.querySelector(".messageText");
+			var sendBtn = document.querySelector(".sendBtn");
+			sendBtn.onclick = function(){
+				var value = messageText.value;
+				var div = document.createElement("div");
+				div.className = "self";
+				div.innerHTML = value;
+				messageBox.appendChild(div);
+				messageText.value = "";
+				var ajax = new XMLHttpRequest();
+				ajax.open("post","03-lt.php");
+				ajax.setRequestHeader("content-type","application/x-www-form-urlencoded");
+				ajax.send("mess="+value);
+				ajax.onreadystatechange = function(){
+					if(ajax.readyState == 4 && ajax.status == 200){
+						var div2 = document.createElement("div");
+						div2.className = "other";
+						div2.innerHTML = ajax.responseText;
+						messageBox.appendChild(div2);
+
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>

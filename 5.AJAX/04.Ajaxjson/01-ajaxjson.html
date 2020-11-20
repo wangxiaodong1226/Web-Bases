@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button>获取数据</button>
+	<script>
+		var btn = document.querySelector("button");
+
+		var arr = [1,2,3,4];
+		btn.onclick = function () {
+			var ajax = new XMLHttpRequest();
+			ajax.open("post","01-ajaxjson.php");
+			ajax.setRequestHeader("content-type","application/x-www-form-urlencoded");
+			ajax.send("arr="+arr);
+			ajax.onreadystatechange = function(){
+				if(ajax.readyState == 4 && ajax.status == 200){
+					// console.log(ajax.responseText);
+					var res = ajax.responseText;
+
+					var arr = JSON.parse(res);
+					console.log(arr[0]["name"]);
+				}
+			}
+		}
+	</script>                                                                                                         
+</body>
+</html>

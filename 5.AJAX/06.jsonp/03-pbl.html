@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			text-align: center;
+			margin: 0;
+			padding: 0;
+			background-color: #f7f7f7;
+		}
+		.box{
+			padding: 50px;
+		}
+		img{
+			display: block;
+			width: 100%;
+			height: 300px;
+		}
+		.items{
+			position: relative;
+			border:1px solid red;
+		}
+		.item{
+			width: 228px;
+			position: absolute;
+		}
+		.loading{
+			width: 280px;
+			height: 40px;
+			margin: 30px auto 0;
+			text-align: center;
+			line-height: 40px;
+			border-radius: 6px;
+			font-size: 24px;
+			cursor: pointer;
+			background-color: hotpink;
+
+		}
+	</style>
+</head>
+
+<script type="html/template" id="template">
+	<% for(var i = 0;i < items.length;i++){%>
+		<div class="item" style="top:7px;left: 7px">
+				<img src="<%=items[i].path%>" >
+				<p><%=items[i].text%></p>
+		</div>
+		
+	<%}%>
+
+</script>
+<body>
+	<h1>瀑布流</h1>
+	<div class="box">
+		<div class="items">
+			<!-- <div class="item" style="top:7px;left: 7px">
+				<img src="images/1.jpg" >
+				<p>中学时候我们班两个同学打赌，内容是在 厕所吃方便面，谁先吃完谁赢，输了的请 赢了的吃一个月的饭，于是厕所里惊现两 个货蹲坑上吃泡面，这俩货还没有决出胜 负，旁边拉屎的哥们都吐了三回了！！！</p>
+			</div> -->
+			
+		</div>
+		<p class="loading">正在加载...</p>
+	</div>
+	<script src="../jquery-1.11.1.js"></script>
+	<script src="template-native.js"></script>
+	<script src="waterFall.js"></script>
+
+
+	<script>
+		$(function () {
+			$(".loading").click(function(){
+				$.ajax({
+					url:"03-pbl.php",
+					type:"post",
+					success:function(data){
+						console.log(data);
+
+						var arr = JSON.parse(data);
+						// console.log(arr);
+						var obj = {
+							items:arr
+						}
+						var res = template("template",obj);
+						$(".items").html(res);
+						$(".items").waterFall();
+					}
+				})
+			})
+		})
+	</script>
+</body>
+</html>
