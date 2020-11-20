@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{msg}}</h1>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+       const vm =  new Vue({
+            // el:"#app",
+            data:{
+                msg:"测试"
+            },
+            beforeCreate() {
+                // vue实例创建之前被调用，数据和模板都未获取到
+                console.log("beforeCreate",this.$el,this.$data);
+            },
+            created() {
+                // 一般发送ajax请求会在这个钩子函数中发送
+                //vue实例创建之后，最早可以获取到data数据的钩子函数，模板还没有获取到
+                console.log("created",this.$el,this.$data);
+            },
+            beforeMount() {
+                // 数据挂载之前，获取到了模板，但是数据还未挂载到模板中
+                console.log("beforeMount",this.$el,this.$data);
+            },
+            mounted() {
+                // 数据已经挂载到模板中了
+                console.log("mounted",this.$el,this.$data);
+            },
+            beforeUpdate() {
+                //当data数据更新之后，去更新模板中的数据之前调用
+                console.log("beforeUpdate",this.$el.innerHTML,this.$data);
+            },
+            updated() {
+                // 更新完毕之后
+                console.log("updated",this.$el.innerHTML,this.$data);
+            },
+            beforeDestroy() {
+                //销毁vue实例之前调用
+                // 收尾工作，比较常用
+                console.log("beforeDestroy");
+            },
+            destroyed() {
+                // vue实例销毁之后
+                console.log("destroyed");
+            },
+        }).$mount("#app")//如果实例中没有el选项，可以手动通过$mount挂载DOM
+
+        // vm.$destroy();
+    </script>
+</body>
+</html>

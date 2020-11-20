@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <div class="header"> <h1>头部组件</h1></div>
+        <div class="main">
+            <ul>
+                <li>用户管理</li>
+                <li>账单管理</li>
+                <li>供应商管理</li>
+            </ul>
+        </div>
+        <div class="footer"><h1>底部组件</h1></div> -->
+
+        <app-Header></app-Header>
+        <app-main></app-main>
+        <app-footer></app-footer>
+    </div>
+    <script src="./todomvc/node_modules/vue/dist/vue.js"></script>
+    <script src="./component/header.js"></script>
+    <script src="./component/main.js"></script>
+    <script src="./component/footer.js"></script>
+    <script>
+        
+        new Vue({
+            el:"#app"
+        })
+    </script>
+</body>
+</html>

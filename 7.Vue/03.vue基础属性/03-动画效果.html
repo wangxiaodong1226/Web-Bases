@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bk-enter-active{
+            animation: identifier 1s ;
+        }
+        .bk-leave-active{
+            animation: identifier 1s reverse;
+        }
+        @keyframes identifier {
+            0%{ /*持续时长百分比，比如1s,0%代表0秒 50%代表0.5秒 ，100%代表1s */
+                transform:scale(0); /* 缩小为0 */
+            }
+            50%{
+                transform:scale(1.5); /* 放大1.5倍 */
+            }
+            100%{
+                transform:scale(1); /* 原始大小 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="show=!show">放大缩小效果</button>
+        <br>
+        <transition name="bk">
+            <p v-if="show" style="display: inline-block;">测试文字，测试文字</p>
+        </transition>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                show:true
+            }
+        })
+    </script>
+</body>
+</html>

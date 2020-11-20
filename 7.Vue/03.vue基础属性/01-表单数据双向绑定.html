@@ -1,0 +1,72 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-15 16:55:26
+ * @LastEditTime: 2020-10-30 10:05:58
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\day61\01-表单数据双向绑定.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+        <form action="#" @submit.prevent="submitform">
+            姓名(文本)：<input type="text" v-model="name">
+            <br><br
+            性别(单选按钮)：
+            <input name="sex" type="radio" value="1" v-model="sex"/>男
+            <input name="sex" type="radio" value="0" v-model="sex"/>女
+            <br><br>
+
+            技能(多选框)：
+            <input type="checkbox" name="skills" value="java" v-model="skills">Java开发
+            <input type="checkbox" name="skills" value="vue" v-model="skills">Vue.js开发
+            <input type="checkbox" name="skills" value="python" v-model="skills">Python开发
+            <br><br>
+
+            城市(下拉框)：
+            <select name="citys" v-model="city">
+                <option :value="c.code" v-for="c in citys">{{c.name}}</option>
+            </select>
+            <br><br>
+
+            说明(多行文本)：<textarea cols="30" rows="5" v-model="content"></textarea>
+            <br><br>
+            <button type="submit">提交</button>
+        </form>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#demo",
+            data:{
+                name:"",
+                sex:"0",
+                skills:["vue"],
+                citys:[
+                    {code:"bj",name:"北京"},
+                    {code:"sh",name:"上海"},
+                    {code:"heb",name:"哈尔滨"}
+                ],
+                city:'sh',
+                content:""
+            },
+            methods: {
+                submitform:function(){
+                    //处理提交表单数据
+                    //发送ajax请求
+                    alert(`${this.name}--${this.sex}--${this.skills}--${this.city}--${this.content}`)
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

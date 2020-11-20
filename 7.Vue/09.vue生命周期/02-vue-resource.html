@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <h1>{{ repData }}</h1>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/vue-resource/dist/vue-resource.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                repData: []
+            },
+            created() {
+                // GET /someUrl
+                this.$http.get('http://127.0.0.1:5500/day67/data.json').then(response => {
+                    // success callback
+                    console.log(response.data);
+                    this.repData = response.data
+                    
+                }, response => {
+                    // error callback
+                    console.log(response.statusText,response.status);
+                    
+                })
+            },
+
+        })
+    </script>
+</body>
+
+</html>

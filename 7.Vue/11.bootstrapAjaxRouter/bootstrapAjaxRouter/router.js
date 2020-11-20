@@ -1,0 +1,47 @@
+
+;(function(){
+    window.router = new VueRouter({
+        linkActiveClass:"active",
+        routes:[
+            {
+                path:"/",
+                component:appHome
+            },
+            {
+                path:"/news",
+                component:News,
+                children:[
+                    {
+                        path:"/news/sport",
+                        component:Sport,
+                        children:[
+                            {
+                                path:'/news/sport/detail/:id',//id 路径变量，占位符
+                                component:SportDetail
+                            }
+                        ]
+                    },
+                    {
+                        //简写方式：相当于/news/tech,注意前面不要加/，如果加了/就代表根目录
+                        path:"tech",
+                        component:Tech,
+                        children:[
+                            {
+                                path:"/news/tech/detail/:id",
+                                component:TechDetail
+                            }
+                        ]
+                    },
+                    {
+                        path:"",
+                        redirect:"/news/sport"
+                    }
+                ]
+            },
+            {
+                path:"/about",
+                component:About
+            }
+        ]
+    })
+})()

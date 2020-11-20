@@ -1,0 +1,51 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-15 16:55:26
+ * @LastEditTime: 2020-10-30 10:59:00
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\day61\04-内置指令.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    <div id="app" v-cloak>
+        <!-- 
+
+            v-pre
+            1:用于显示双大括
+            2，跳过这个元素和它的子元素的编译过程，这样可以提高性能
+         -->
+        <span v-pre>{{我是文字}}</span>
+
+        <h3>{{msg}}</h3>
+        <h3>{{msg}}</h3>
+        <h3>{{msg}}</h3>
+
+
+        <h3 v-text="msg"></h3>
+        <h3 v-model="msg"></h3>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                msg:'测试文字'
+            }
+        })
+    </script>
+</body>
+</html>

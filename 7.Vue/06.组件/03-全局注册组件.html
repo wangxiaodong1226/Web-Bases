@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <component-a></component-a>
+        <component-a></component-a>
+        <component-B></component-B>
+    </div>
+    <script src="./todomvc/node_modules/vue/dist/vue.js"></script>
+    <script>
+        /* 
+            全局注册组件
+            组件名：
+            1，驼峰式，横线分割式
+            2，使用组件时，必须采用横线分割的方式进行引用
+            组件可以理解为特殊的vue实例，不需要手动实例化，它用于管理自己的模板
+        */
+        Vue.component('component-a',{
+            //template指定组件的模板代码
+            template:'<div><h1>头部组件----{{name}}</h1></div>',
+            data:function(){//在组件中data选项必须是一个函数
+                return {
+                    name:'全局组件'
+                }
+            }
+        })
+
+        new Vue({
+            el:"#app",
+            data:{
+
+            },
+            //定义局部组件
+            components:{
+                'component-b':{
+                    template:"<div>这是{{name}}</div>",
+                    data:function(){
+                        return{
+                            name:'局部组件'
+                        }
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

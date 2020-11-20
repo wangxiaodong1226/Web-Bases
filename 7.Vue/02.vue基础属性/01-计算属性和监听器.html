@@ -1,0 +1,98 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-13 12:18:14
+ * @LastEditTime: 2020-10-29 19:11:55
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\day60\01-计算属性和监听器.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        数学：<input type="text" v-model="mathScore">
+        英语：<input type="text" v-model="englishScore">
+        <br>
+        <!-- v-model可以调用函数，注意不要忘记小括号 -->
+        总得分(函数)：<input type="text" v-model="sumScore()">
+        <br>
+        <!-- 绑定计算属性后面不加小括号 -->
+        总得分(计算属性-单向绑定)：<input type="text" v-model="sumScore1">
+        <br>
+        总得分(计算属性-双向绑定)：<input type="text" v-model="sumScore2">
+        <br>
+        总得分(监听器)：<input type="text" v-model="sumScore3">
+        <br>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        /* 
+        1，函数没有缓存，每次都会被调用
+        2，计算属性有缓存，只有当计算属性体内的属性值更改后才会被调用
+        3，函数只支持单向
+        4，计算属性默认只有get函数，而没有set函数，所以只支持单向，如果进行双向，则血药手动设置
+         */
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                mathScore:'70',
+                englishScore:'80',
+                sumScore3:0
+            },
+            methods: {
+                sumScore:function(){
+                    console.log('函数被调用了');
+                    //减0防止数据是字符串，会进行拼接
+                    return (this.mathScore - 0) + (this.englishScore - 0)
+                    // return this.mathScore + this.englishScore
+                    
+                }
+            },
+            computed:{
+                sumScore1:function(){
+                    console.log('计算属性被调用了');
+                    //减0防止数据是字符串，会进行拼接
+                    return (this.mathScore - 0) + (this.englishScore - 0)
+                },
+                sumScore2:{
+                    get:function(){
+                        console.log('get被调用了');
+                        return (this.mathScore - 0) + (this.englishScore - 0)
+                    },
+                    set:function(newValue,oldValue){
+                        console.log('set被调用了');
+                        var avgScore = newValue / 2;
+                        this.mathScore = avgScore;
+                        this.englishScore = avgScore;
+                    }
+                }
+            },
+            watch:{
+                //通过watch选项监听数学分数，当数学更行后回调函数中重新计算总分数sumScore3
+                mathScore:function(newValue,oldValue){
+                    this.sumScore3 = (newValue - 0) + (this.englishScore - 0);
+                }
+            }
+        })
+        //监听器方式2：通过vm实例进行调用
+        //第一个参数是监听的属性名，第二个参数是回调函数
+        vm.$watch("englishScore",function(newValue){
+            this.sumScore3 = (newValue - 0) + (this.mathScore - 0)
+        })
+        /* vm.$watch('sumScore3',function(newValue){
+            var avgScore = newValue / 2;
+            this.mathScore = avgScore;
+            this.englishScore = avgScore;
+        }) */
+
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/vue-router/dist/vue-router.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="header">
+            <h1>头部</h1>
+        </div>
+        <div class="left">
+            <p>
+            <ul>
+                <li> <a href="#/foo">go foo</a></li>
+                <li> <a href="#/bar">go bar</a></li>
+
+                <!-- 使用 router-link 组件来导航. -->
+                <!-- 通过传入 `to` 属性指定链接. -->
+                <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+                <!-- 以下代码和上面的a标签作用一样，是官方提供的，目的就是简化我们写#的操作
+                router-link默认会渲染出a标签，其中通过to属性指定跳转的链接，不用带#
+                -->
+                <router-link to="/foo">Go to Foo</router-link> <br>
+                <router-link to="/bar">Go to Bar</router-link>
+            </ul>
+            </p>
+        </div>
+        <div class="main">
+            <!-- 路由出口 -->
+            <!-- 路由匹配到的组件将渲染在这里 -->
+            <router-view></router-view>
+        </div>
+    </div>
+    <script>
+        //1，定义组件
+        const Foo = {
+            template: `<div>我是FOO组件</div>`
+        }
+        const Bar = {
+            template: `<div>我是Bar组件</div>`
+        }
+        //   2，配置路由表（路由器），当点击指定的url时，显示对应的组件
+        const router = new VueRouter({
+            routes: [ //注意不要带r 
+                {
+                    path: "/foo", //注意不要加#
+                    component: Foo
+                },
+                {
+                    path: "/bar",
+                    component: Bar
+                }
+            ]
+        })
+        // 3,将路由器注入到实例中
+        new Vue({
+            el: "#app",
+            router// ES6简写方式，相当于router:router
+        })
+    </script>
+</body>
+
+</html>

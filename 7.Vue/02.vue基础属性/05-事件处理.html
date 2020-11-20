@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h3>事件处理方式：v-on 或 @事件名</h3>
+        <button v-on:click="say">say {{msg}}</button>
+        <!-- $event代表的就是原生dom事件对象 -->
+        <button v-on:click="say2('heihei',$event)">say2</button>
+        <h3>2，事件修饰符</h3>
+        <div @click="todo">
+            <button @click.stop="doThis">阻止冒泡</button>
+        </div>
+        <a href="https://www.baidu.com" @click.prevent="doStop">跳转</a>
+        <br>
+        <button @click.once="doOnly">事件只会出发一次---{{num}}</button>
+        <h3>按键修饰符</h3>
+        <input type="text" @keyup.enter="keyEnter">
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                msg:'hello wangzhe',
+                num:1
+            },
+            methods: {
+                say:function(event){
+                    alert(this.msg);
+                    alert(event.target.innerHTML)
+
+                },
+                say2:function(name,event){
+                    alert(name + event.target.innerHTML)
+                },
+                todo:function(){
+                    alert('todo...')
+                },
+                doThis:function(){
+                    alert('doThis...')
+                },
+                doStop:function(){
+                    alert('doStop...')
+                },
+                doOnly:function(){
+                    this.num++;
+                },
+                keyEnter:function(){
+                    alert('keyEnter...')
+                }
+            },
+        })
+    </script>
+</body>
+</html>

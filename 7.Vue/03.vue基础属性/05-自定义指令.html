@@ -1,0 +1,62 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-05-15 16:55:26
+ * @LastEditTime: 2020-10-30 11:05:28
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \buka\day61\05-自定义指令.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p v-upper-text="message">xxxxx</p>
+        <input type="text" v-focus>
+    </div>
+    <!-- <div id="app2">
+        <p v-upper-text="message">xxxxx</p>
+        <input type="text" v-focus>
+    </div> -->
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        //全局注册自定义指令
+        Vue.directive('upper-text',{
+            //一般对样式操作的时候在bind中，只调用一次
+            bind:function(el){
+                el.style.color="red";
+            },
+            //一般针对js操作在inserted中，只要用一次
+            //el代表当前指定作用的DOM元素
+            //binding用于获取使用了当前指令的绑定值
+            inserted:function(el,binding){
+                el.innerHTML = binding.value.toUpperCase();
+            }
+        })
+        new Vue({
+            el:"#app",
+            data:{
+                message:"haiyang,测试为你"
+            },
+            directives:{//注册局部自定义指令
+                "focus":{//指令名
+                    inserted:function(el,binding){//要执行的功能
+                        el.focus();
+                    }
+                }
+            }
+        })
+        // new Vue({
+        //     el:"#app2",
+        //     data:{
+        //         message:"haiyang,测试为你123"
+        //     }
+            
+        // })
+    </script>
+</body>
+</html>
